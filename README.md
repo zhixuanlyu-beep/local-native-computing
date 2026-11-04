@@ -24,6 +24,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `ic_tagged_unary_case.py`: alternative unary encoding with a genuine one-step local zero/successor IC discriminator and separately checked copy/erase compatibility.
 - `ic_signed_branch_pruning.py`: comparator-driven pure-IC positive/negative branch erasure for multiple wired gamma/epsilon packages, including adversarial control-port context counterexamples.
 - `ic_signed_sum_selector.py`: comparator-controlled native IC tagged-sum result on one fixed output port, with independently verified normal forms and copy/erase/unpack consumers.
+- `ic_three_way_selector.py`: pure IC three-way tagged sum with a genuine equality payload; one fixed result port and native copy, erase, unpack, and unpacked-payload copy consumers.
 - `ic_gamma_tree_copy_demo.py`, `ic_reduced_package_copy_demo.py`, `ic_tree_erase_demo.py`: primitive IC copy/erase experiments.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -115,6 +116,10 @@ The pair of signed-comparison gamma probes now directly erases losing branches v
 ## New: single-output native IC tagged sum
 
 The comparator/case path now constructs **one fixed output** whose three distinct normal forms identify positive, zero, and negative comparisons and retain the selected opaque candidate as a nested payload. Primitive IC delta, epsilon and gamma consumers can respectively copy, erase and deconstruct the result without observer-directed decisions. The unselected candidate is erased in the network. This is a tagged-sum datapath rather than a bare-root payload selector or the original source `GATE`; source-rule certificates remain 4/15. See `ic_signed_sum_selector.py` and claim ledger §L.
+
+## New: native IC three-way selector with equality payload
+
+`ic_three_way_selector.py` adds a zero-sentinel equality channel to the existing positive/negative comparison channels. On one fixed result port it produces exactly one of three explicitly tagged alternatives carrying the preallocated opaque `A` (greater), `B` (equal), or `C` (less) package. Two losing packages are locally erased; native IC consumers can copy, erase, or unpack the result and then duplicate its unpacked payloads. This is not yet the source-language `GATE` and is not a bare payload switch; the 15-source-rule coverage remains **4/15**. See claim ledger §M.
 
 ## Remaining gaps
 

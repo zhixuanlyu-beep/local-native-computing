@@ -12,6 +12,7 @@ python ic_unary_operational_fragment.py
 python ic_signed_unary_comparator.py
 python ic_composable_signed_difference.py
 python ic_tagged_unary_case.py
+python ic_signed_branch_pruning.py
 python lafont_sigma_width_audit.py
 python lafont_phi_psi_split.py
 python lafont_macro_budget_v2.py

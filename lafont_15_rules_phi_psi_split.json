@@ -1,0 +1,1049 @@
+{
+  "description": "Source-level exact Figure 6 noncanonical split, NOT an IC expansion",
+  "rules": [
+    {
+      "lhs": [
+        "INIT",
+        "Z"
+      ],
+      "arity": [
+        1,
+        0
+      ],
+      "phi": {
+        "nodes": {
+          "sq": {
+            "type": "SQ",
+            "arity": 1
+          },
+          "z": {
+            "type": "Z",
+            "arity": 0
+          }
+        },
+        "boundary": [
+          "A1"
+        ],
+        "cuts": [],
+        "edges": [
+          [
+            "sq.1",
+            "z.0"
+          ],
+          [
+            "A1",
+            "sq.0"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 2,
+      "source_rhs_edges": 2,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "INIT",
+        "S"
+      ],
+      "arity": [
+        1,
+        1
+      ],
+      "phi": {
+        "nodes": {},
+        "boundary": [
+          "A1"
+        ],
+        "cuts": [
+          "cutA1"
+        ],
+        "edges": [
+          [
+            "A1",
+            "cutA1"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {
+          "c": {
+            "type": "CMP",
+            "arity": 3
+          },
+          "g": {
+            "type": "GATE",
+            "arity": 4
+          },
+          "sb": {
+            "type": "S",
+            "arity": 1
+          },
+          "za": {
+            "type": "Z",
+            "arity": 0
+          },
+          "zb": {
+            "type": "Z",
+            "arity": 0
+          },
+          "zc": {
+            "type": "Z",
+            "arity": 0
+          }
+        },
+        "boundary": [
+          "B1"
+        ],
+        "cuts": [
+          "cutB1"
+        ],
+        "edges": [
+          [
+            "c.1",
+            "za.0"
+          ],
+          [
+            "c.2",
+            "g.0"
+          ],
+          [
+            "c.3",
+            "g.1"
+          ],
+          [
+            "g.2",
+            "sb.0"
+          ],
+          [
+            "sb.1",
+            "zb.0"
+          ],
+          [
+            "g.3",
+            "zc.0"
+          ],
+          [
+            "g.4",
+            "cutB1"
+          ],
+          [
+            "B1",
+            "c.0"
+          ]
+        ]
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 1,
+        "strands": [
+          {
+            "index": 1,
+            "A_endpoint": "A1",
+            "B_endpoint": "g.4",
+            "A_cut": "cutA1",
+            "B_cut": "cutB1"
+          }
+        ]
+      },
+      "source_rhs_nodes": 6,
+      "source_rhs_edges": 8,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "CMP",
+        "Z"
+      ],
+      "arity": [
+        3,
+        0
+      ],
+      "phi": {
+        "nodes": {
+          "c0": {
+            "type": "CMP0",
+            "arity": 2
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2",
+          "A3"
+        ],
+        "cuts": [],
+        "edges": [
+          [
+            "A1",
+            "c0.0"
+          ],
+          [
+            "A2",
+            "c0.1"
+          ],
+          [
+            "A3",
+            "c0.2"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 1,
+      "source_rhs_edges": 3,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "CMP",
+        "S"
+      ],
+      "arity": [
+        3,
+        1
+      ],
+      "phi": {
+        "nodes": {
+          "cs": {
+            "type": "CMPS",
+            "arity": 3
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2",
+          "A3"
+        ],
+        "cuts": [
+          "cutA1"
+        ],
+        "edges": [
+          [
+            "A1",
+            "cs.0"
+          ],
+          [
+            "A2",
+            "cs.2"
+          ],
+          [
+            "A3",
+            "cs.3"
+          ],
+          [
+            "cs.1",
+            "cutA1"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [
+          "B1"
+        ],
+        "cuts": [
+          "cutB1"
+        ],
+        "edges": [
+          [
+            "B1",
+            "cutB1"
+          ]
+        ]
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 1,
+        "strands": [
+          {
+            "index": 1,
+            "A_endpoint": "cs.1",
+            "B_endpoint": "B1",
+            "A_cut": "cutA1",
+            "B_cut": "cutB1"
+          }
+        ]
+      },
+      "source_rhs_nodes": 1,
+      "source_rhs_edges": 4,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "CMP0",
+        "Z"
+      ],
+      "arity": [
+        2,
+        0
+      ],
+      "phi": {
+        "nodes": {
+          "e": {
+            "type": "EQ",
+            "arity": 0
+          },
+          "z": {
+            "type": "Z",
+            "arity": 0
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2"
+        ],
+        "cuts": [],
+        "edges": [
+          [
+            "A1",
+            "e.0"
+          ],
+          [
+            "A2",
+            "z.0"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 2,
+      "source_rhs_edges": 2,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "CMP0",
+        "S"
+      ],
+      "arity": [
+        2,
+        1
+      ],
+      "phi": {
+        "nodes": {
+          "l": {
+            "type": "LT",
+            "arity": 0
+          },
+          "sn": {
+            "type": "S",
+            "arity": 1
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2"
+        ],
+        "cuts": [
+          "cutA1"
+        ],
+        "edges": [
+          [
+            "A1",
+            "l.0"
+          ],
+          [
+            "A2",
+            "sn.0"
+          ],
+          [
+            "sn.1",
+            "cutA1"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [
+          "B1"
+        ],
+        "cuts": [
+          "cutB1"
+        ],
+        "edges": [
+          [
+            "B1",
+            "cutB1"
+          ]
+        ]
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 1,
+        "strands": [
+          {
+            "index": 1,
+            "A_endpoint": "sn.1",
+            "B_endpoint": "B1",
+            "A_cut": "cutA1",
+            "B_cut": "cutB1"
+          }
+        ]
+      },
+      "source_rhs_nodes": 2,
+      "source_rhs_edges": 3,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "CMPS",
+        "Z"
+      ],
+      "arity": [
+        3,
+        0
+      ],
+      "phi": {
+        "nodes": {
+          "g": {
+            "type": "GT",
+            "arity": 0
+          },
+          "sn": {
+            "type": "S",
+            "arity": 1
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2",
+          "A3"
+        ],
+        "cuts": [],
+        "edges": [
+          [
+            "A1",
+            "sn.1"
+          ],
+          [
+            "A2",
+            "g.0"
+          ],
+          [
+            "A3",
+            "sn.0"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 2,
+      "source_rhs_edges": 3,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "CMPS",
+        "S"
+      ],
+      "arity": [
+        3,
+        1
+      ],
+      "phi": {
+        "nodes": {
+          "c": {
+            "type": "CMP",
+            "arity": 3
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2",
+          "A3"
+        ],
+        "cuts": [
+          "cutA1"
+        ],
+        "edges": [
+          [
+            "A1",
+            "c.0"
+          ],
+          [
+            "A2",
+            "c.2"
+          ],
+          [
+            "A3",
+            "c.3"
+          ],
+          [
+            "c.1",
+            "cutA1"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [
+          "B1"
+        ],
+        "cuts": [
+          "cutB1"
+        ],
+        "edges": [
+          [
+            "B1",
+            "cutB1"
+          ]
+        ]
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 1,
+        "strands": [
+          {
+            "index": 1,
+            "A_endpoint": "c.1",
+            "B_endpoint": "B1",
+            "A_cut": "cutA1",
+            "B_cut": "cutB1"
+          }
+        ]
+      },
+      "source_rhs_nodes": 1,
+      "source_rhs_edges": 4,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "GATE",
+        "EQ"
+      ],
+      "arity": [
+        4,
+        0
+      ],
+      "phi": {
+        "nodes": {
+          "q": {
+            "type": "SQ",
+            "arity": 1
+          },
+          "s": {
+            "type": "S",
+            "arity": 1
+          },
+          "ea": {
+            "type": "ERA",
+            "arity": 0
+          },
+          "eb": {
+            "type": "ERA",
+            "arity": 0
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        "cuts": [],
+        "edges": [
+          [
+            "q.1",
+            "s.0"
+          ],
+          [
+            "A1",
+            "ea.0"
+          ],
+          [
+            "A2",
+            "eb.0"
+          ],
+          [
+            "A3",
+            "s.1"
+          ],
+          [
+            "A4",
+            "q.0"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 4,
+      "source_rhs_edges": 5,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "GATE",
+        "GT"
+      ],
+      "arity": [
+        4,
+        0
+      ],
+      "phi": {
+        "nodes": {
+          "c": {
+            "type": "CMP",
+            "arity": 3
+          },
+          "g": {
+            "type": "GATE",
+            "arity": 4
+          },
+          "d": {
+            "type": "DUP",
+            "arity": 2
+          },
+          "sa1": {
+            "type": "S",
+            "arity": 1
+          },
+          "sa2": {
+            "type": "S",
+            "arity": 1
+          },
+          "sb1": {
+            "type": "S",
+            "arity": 1
+          },
+          "sb2": {
+            "type": "S",
+            "arity": 1
+          },
+          "sk": {
+            "type": "S",
+            "arity": 1
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        "cuts": [],
+        "edges": [
+          [
+            "c.1",
+            "sa2.0"
+          ],
+          [
+            "sa2.1",
+            "sa1.0"
+          ],
+          [
+            "sa1.1",
+            "d.1"
+          ],
+          [
+            "g.2",
+            "sb2.0"
+          ],
+          [
+            "sb2.1",
+            "sb1.0"
+          ],
+          [
+            "sb1.1",
+            "d.2"
+          ],
+          [
+            "c.2",
+            "g.0"
+          ],
+          [
+            "c.3",
+            "g.1"
+          ],
+          [
+            "g.3",
+            "sk.0"
+          ],
+          [
+            "A1",
+            "c.0"
+          ],
+          [
+            "A2",
+            "d.0"
+          ],
+          [
+            "A3",
+            "sk.1"
+          ],
+          [
+            "A4",
+            "g.4"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 8,
+      "source_rhs_edges": 13,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "GATE",
+        "LT"
+      ],
+      "arity": [
+        4,
+        0
+      ],
+      "phi": {
+        "nodes": {
+          "b": {
+            "type": "BR",
+            "arity": 2
+          },
+          "d": {
+            "type": "DUP",
+            "arity": 2
+          },
+          "s": {
+            "type": "S",
+            "arity": 1
+          },
+          "ea": {
+            "type": "ERA",
+            "arity": 0
+          },
+          "eb": {
+            "type": "ERA",
+            "arity": 0
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        "cuts": [],
+        "edges": [
+          [
+            "d.1",
+            "b.1"
+          ],
+          [
+            "d.2",
+            "s.1"
+          ],
+          [
+            "s.0",
+            "b.2"
+          ],
+          [
+            "A1",
+            "ea.0"
+          ],
+          [
+            "A2",
+            "eb.0"
+          ],
+          [
+            "A3",
+            "d.0"
+          ],
+          [
+            "A4",
+            "b.0"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 5,
+      "source_rhs_edges": 7,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "DUP",
+        "Z"
+      ],
+      "arity": [
+        2,
+        0
+      ],
+      "phi": {
+        "nodes": {
+          "z1": {
+            "type": "Z",
+            "arity": 0
+          },
+          "z2": {
+            "type": "Z",
+            "arity": 0
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2"
+        ],
+        "cuts": [],
+        "edges": [
+          [
+            "A1",
+            "z1.0"
+          ],
+          [
+            "A2",
+            "z2.0"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 2,
+      "source_rhs_edges": 2,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "DUP",
+        "S"
+      ],
+      "arity": [
+        2,
+        1
+      ],
+      "phi": {
+        "nodes": {
+          "s1": {
+            "type": "S",
+            "arity": 1
+          },
+          "s2": {
+            "type": "S",
+            "arity": 1
+          }
+        },
+        "boundary": [
+          "A1",
+          "A2"
+        ],
+        "cuts": [
+          "cutA1",
+          "cutA2"
+        ],
+        "edges": [
+          [
+            "s1.1",
+            "cutA1"
+          ],
+          [
+            "s2.1",
+            "cutA2"
+          ],
+          [
+            "A1",
+            "s1.0"
+          ],
+          [
+            "A2",
+            "s2.0"
+          ]
+        ]
+      },
+      "psi": {
+        "nodes": {
+          "d": {
+            "type": "DUP",
+            "arity": 2
+          }
+        },
+        "boundary": [
+          "B1"
+        ],
+        "cuts": [
+          "cutB1",
+          "cutB2"
+        ],
+        "edges": [
+          [
+            "d.1",
+            "cutB1"
+          ],
+          [
+            "d.2",
+            "cutB2"
+          ],
+          [
+            "B1",
+            "d.0"
+          ]
+        ]
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 2,
+        "strands": [
+          {
+            "index": 1,
+            "A_endpoint": "s1.1",
+            "B_endpoint": "d.1",
+            "A_cut": "cutA1",
+            "B_cut": "cutB1"
+          },
+          {
+            "index": 2,
+            "A_endpoint": "s2.1",
+            "B_endpoint": "d.2",
+            "A_cut": "cutA2",
+            "B_cut": "cutB2"
+          }
+        ]
+      },
+      "source_rhs_nodes": 3,
+      "source_rhs_edges": 5,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "ERA",
+        "Z"
+      ],
+      "arity": [
+        0,
+        0
+      ],
+      "phi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "psi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 0,
+      "source_rhs_edges": 0,
+      "reconstructed_exactly": true
+    },
+    {
+      "lhs": [
+        "ERA",
+        "S"
+      ],
+      "arity": [
+        0,
+        1
+      ],
+      "phi": {
+        "nodes": {},
+        "boundary": [],
+        "cuts": [],
+        "edges": []
+      },
+      "psi": {
+        "nodes": {
+          "e": {
+            "type": "ERA",
+            "arity": 0
+          }
+        },
+        "boundary": [
+          "B1"
+        ],
+        "cuts": [],
+        "edges": [
+          [
+            "B1",
+            "e.0"
+          ]
+        ]
+      },
+      "sigma": {
+        "permutation": "identity",
+        "width": 0,
+        "strands": []
+      },
+      "source_rhs_nodes": 1,
+      "source_rhs_edges": 1,
+      "reconstructed_exactly": true
+    }
+  ]
+}

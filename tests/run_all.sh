@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+python source_rule_audit_v3.py
+python source_feedback_audit.py
+python ic_primitive_port_verifier.py
+python ic_gamma_tree_copy_demo.py
+python ic_reduced_package_copy_demo.py
+python ic_tree_erase_demo.py
+python lafont_sigma_width_audit.py
+python lafont_phi_psi_split.py
+python lafont_macro_budget_v2.py

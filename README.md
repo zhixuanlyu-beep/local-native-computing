@@ -20,6 +20,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `source_ic_structure_encoding.py`: lossless source port-net **data** encoding in primitive gamma/epsilon IC, with native delta copying and epsilon erasure; not a source-to-IC evaluator.
 - `ic_unary_operational_fragment.py`: genuine operational IC simulations for four typed source rules `ERA-Z`, `ERA-S`, `DUP-Z`, `DUP-S`, with context checks.
 - `ic_signed_unary_comparator.py`: original complementary unary-chain comparator using only primitive IC gamma/epsilon annihilations; signed difference is read from its stable residual topology.
+- `ic_composable_signed_difference.py`: two complementary native IC channels which leave rooted unary data at two output ports; further delta/epsilon contexts copy or erase the produced data.
 - `ic_gamma_tree_copy_demo.py`, `ic_reduced_package_copy_demo.py`, `ic_tree_erase_demo.py`: primitive IC copy/erase experiments.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -95,6 +96,10 @@ The typed unary sublanguage `{Z,S,DUP,ERA}` now has four source-rule certificate
 ## New: signed unary comparison by native IC (component only)
 
 Complementary gamma/epsilon unary chains cancel via gamma-gamma interactions and expose a stable oriented residual wire path. Two boundary endpoints distinguish equal, greater-than, and less-than; the residual gamma count is the exact absolute difference. For two lengths `m,n`, the system performs `min(m,n)+1` gamma collisions and the same number of independent epsilon-epsilon cleanups. The result can be read **before** the cleanup ends, with no source rule interpreter at runtime. Unlike the four-rule unary fragment, this is a **separate component** and not yet an operational compilation of CMP/CMP0/CMPS. See `docs/CLAIM_LEDGER.md` §H.
+
+## New: composed signed differences as consumable IC data
+
+Two pure-IC comparison channels produce `(max(m-n,0), max(n-m,0))` as two rooted gamma/epsilon unary values on fixed output ports. These values can be connected **before execution** to real IC delta and epsilon consumer nodes, yielding two exact copies of either selected truncated difference without an observer choosing rewrite actions. This is a compositional primitive IC circuit rather than the full `CMP` / `GATE` source-level lowering. See `ic_composable_signed_difference.py` and claim ledger §I.
 
 ## Remaining gaps
 

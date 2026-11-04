@@ -75,6 +75,7 @@ def reduction(net, strategy, seed):
     """Unbiased primitive IC scheduler; strategy only chooses active pairs."""
     rng = random.Random(seed)
     steps = 0
+    limit = 30 * (len(net.nodes) + 1)
     while net.active():
         pairs = net.active()
         if strategy == 'random':
@@ -90,7 +91,7 @@ def reduction(net, strategy, seed):
         net.reduce(*pair)
         steps += 1
         # The exact bound is a test guard, not a scheduling rule.
-        assert steps <= 30 * (len(net.nodes) + steps + 1)
+        assert steps <= limit, ('step limit', strategy, steps)
     net.check()
     return steps
 

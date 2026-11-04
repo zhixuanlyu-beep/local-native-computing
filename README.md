@@ -25,6 +25,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `ic_signed_branch_pruning.py`: comparator-driven pure-IC positive/negative branch erasure for multiple wired gamma/epsilon packages, including adversarial control-port context counterexamples.
 - `ic_signed_sum_selector.py`: comparator-controlled native IC tagged-sum result on one fixed output port, with independently verified normal forms and copy/erase/unpack consumers.
 - `ic_three_way_selector.py`: pure IC three-way tagged sum with a genuine equality payload; one fixed result port and native copy, erase, unpack, and unpacked-payload copy consumers.
+- `ic_typed_entry_rules.py`: two isolated typed source-rule IC projection certificates (`INIT-Z`, `CMP0-Z`), with transparent `SQ(Z)` and explicit compositional limitations.
 - `ic_gamma_tree_copy_demo.py`, `ic_reduced_package_copy_demo.py`, `ic_tree_erase_demo.py`: primitive IC copy/erase experiments.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -120,6 +121,10 @@ The comparator/case path now constructs **one fixed output** whose three distinc
 ## New: native IC three-way selector with equality payload
 
 `ic_three_way_selector.py` adds a zero-sentinel equality channel to the existing positive/negative comparison channels. On one fixed result port it produces exactly one of three explicitly tagged alternatives carrying the preallocated opaque `A` (greater), `B` (equal), or `C` (less) package. Two losing packages are locally erased; native IC consumers can copy, erase, or unpack the result and then duplicate its unpacked payloads. This is not yet the source-language `GATE` and is not a bare payload switch; the 15-source-rule coverage remains **4/15**. See claim ledger §M.
+
+## New: isolated typed source entry certificates
+
+`ic_typed_entry_rules.py` gives primitive IC reductions of the isolated `INIT-Z` and `CMP0-Z` source RHS shapes (2 and 1 steps) under explicit *typed, partially transparent* representations. This is a local rule correspondence, not a single, globally consistent source-to-IC compiler: `SQ(Z)` is projected to its child and `EQ` is represented by epsilon only at an isolated T-typed interface. The coherent four-rule source fragment remains **4/15**; these two isolated patterns are reported separately in the claim ledger §N.
 
 ## Remaining gaps
 

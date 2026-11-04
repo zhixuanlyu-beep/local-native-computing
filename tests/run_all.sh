@@ -15,6 +15,7 @@ python ic_tagged_unary_case.py
 python ic_signed_branch_pruning.py
 python ic_signed_sum_selector.py
 python ic_three_way_selector.py
+python ic_typed_entry_rules.py
 python lafont_sigma_width_audit.py
 python lafont_phi_psi_split.py
 python lafont_macro_budget_v2.py

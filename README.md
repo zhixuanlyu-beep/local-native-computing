@@ -17,6 +17,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 
 - `source_feedback_audit.py`, `source_rule_audit_v3.py`: source-level feedback simulator and rule audit.
 - `ic_primitive_port_verifier.py`: literal gamma/delta/epsilon port-graph reducer for the six Lafont rules.
+- `source_ic_structure_encoding.py`: lossless source port-net **data** encoding in primitive gamma/epsilon IC, with native delta copying and epsilon erasure; not a source-to-IC evaluator.
 - `ic_gamma_tree_copy_demo.py`, `ic_reduced_package_copy_demo.py`, `ic_tree_erase_demo.py`: primitive IC copy/erase experiments.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -63,6 +64,7 @@ python ic_primitive_port_verifier.py
 python ic_gamma_tree_copy_demo.py
 python ic_reduced_package_copy_demo.py
 python ic_tree_erase_demo.py
+python source_ic_structure_encoding.py
 python lafont_sigma_width_audit.py
 python lafont_phi_psi_split.py
 python lafont_macro_budget_v2.py
@@ -77,6 +79,10 @@ python lafont_macro_budget_v2.py
 ## Source
 
 Yves Lafont, *Interaction Combinators*, Information and Computation 137 (1997), 69-101, DOI: 10.1006/inco.1997.2643. Relevant figures: 2, 4-10.
+
+## New: structural source-net encoding (not source-rule execution)
+
+`source_ic_structure_encoding.py` produces fully paired primitive IC gamma/epsilon packages from arbitrary finite source-node port matchings, retaining source node tags and ordered wire topology. All 15 source-rule RHS structures and source initial states for N=0..200 round-trip exactly. A primitive IC delta/epsilon copies/erases the encoded **data** using only IC rewrites. For the initial N=81 source structure: 533 IC payload cells + 83 source wires = 616 IC copy/erase steps. This **does not compute SQ(9)**; the source rewrite interpreter/compiler and local runtime execution remain open.
 
 ## Remaining gaps
 

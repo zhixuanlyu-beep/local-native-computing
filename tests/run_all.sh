@@ -7,6 +7,7 @@ python ic_primitive_port_verifier.py
 python ic_gamma_tree_copy_demo.py
 python ic_reduced_package_copy_demo.py
 python ic_tree_erase_demo.py
+python source_ic_structure_encoding.py
 python lafont_sigma_width_audit.py
 python lafont_phi_psi_split.py
 python lafont_macro_budget_v2.py

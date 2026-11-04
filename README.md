@@ -23,6 +23,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `ic_composable_signed_difference.py`: two complementary native IC channels which leave rooted unary data at two output ports; further delta/epsilon contexts copy or erase the produced data.
 - `ic_tagged_unary_case.py`: alternative unary encoding with a genuine one-step local zero/successor IC discriminator and separately checked copy/erase compatibility.
 - `ic_signed_branch_pruning.py`: comparator-driven pure-IC positive/negative branch erasure for multiple wired gamma/epsilon packages, including adversarial control-port context counterexamples.
+- `ic_signed_sum_selector.py`: comparator-controlled native IC tagged-sum result on one fixed output port, with independently verified normal forms and copy/erase/unpack consumers.
 - `ic_gamma_tree_copy_demo.py`, `ic_reduced_package_copy_demo.py`, `ic_tree_erase_demo.py`: primitive IC copy/erase experiments.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -110,6 +111,10 @@ A fixed IC gamma destructor can turn `Z=e` into `(false=e, predecessor=e)` or `S
 ## New: IC comparator-driven conditional branch pruning
 
 The pair of signed-comparison gamma probes now directly erases losing branches via gamma/epsilon control interactions and a delta fanout, with no external sign test or source interpreter. Non-tree, internally wired, reduced gamma/epsilon packages survive intact only on the sign-selected side; equality erases both. The theorem is explicitly **interface-restricted**: an adversarial epsilon connected to a control port can erase the nominal winner. This is not yet a unified-output three-way selector nor a compiled `GATE` source rule. See `ic_signed_branch_pruning.py` and claim ledger §K.
+
+## New: single-output native IC tagged sum
+
+The comparator/case path now constructs **one fixed output** whose three distinct normal forms identify positive, zero, and negative comparisons and retain the selected opaque candidate as a nested payload. Primitive IC delta, epsilon and gamma consumers can respectively copy, erase and deconstruct the result without observer-directed decisions. The unselected candidate is erased in the network. This is a tagged-sum datapath rather than a bare-root payload selector or the original source `GATE`; source-rule certificates remain 4/15. See `ic_signed_sum_selector.py` and claim ledger §L.
 
 ## Remaining gaps
 

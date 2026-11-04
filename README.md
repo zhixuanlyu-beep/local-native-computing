@@ -21,6 +21,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `ic_unary_operational_fragment.py`: genuine operational IC simulations for four typed source rules `ERA-Z`, `ERA-S`, `DUP-Z`, `DUP-S`, with context checks.
 - `ic_signed_unary_comparator.py`: original complementary unary-chain comparator using only primitive IC gamma/epsilon annihilations; signed difference is read from its stable residual topology.
 - `ic_composable_signed_difference.py`: two complementary native IC channels which leave rooted unary data at two output ports; further delta/epsilon contexts copy or erase the produced data.
+- `ic_tagged_unary_case.py`: alternative unary encoding with a genuine one-step local zero/successor IC discriminator and separately checked copy/erase compatibility.
 - `ic_gamma_tree_copy_demo.py`, `ic_reduced_package_copy_demo.py`, `ic_tree_erase_demo.py`: primitive IC copy/erase experiments.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -100,6 +101,10 @@ Complementary gamma/epsilon unary chains cancel via gamma-gamma interactions and
 ## New: composed signed differences as consumable IC data
 
 Two pure-IC comparison channels produce `(max(m-n,0), max(n-m,0))` as two rooted gamma/epsilon unary values on fixed output ports. These values can be connected **before execution** to real IC delta and epsilon consumer nodes, yielding two exact copies of either selected truncated difference without an observer choosing rewrite actions. This is a compositional primitive IC circuit rather than the full `CMP` / `GATE` source-level lowering. See `ic_composable_signed_difference.py` and claim ledger §I.
+
+## New: one-step local zero/successor case (alternate tagged encoding)
+
+A fixed IC gamma destructor can turn `Z=e` into `(false=e, predecessor=e)` or `S(x)=g(x,T)` into `(true=T, predecessor=x)`, with `T=g(e,e)`, in one primitive reduction. The emitted Boolean is a real copyable/erasable IC net, rather than a runtime observer decision. The same tagged representation retains the existing four unary source-rule simulations with larger constant costs; **the source-rule coverage remains 4/15**. The previous comparator's canonical unary outputs are not yet converted to the tagged protocol, and no full conditional GATE has been compiled.
 
 ## Remaining gaps
 

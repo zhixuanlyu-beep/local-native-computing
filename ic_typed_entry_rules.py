@@ -74,7 +74,8 @@ def rhs_from_source(a, b):
     labels = tuple("A" + str(i) for i in range(1, AR[a] + 1))
     assert set(exterior) == set(labels)
     assert not any(k.startswith("B") for k in exterior)
-    assert PORTS[a][0] == PORTS[b][0] or PORTS[a][0][0] != PORTS[b][0][0]
+    assert PORTS[a][0][1] == PORTS[b][0][1] == "N"
+    assert PORTS[a][0][0] != PORTS[b][0][0]
     net = Net()
 
     if a == "CMP0":
@@ -91,7 +92,8 @@ def rhs_from_source(a, b):
         assert edges == [("sq", 1, "z", 0)]
         assert exterior == {"A1": ("sq", 0)}
         assert PORTS["INIT"][1] == PORTS["SQ"][0]
-        assert PORTS["SQ"][1] == PORTS["Z"][0]
+        assert PORTS["SQ"][1][1] == PORTS["Z"][0][1] == "N"
+        assert PORTS["SQ"][1][0] != PORTS["Z"][0][0]
         # The source SQ output is explicitly a transparent wrapper in this
         # PROJECTION; an independent general SQ semantics is NOT obtained.
         cell = net.cell("e")

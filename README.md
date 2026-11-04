@@ -19,6 +19,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `ic_primitive_port_verifier.py`: literal gamma/delta/epsilon port-graph reducer for the six Lafont rules.
 - `source_ic_structure_encoding.py`: lossless source port-net **data** encoding in primitive gamma/epsilon IC, with native delta copying and epsilon erasure; not a source-to-IC evaluator.
 - `ic_unary_operational_fragment.py`: genuine operational IC simulations for four typed source rules `ERA-Z`, `ERA-S`, `DUP-Z`, `DUP-S`, with context checks.
+- `ic_signed_unary_comparator.py`: original complementary unary-chain comparator using only primitive IC gamma/epsilon annihilations; signed difference is read from its stable residual topology.
 - `ic_gamma_tree_copy_demo.py`, `ic_reduced_package_copy_demo.py`, `ic_tree_erase_demo.py`: primitive IC copy/erase experiments.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -66,6 +67,8 @@ python ic_gamma_tree_copy_demo.py
 python ic_reduced_package_copy_demo.py
 python ic_tree_erase_demo.py
 python source_ic_structure_encoding.py
+python ic_unary_operational_fragment.py
+python ic_signed_unary_comparator.py
 python lafont_sigma_width_audit.py
 python lafont_phi_psi_split.py
 python lafont_macro_budget_v2.py
@@ -88,6 +91,10 @@ Yves Lafont, *Interaction Combinators*, Information and Computation 137 (1997), 
 ## New: four-rule **operational** compiler fragment
 
 The typed unary sublanguage `{Z,S,DUP,ERA}` now has four source-rule certificates executed **only by primitive IC**: `ERA-Z` (1), `ERA-S` (2), `DUP-Z` (1), and `DUP-S` (2) primitive reductions. They are checked on local interfaces and randomized typed closed contexts, with unary copying, erasure, and closed copy-then-erase programs. The embedding uses `Z -> epsilon`, `ERA -> epsilon`, `DUP -> delta`, and `S -> gamma(child,epsilon)`. The two epsilon source symbols are distinct by source typing, not by their bare IC encoding. This remains a **restricted typed fragment**, not an operational lowering for the full 14-symbol source program.
+
+## New: signed unary comparison by native IC (component only)
+
+Complementary gamma/epsilon unary chains cancel via gamma-gamma interactions and expose a stable oriented residual wire path. Two boundary endpoints distinguish equal, greater-than, and less-than; the residual gamma count is the exact absolute difference. For two lengths `m,n`, the system performs `min(m,n)+1` gamma collisions and the same number of independent epsilon-epsilon cleanups. The result can be read **before** the cleanup ends, with no source rule interpreter at runtime. Unlike the four-rule unary fragment, this is a **separate component** and not yet an operational compilation of CMP/CMP0/CMPS. See `docs/CLAIM_LEDGER.md` §H.
 
 ## Remaining gaps
 

@@ -14,7 +14,7 @@ The research route is:
 
 Two related but distinct lines of work are kept separate:
 
-- **Constraint discovery from problem semantics** is the broader research goal. No automatic algorithm for deriving local constraints from arbitrary task semantics is implemented.
+- **Constraint discovery from problem semantics** has a bounded carrier/gate graph-search instance with executable counterexamples and retained-artifact reuse. General derivation from arbitrary task semantics remains open.
 - **Compilation of known source rules** is the current concrete engineering line. It has a coherent typed four-rule fragment and two separately typed isolated projections, but not a globally coherent source-to-IC compiler.
 
 The [claim ledger](docs/CLAIM_LEDGER.md) is the sole source for detailed evidence, test sizes, coverage counts, and proof boundaries. Read it before interpreting any result.
@@ -38,6 +38,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 | Coherent typed fragment | `ic_unary_operational_fragment.py` operationally refines four typed source rules. |
 | Isolated projections | `ic_typed_entry_rules.py` certifies two typed source-entry redexes separately from the coherent fragment. |
 | Restricted-consumer components | The comparator provides path readout; difference, pruning, and selector scripts check native behavior under declared interfaces and consumers. |
+| Bounded semantic synthesis and reuse | A finite literal-IC graph search refines candidates with counterexamples; native copy products are archived and reconstructed for independent-input consumer checks. |
 | Full program execution | Not established; the complete source-to-IC compiler and the `81 -> SQ(9)` IC trace remain open. |
 
 ## Repository layout
@@ -46,6 +47,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 
 - `docs/RESEARCH_FRAMEWORK.md`: research route, terminology, component contracts, and evidence boundaries.
 - `docs/CLAIM_LEDGER.md`: executable evidence, conditional results, coverage boundaries, and open goals.
+- `docs/BOUNDED_IC_INSTANCE.md`: a runnable finite observation-to-IC instance and its exact scope.
 - `source_feedback_audit.py`, `source_rule_audit_v3.py`: source-level feedback simulator and rule audit.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -66,6 +68,14 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `ic_signed_sum_selector.py`: single-output native IC tagged sum with checked downstream consumers.
 - `ic_three_way_selector.py`: three-way tagged selector with an equality payload and native consumers.
 - `ic_typed_entry_rules.py`: isolated typed certificates for `INIT-Z` and `CMP0-Z`.
+
+### Bounded discovery and retained artifacts
+
+- `ic_bounded_synthesis.py`: finite carrier/gate port-graph enumeration, semantic screening, counterexamples, and context refinement.
+- `ic_bounded_execution.py`: complete small execution graphs over all active-pair choices, with exact isomorphism and explicit cutoffs.
+- `ic_research_artifacts.py`: literal graph templates and validated ROOT-component archives.
+- `ic_research_pipeline.py`: native production, provenance replay, fresh reconstruction, and independent reuse.
+- `results/native_ic_research.json.gz`: complete candidate records and archived artifacts; replay with `python ic_research_pipeline.py --verify-report results/native_ic_research.json.gz`.
 
 ### Continuous audit
 
@@ -89,6 +99,9 @@ python ic_signed_branch_pruning.py
 python ic_signed_sum_selector.py
 python ic_three_way_selector.py
 python ic_typed_entry_rules.py
+python ic_bounded_execution.py
+python ic_research_artifacts.py
+python ic_research_pipeline.py
 python lafont_sigma_width_audit.py
 python lafont_phi_psi_split.py
 python lafont_macro_budget_v2.py

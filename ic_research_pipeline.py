@@ -6,8 +6,8 @@ reinstantiate the specimen using fresh symbolic allocation and a new input;
 verify its subsequent behavior in the declared finite consumer family.
 
 Archiving/import are research tooling, outside runtime evolution.  They do
-not reset physical material or constitute a new IC rule.  The source feedback
-compiler and general semantic synthesis remain separate open obligations.
+not reset physical material or constitute a new IC rule.  The unified source
+compiler is evaluated separately; general semantic synthesis remains open.
 """
 from dataclasses import asdict, replace
 import argparse
@@ -277,7 +277,7 @@ def main():
           "context refinement cases", len(synthesis["context_refinement"]))
     print("PASS: runtime-created archived specimens", len(artifacts), "reuse cases",
           sum(len(a["reuse"]) for a in artifacts))
-    print("LIMIT: finite synthesis and reuse contracts; complete source feedback compilation remains open")
+    print("LIMIT: finite synthesis and reuse contracts; separate compiler and bridge evidence is in docs/CLAIM_LEDGER.md")
 
 
 if __name__ == "__main__":

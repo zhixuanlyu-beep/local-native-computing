@@ -1,6 +1,6 @@
 # A bounded observation-to-IC research instance
 
-This instance implements one finite path through the [research framework](RESEARCH_FRAMEWORK.md): declare an observation contract, enumerate literal IC carrier and gate graphs, reject them using concrete executions, verify the surviving combinations, and archive and reuse an actual runtime-produced structure. It supplies neither a general semantic synthesis algorithm nor the complete source feedback compiler. Concrete counts and verified coverage belong to the [claim ledger](CLAIM_LEDGER.md).
+This instance implements one finite path through the [research framework](RESEARCH_FRAMEWORK.md): declare an observation contract, enumerate literal IC carrier and gate graphs, reject them using concrete executions, verify the surviving combinations, and archive and reuse an actual runtime-produced structure. It supplies neither a general semantic synthesis algorithm nor a general compiler from arbitrary task semantics. Concrete counts and verified coverage belong to the [claim ledger](CLAIM_LEDGER.md).
 
 ## Problem and budgets
 
@@ -68,4 +68,4 @@ python ic_research_pipeline.py --verify-report results/native_ic_research.json.g
 
 The report command writes the complete candidate records, replayable counterexamples, per-case execution summaries, and archived artifacts. A `.gz` suffix compresses the UTF-8 JSON. The verification command reads the saved report, replays its counterexamples and producers, and checks native reuse in the declared environments. A [saved report](../results/native_ic_research.json.gz) is included. The other entry points exercise the supporting checks separately; the integrated pipeline and supporting checks are included in [the repository runner](../tests/run_all.sh).
 
-The complete source compiler, protocol adapters outside this instance, general constraint discovery, stronger contextual replacement, and physical resource models retain their separate obligations in the [framework](RESEARCH_FRAMEWORK.md#8-next-obligations-and-reporting-discipline).
+The separate unified source compiler is described in the [compiler guide](COHERENT_IC_COMPILER.md), and the bridge from these discovered gates to its literal program code is described in the [program-code bridge guide](PROGRAM_CODE_BRIDGE.md). General constraint discovery, protocol adapters outside these instances, stronger contextual replacement, and physical resource models retain their separate obligations in the [framework](RESEARCH_FRAMEWORK.md#8-next-obligations-and-reporting-discipline).

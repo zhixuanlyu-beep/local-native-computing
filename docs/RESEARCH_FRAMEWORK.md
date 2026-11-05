@@ -16,6 +16,8 @@ This document defines a research agenda and relates it to existing mechanisms. T
 
 The two lines can inform each other. A compiler fragment can supply a candidate building block, and a context counterexample can expose a missing interface constraint. Success in one line does not discharge the other's proof obligations. The unified compiler and concrete feedback run are recorded in [ledger Q](CLAIM_LEDGER.md#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution); broader constraint discovery remains open.
 
+The E_code bridge now composes the bounded-discovery gates with the compiler's actual !Gamma program code under a restricted finite consumer contract; complete-program activation and continuous task reuse remain separate M2 obligations and are recorded in [ledger R](CLAIM_LEDGER.md#r-program-code-bridge-e_code).
+
 ## 2. Declare the problem before choosing materials
 
 Every investigation should record these five inputs, plus a separate search budget:

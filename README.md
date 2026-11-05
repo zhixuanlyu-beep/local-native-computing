@@ -10,12 +10,13 @@ The research route is:
 4. **Local evolution** — let only declared local IC interactions execute under the allowed environments and schedules.
 5. **Readout and retained structure** — decode boundary results and record reusable components with their contracts and replacement conditions.
 
-[docs/RESEARCH_FRAMEWORK.md](docs/RESEARCH_FRAMEWORK.md) defines this route and maps the existing implementations to it. The repository now includes a complete coherent source-to-IC compiler for the 14-symbol / 15-rule system, complete rule certificates, declared finite typed-context checks, and the concrete 81 -> SQ(9) primitive-IC feedback execution.
+[docs/RESEARCH_FRAMEWORK.md](docs/RESEARCH_FRAMEWORK.md) defines this route and maps the existing implementations to it. The repository now includes a complete coherent source-to-IC compiler for the 14-symbol / 15-rule system, complete rule certificates, declared finite typed-context checks, the concrete 81 -> SQ(9) primitive-IC feedback execution, and a program-code bridge from the discovered retain/erase gates to the compiler's !Gamma package.
 
-Two related but distinct lines of work are kept separate:
+These related lines retain separate obligations:
 
 - **Constraint discovery from problem semantics** has a bounded carrier/gate graph-search instance with executable counterexamples and retained-artifact reuse. General derivation from arbitrary task semantics remains open.
 - **Compilation of known source rules** now has a unified primitive-IC compiler and the concrete 81 -> SQ(9) execution; arbitrary-context equivalence, all-schedule verification, and automatic rule discovery remain open.
+- **Program-code composition** bridges the bounded-discovery gates to the real !Gamma package and native code/object consumers; complete-program activation and continuous reuse remain open.
 
 The [claim ledger](docs/CLAIM_LEDGER.md) is the sole source for detailed evidence, test sizes, coverage counts, and proof boundaries. Read it before interpreting any result.
 
@@ -39,6 +40,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 | Isolated projections | `ic_typed_entry_rules.py` certifies typed source-entry redexes separately from the coherent fragment. |
 | Restricted-consumer components | The comparator provides path readout; difference, pruning, and selector scripts check native behavior under declared interfaces and consumers. |
 | Bounded semantic synthesis and reuse | A finite literal-IC graph search refines candidates with counterexamples; native copy products are archived and reconstructed for independent-input consumer checks. |
+| Program-code bridge | Frozen discovered gates control the compiler's real !Gamma code, with native copy, retain, decode, and copy-decode consumers. |
 | Full program execution | The unified compiler certifies the full source rule table and executes input 81 to `SQ(9)`; measurements and limits are in [ledger Q](docs/CLAIM_LEDGER.md#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution). |
 
 ## Repository layout
@@ -49,6 +51,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `docs/CLAIM_LEDGER.md`: executable evidence, conditional results, coverage boundaries, and open goals.
 - `docs/COHERENT_IC_COMPILER.md`: unified compiler conventions, trace format, structural readout, and reproduction commands.
 - `docs/BOUNDED_IC_INSTANCE.md`: a runnable finite observation-to-IC instance and its exact scope.
+- `docs/PROGRAM_CODE_BRIDGE.md`: E_code contract, trace replay, offline artifact reuse, and the M2-M5 research route.
 - `source_feedback_audit.py`, `source_rule_audit_v3.py`: source-level feedback simulator and rule audit.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -87,7 +90,10 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `ic_bounded_execution.py`: complete small execution graphs over all active-pair choices, with exact isomorphism and explicit cutoffs.
 - `ic_research_artifacts.py`: literal graph templates and validated ROOT-component archives.
 - `ic_research_pipeline.py`: native production, provenance replay, fresh reconstruction, and independent reuse.
+- `ic_program_code_bridge.py`: discovered gates controlling compiler program code, with report and trace verification.
 - `results/native_ic_research.json.gz`: complete candidate records and archived artifacts; replay with `python ic_research_pipeline.py --verify-report results/native_ic_research.json.gz`.
+- `results/program_code_bridge.json.gz`, `results/program_code_bridge.ictrace.gz`: E_code bridge evidence and replayable primitive trace.
+- `tests/program_code_bridge_integrity.py`: adversarial report/trace/input checks for the bridge.
 
 ### Continuous audit
 
@@ -114,6 +120,7 @@ python ic_typed_entry_rules.py
 python ic_bounded_execution.py
 python ic_research_artifacts.py
 python ic_research_pipeline.py
+python ic_program_code_bridge.py --verify-report results/program_code_bridge.json.gz --trace results/program_code_bridge.ictrace.gz
 python lafont_ic_macro_builder.py
 python ic_package_codec.py
 python ic_coherent_output_decoder.py
@@ -138,6 +145,7 @@ The earlier `ic_feedback_audit_bundle.zip` figures are obsolete. Its accounting 
 3. Derive local constraints automatically from broader task semantics.
 4. Study synthesis from polynomial-term structure and the three-cycle or complex-structure claim.
 5. Keep physical-inventory, optimality, and arbitrary-context claims separate from symbolic allocation and measured concrete runs.
+6. Activate and disable complete programs, then reuse structure across continuous tasks without collapsing the E_code boundary into full-program semantics.
 
 ## Source
 

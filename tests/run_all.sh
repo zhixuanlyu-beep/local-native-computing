@@ -41,6 +41,11 @@ python tests/discovered_programs_integrity.py
 python tests/component_witnesses_integrity.py
 python tests/multitask_discovery_integrity.py
 python ic_multitask_discovery.py --verify-report results/multitask_discovery.json.gz --trace results/multitask_discovery.ictrace.gz
+python tests/structure_library_integrity.py
+python tests/structure_capsules_integrity.py
+python tests/reuse_benchmarks_integrity.py
+python tests/structure_reuse_integrity.py
+python ic_structure_reuse.py --verify-report results/structure_reuse.json.gz --library results/structure_library.json.gz --trace results/structure_reuse.ictrace.gz
 python ic_coherent_feedback.py --input 0
 python ic_coherent_feedback.py --input 2
 python ic_coherent_feedback.py --verify-report results/coherent_feedback_81.json.gz --replay-trace results/coherent_feedback_81.ictrace.gz --verify-final results/coherent_feedback_81.final.json.gz

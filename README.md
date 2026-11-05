@@ -19,6 +19,7 @@ These related lines retain separate obligations:
 - **Safe program activation** now provides finite FIFO evidence for enabled and disabled whole feedback programs, skip-and-continue transitions, one shared literal !Gamma supply, and prewired continuations. Arbitrary-context equivalence, all-schedule behavior, exhaustive bound coverage, and a cost-benefit claim remain open.
 - **Composition and resources** adds bounded typed programs, lifted rule prefixes, alternative native schedules, source-predicted interaction costs, structural readout, and symbolic resource ledgers. See the [contract](docs/COMPOSITION_CONTRACTS.md) and [ledger](docs/CLAIM_LEDGER.md#t-composition-arguments-and-schedule-evidence-e_composition) for the distinction between written arguments and finite tests.
 - **Multiple observation contracts** now drive a complete bounded graph search for Boolean functions, copying/erasure, and representation adapters. Selected literal specimens compose into native DAGs and real compiler-code consumers through replayed local witnesses. [The guide](docs/MULTITASK_DISCOVERY.md) separates verified components, concrete rejections, unfinished observations, and finite-prior absence results.
+- **Evidence-indexed structure library and native reuse** now provides exact typed/evidence retrieval from the frozen M4 assignments, a raw catalog that retains unsupported capsule assessments, native packet source production with all future tasks prewired, and common-cost comparison of literal, native-fanout, and retained-chain strategies. [The guide](docs/EVIDENCE_INDEXED_STRUCTURE_LIBRARY.md) keeps measured results in the ledger and records finite tradeoffs and evidence boundaries.
 
 The [claim ledger](docs/CLAIM_LEDGER.md) is the sole source for detailed evidence, test sizes, coverage counts, and proof boundaries. Read it before interpreting any result.
 
@@ -46,6 +47,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 | Safe program activation | Suspended bare feedback programs use one shared !Gamma supply; enabled, disabled, and prewired continuation cases are verified as complete labeled graphs and native event sequences. |
 | Composition and resources | Local source-rule witnesses lift through explicit contexts; finite typed programs and selected activation sequences have native schedule comparisons and exact symbolic cost records. |
 | Multi-task component discovery | A frozen complete syntax ledger is refined by distinct observation contracts; verified specimens compose through typed linear wiring and actual lifted traces. |
+| Evidence-indexed structure library and native reuse | Verified M4 assignments are retrieved by exact representations, interface, and evidence scope; literal, native-fanout, and retained-chain executions are compared under complete declared native cost vectors. |
 | Full program execution | The unified compiler certifies the full source rule table and executes input 81 to `SQ(9)`; measurements and limits are in [ledger Q](docs/CLAIM_LEDGER.md#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution). |
 
 ## Repository layout
@@ -60,6 +62,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `docs/SAFE_PROGRAM_ACTIVATION.md`: E_activation contract, prewired continuations, bounded result reader, native readiness events, and replay verification.
 - `docs/COMPOSITION_LEMMAS.md`, `docs/COMPOSITION_CONTRACTS.md`: abstract composition arguments, implementation hypotheses, finite typed programs, schedule policies, and resource verification.
 - `docs/MULTITASK_DISCOVERY.md`: fixed multi-task search prior, representation/interface contracts, candidate accounting, staged composition witnesses, and native code-consumer replay.
+- `docs/EVIDENCE_INDEXED_STRUCTURE_LIBRARY.md`: exact evidence-indexed retrieval, native grant-packet storage, prewired strategies, complete native cost comparison, and M5 boundaries.
 - `source_feedback_audit.py`, `source_rule_audit_v3.py`: source-level feedback simulator and rule audit.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -108,7 +111,10 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `ic_component_candidates.py`, `ic_observation_contracts.py`, `ic_multitask_discovery.py`: complete finite component syntax, independent observation contracts, candidate ledgers and native discovery/replay.
 - `ic_component_witnesses.py`, `ic_discovered_programs.py`: exact local embeddings, fresh-name witness lifting, and prewired programs built from selected graph specimens.
 - `results/multitask_discovery.json.gz`, `results/multitask_discovery.ictrace.gz`: M4 discovery, counterexamples, composition evidence and primitive trace.
+- `ic_structure_library.py`, `ic_structure_capsules.py`, `ic_reuse_benchmarks.py`, `ic_structure_reuse.py`: immutable M5 source catalog, native capsule eligibility and encoding, prewired reuse benchmarks, and report/library/trace verification.
+- `results/structure_library.json.gz`, `results/structure_reuse.json.gz`, `results/structure_reuse.ictrace.gz`: M5 library, common-cost reuse evidence, and replayable primitive trace.
 - `tests/program_code_bridge_integrity.py`: adversarial report/trace/input checks for the bridge.
+- `tests/structure_library_integrity.py`: adversarial catalog, source-report/trace, schema, fingerprint, and replay checks.
 
 ### Continuous audit
 
@@ -148,6 +154,12 @@ python tests/discovered_programs_integrity.py
 python tests/component_witnesses_integrity.py
 python tests/multitask_discovery_integrity.py
 python ic_multitask_discovery.py --verify-report results/multitask_discovery.json.gz --trace results/multitask_discovery.ictrace.gz
+python tests/structure_library_integrity.py
+python tests/structure_capsules_integrity.py
+python tests/reuse_benchmarks_integrity.py
+python tests/structure_reuse_integrity.py
+python ic_structure_reuse.py --report results/structure_reuse.json.gz --library results/structure_library.json.gz --trace results/structure_reuse.ictrace.gz
+python ic_structure_reuse.py --verify-report results/structure_reuse.json.gz --library results/structure_library.json.gz --trace results/structure_reuse.ictrace.gz
 python lafont_ic_macro_builder.py
 python ic_package_codec.py
 python ic_coherent_output_decoder.py
@@ -173,7 +185,7 @@ The earlier `ic_feedback_audit_bundle.zip` figures are obsolete. Its accounting 
 4. Study synthesis from polynomial-term structure and the three-cycle or complex-structure claim.
 5. Keep physical-inventory, optimality, and arbitrary-context claims separate from symbolic allocation and measured concrete runs.
 6. Extend safe activation beyond its finite validated case list and representation bounds, and study structure reuse across continuous tasks without collapsing the E_code boundary into full-program semantics.
-7. Build representation/interface/evidence-indexed structure retrieval and compare rebuilding, native copying, and reuse under a common cost model; reuse may have no net benefit.
+7. Extend the delivered, evidence-scoped structure library beyond its frozen sources and finite schedules without turning no measured benefit into a universal failure result; reuse may have no net benefit under the current contract.
 
 ## Source
 

@@ -35,6 +35,12 @@ python tests/typed_programs_integrity.py
 python tests/schedule_audit_integrity.py
 python tests/composition_evidence_integrity.py
 python ic_composition_certificates.py --verify-report results/composition_certificates.json.gz --trace results/composition_certificates.ictrace.gz
+python tests/component_candidates_integrity.py
+python tests/observation_contracts_integrity.py
+python tests/discovered_programs_integrity.py
+python tests/component_witnesses_integrity.py
+python tests/multitask_discovery_integrity.py
+python ic_multitask_discovery.py --verify-report results/multitask_discovery.json.gz --trace results/multitask_discovery.ictrace.gz
 python ic_coherent_feedback.py --input 0
 python ic_coherent_feedback.py --input 2
 python ic_coherent_feedback.py --verify-report results/coherent_feedback_81.json.gz --replay-trace results/coherent_feedback_81.ictrace.gz --verify-final results/coherent_feedback_81.final.json.gz

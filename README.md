@@ -18,6 +18,7 @@ These related lines retain separate obligations:
 - **Compilation of known source rules** has a unified primitive-IC compiler and concrete feedback execution. [Composition arguments](docs/COMPOSITION_LEMMAS.md) now connect local witnesses to finite source reductions under explicit abstract-model hypotheses; implementation evidence and remaining equivalence obligations are recorded separately.
 - **Safe program activation** now provides finite FIFO evidence for enabled and disabled whole feedback programs, skip-and-continue transitions, one shared literal !Gamma supply, and prewired continuations. Arbitrary-context equivalence, all-schedule behavior, exhaustive bound coverage, and a cost-benefit claim remain open.
 - **Composition and resources** adds bounded typed programs, lifted rule prefixes, alternative native schedules, source-predicted interaction costs, structural readout, and symbolic resource ledgers. See the [contract](docs/COMPOSITION_CONTRACTS.md) and [ledger](docs/CLAIM_LEDGER.md#t-composition-arguments-and-schedule-evidence-e_composition) for the distinction between written arguments and finite tests.
+- **Multiple observation contracts** now drive a complete bounded graph search for Boolean functions, copying/erasure, and representation adapters. Selected literal specimens compose into native DAGs and real compiler-code consumers through replayed local witnesses. [The guide](docs/MULTITASK_DISCOVERY.md) separates verified components, concrete rejections, unfinished observations, and finite-prior absence results.
 
 The [claim ledger](docs/CLAIM_LEDGER.md) is the sole source for detailed evidence, test sizes, coverage counts, and proof boundaries. Read it before interpreting any result.
 
@@ -44,6 +45,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 | Program-code bridge | Frozen discovered gates control the compiler's real !Gamma code, with native copy, retain, decode, and copy-decode consumers. |
 | Safe program activation | Suspended bare feedback programs use one shared !Gamma supply; enabled, disabled, and prewired continuation cases are verified as complete labeled graphs and native event sequences. |
 | Composition and resources | Local source-rule witnesses lift through explicit contexts; finite typed programs and selected activation sequences have native schedule comparisons and exact symbolic cost records. |
+| Multi-task component discovery | A frozen complete syntax ledger is refined by distinct observation contracts; verified specimens compose through typed linear wiring and actual lifted traces. |
 | Full program execution | The unified compiler certifies the full source rule table and executes input 81 to `SQ(9)`; measurements and limits are in [ledger Q](docs/CLAIM_LEDGER.md#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution). |
 
 ## Repository layout
@@ -57,6 +59,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `docs/PROGRAM_CODE_BRIDGE.md`: E_code contract, trace replay, offline artifact reuse, and the M1-M5 research route.
 - `docs/SAFE_PROGRAM_ACTIVATION.md`: E_activation contract, prewired continuations, bounded result reader, native readiness events, and replay verification.
 - `docs/COMPOSITION_LEMMAS.md`, `docs/COMPOSITION_CONTRACTS.md`: abstract composition arguments, implementation hypotheses, finite typed programs, schedule policies, and resource verification.
+- `docs/MULTITASK_DISCOVERY.md`: fixed multi-task search prior, representation/interface contracts, candidate accounting, staged composition witnesses, and native code-consumer replay.
 - `source_feedback_audit.py`, `source_rule_audit_v3.py`: source-level feedback simulator and rule audit.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -102,6 +105,9 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `results/safe_program_activation.json.gz`, `results/safe_program_activation.ictrace.gz`: M2 activation evidence and replayable primitive trace.
 - `ic_typed_programs.py`, `ic_schedule_audit.py`, `ic_composition_examples.py`, `ic_rule_trace_lifting.py`, `ic_composition_certificates.py`: bounded typed syntax, primitive scheduling/resource instrumentation, independent macro examples, contextual witness translation, and M3 evidence replay.
 - `results/composition_certificates.json.gz`, `results/composition_certificates.ictrace.gz`: M3 finite composition evidence and primitive trace.
+- `ic_component_candidates.py`, `ic_observation_contracts.py`, `ic_multitask_discovery.py`: complete finite component syntax, independent observation contracts, candidate ledgers and native discovery/replay.
+- `ic_component_witnesses.py`, `ic_discovered_programs.py`: exact local embeddings, fresh-name witness lifting, and prewired programs built from selected graph specimens.
+- `results/multitask_discovery.json.gz`, `results/multitask_discovery.ictrace.gz`: M4 discovery, counterexamples, composition evidence and primitive trace.
 - `tests/program_code_bridge_integrity.py`: adversarial report/trace/input checks for the bridge.
 
 ### Continuous audit
@@ -136,6 +142,12 @@ python tests/typed_programs_integrity.py
 python tests/schedule_audit_integrity.py
 python tests/composition_evidence_integrity.py
 python ic_composition_certificates.py --verify-report results/composition_certificates.json.gz --trace results/composition_certificates.ictrace.gz
+python tests/component_candidates_integrity.py
+python tests/observation_contracts_integrity.py
+python tests/discovered_programs_integrity.py
+python tests/component_witnesses_integrity.py
+python tests/multitask_discovery_integrity.py
+python ic_multitask_discovery.py --verify-report results/multitask_discovery.json.gz --trace results/multitask_discovery.ictrace.gz
 python lafont_ic_macro_builder.py
 python ic_package_codec.py
 python ic_coherent_output_decoder.py
@@ -157,10 +169,11 @@ The earlier `ic_feedback_audit_bundle.zip` figures are obsolete. Its accounting 
 
 1. Strengthen the conditional forward-simulation arguments into broader contextual-equivalence results and implementation-conformance proofs.
 2. Extend the declared finite program grammar and schedule comparisons while preserving their evidence boundaries.
-3. Derive local constraints automatically from broader task semantics.
+3. Extend bounded multi-contract component discovery to broader task semantics and representations without inferring general synthesis from its finite prior.
 4. Study synthesis from polynomial-term structure and the three-cycle or complex-structure claim.
 5. Keep physical-inventory, optimality, and arbitrary-context claims separate from symbolic allocation and measured concrete runs.
 6. Extend safe activation beyond its finite validated case list and representation bounds, and study structure reuse across continuous tasks without collapsing the E_code boundary into full-program semantics.
+7. Build representation/interface/evidence-indexed structure retrieval and compare rebuilding, native copying, and reuse under a common cost model; reuse may have no net benefit.
 
 ## Source
 

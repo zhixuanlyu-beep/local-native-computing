@@ -65,9 +65,9 @@ The report retains four boundary checks. An epsilon supplied directly to the pac
 
 ## From M1 to later milestones
 
-M1 establishes this program-code bridge and its replayable evidence. M2 records finite evidence for safe activation and prewired continuations in [SAFE_PROGRAM_ACTIVATION.md](SAFE_PROGRAM_ACTIVATION.md). M3 adds [composition arguments](COMPOSITION_LEMMAS.md) and a [finite verification environment](COMPOSITION_CONTRACTS.md), with measured acceptance and remaining hypotheses in [ledger §T](CLAIM_LEDGER.md#t-composition-arguments-and-schedule-evidence-e_composition). Later milestones remain open:
+M1 establishes this program-code bridge and its replayable evidence. M2 records finite evidence for safe activation and prewired continuations in [SAFE_PROGRAM_ACTIVATION.md](SAFE_PROGRAM_ACTIVATION.md). M3 adds [composition arguments](COMPOSITION_LEMMAS.md) and a [finite verification environment](COMPOSITION_CONTRACTS.md), with measured acceptance and remaining hypotheses in [ledger §T](CLAIM_LEDGER.md#t-composition-arguments-and-schedule-evidence-e_composition). Subsequent stages and their current boundaries are:
 
-- M4, multi-task constraint discovery: discover composable components from distinct observation contracts, including Boolean combinations, copying/erasing, and representation adapters.
+- M4 now records [bounded multi-task component discovery](MULTITASK_DISCOVERY.md), including distinct Boolean/copy/erase/adapter contracts, complete syntax accounting, and lifted composition traces; acceptance and scope are in [ledger §U](CLAIM_LEDGER.md#u-multiple-observation-contracts-and-discovered-composition-e_multitask).
 - M5, structure library and benefit evaluation: index retained structures by representation, interface, and evidence scope, then compare rebuilding, native copying, and reuse under one cost model.
 
 The bridge does not claim arbitrary-context equivalence, all-schedule behavior for the full !Gamma network, physical inventory, or general semantic synthesis.

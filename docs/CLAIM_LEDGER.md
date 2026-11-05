@@ -323,3 +323,94 @@ Local acceptance passed generation and a complete independent CLI replay of all 
 The integrity suites are [typed_programs_integrity.py](../tests/typed_programs_integrity.py), [schedule_audit_integrity.py](../tests/schedule_audit_integrity.py), and [composition_evidence_integrity.py](../tests/composition_evidence_integrity.py), with 14, 8, and 5 test groups respectively. They include invalid AST/interface/type rejection, source-evaluator-free builders, original-rule comparisons, representative commuting redex contexts, FIFO fidelity and seeded reproducibility, runtime-policy/contract mismatch rejection, ownership/host-allocation rejection, wrong complete graphs, cutoffs, report/resource mutations, and header/order/truncation/trailing trace corruption. Small fixtures are actual native executions and replays; the complete new archive is replayed separately. All 36 commands in the frozen M2 regression runner passed, including the original input-81 primitive replay and all frozen discovery, bridge, activation, coherent-rule and context evidence. The existing CI runner appends the three new integrity suites and full M3 replay, without an external solver or new compute dependency.
 
 This section establishes explicit abstract-model composition arguments and finite implementation evidence with resource records. Large-network execution remains a selected-policy experiment, not exhaustive schedule exploration. The conditional abstract uniform-normalization theorem does not retroactively relabel historical FIFO archives as universally verified Python executions. M1 offline archive reconstruction, M2 local readiness, physical inventory, arbitrary-context equivalence, optimality, general semantic discovery, polynomial/complex-structure derivation, and a demonstrated reuse benefit retain their separate boundaries.
+
+## U. Multiple observation contracts and discovered composition (E_multitask)
+
+[ic_multitask_discovery.py](../ic_multitask_discovery.py) implements M4 with a frozen finite prior and independently specified Boolean, copying, erasure, and representation-adapter contracts. [MULTITASK_DISCOVERY.md](MULTITASK_DISCOVERY.md) describes construction and replay; [COMPOSITION_LEMMAS.md](COMPOSITION_LEMMAS.md) supplies the abstract-model lifting basis. The program architecture is a declared consumer environment, not an automatically synthesized architecture. Components are enumerated, observed, selected, and loaded as their original graph syntax; no successful gate is manually substituted after search.
+
+Representation A has false=epsilon and true=gamma with its auxiliaries joined as Loop. B is the ordered package gamma(epsilon,A). Both have exactly 2 admitted values and are delta-free principal packages. The 36 contracts comprise every 2-input Boolean function A×A→A (16 masks), every unary Boolean function for every ordered source/target A/B pair (16 contracts), and copy/erase on A and B (4 contracts). Binary mask bits correspond to inputs 00,01,10,11; unary mask bits correspond to 0,1. Mask 8 is AND; unary mask 2 preserves the Boolean value across the declared representation change.
+
+[ic_component_candidates.py](../ic_component_candidates.py) enumerates all complete port matchings for ordered cell-kind tuples over epsilon/gamma/delta. There is no semantic, connectedness, reducedness, or isomorphism filter. Initial detached wire cycles are excluded (`cycles=0`), while cyclic principal wiring and all subsequently produced pure wire cycles remain represented. Literal syntax duplicates under cell renaming are deliberately retained. The input-only weak observation is the first all-false tuple; the remaining fixed tuples refine the same contract.
+
+| Interface family | Interface | Declared cells | Literal candidates | Contracts | Candidate/contract assignments |
+|---|---|---:|---:|---:|---:|
+| Binary Boolean | LEFT, RIGHT, OUT | 0–1 | 33 | 16 | 528 |
+| Unary Boolean / adapter | IN, OUT | 0–2 | 484 | 16 | 7,744 |
+| Copy | IN, OUT1, OUT2 | 0–1 | 33 | 2 | 66 |
+| Erase | IN | 0–1 | 7 | 2 | 14 |
+| Total | | | 557 | 36 | 8,352 |
+
+Port parity makes some requested cell counts empty; the ledger retains the complete grammar rather than privileging known wiring. Native observation is shared only when candidate, input representation, and supplied tuple are identical. Thus the assignment matrix uses 2,228 distinct FIFO observations rather than calling a reducer separately for every expected function. Their entire initial/final graphs, trace intervals, primitive censuses, allocation counts, and resource outcomes are retained. Initial sizes range 1–5 cells, observation interactions 0–128, and observed atomic-state peaks 1–129 cells. These observations contain 10,804 recorded interactions.
+
+The observation bounds are 128 interactions and 128 live cells. Of the observations, 2,148 reach normal forms, 64 demonstrate material violations at 129 live cells, and 16 stop incomplete at the interaction budget. The latter are replayable unfinished prefixes, not divergence or impossibility certificates and not passing cases. Nevertheless every candidate/contract assignment has a decided outcome: the affected assignments also have a different concrete wrong-normal-form or material-violation case. Rejection selects that concrete case and never uses an incomplete observation as its counterexample. No assignment remains incomplete, and no elementary budget was enlarged after search.
+
+The weak observation leaves 586 compatible candidate/contract assignments. Full input refinement and verification reject 416 of those. Overall, 170 assignments are verified and 8,182 have concrete rejection evidence. These are literal candidate/contract pairs, not 170 semantically distinct components. In the actual archive every rejection has its first concrete counterexample; all verified input instances additionally pass exhaustive scheduling. The report exposes every individual case status, so FIFO compatibility and subsequent all-schedule outcomes can be distinguished without treating a weak observation as a certificate.
+
+The complete function coverage is:
+
+| Contract group | Verified literal candidates |
+|---|---|
+| Binary A×A→A masks 0..15 | 0,0,0,0,0,0,0,0,4,0,1,0,1,0,0,0 |
+| Unary A→A masks 0..3 | 14,0,38,2 |
+| Unary A→B masks 0..3 | 0,0,2,0 |
+| Unary B→A masks 0..3 | 32,0,14,10 |
+| Unary B→B masks 0..3 | 0,0,44,0 |
+| Copy A, Copy B | 2,2 |
+| Erase A, Erase B | 1,3 |
+
+Exactly 15 contracts have verified candidates; the other 21 have no verified candidate in this fixed syntax and resource environment. Binary masks 10 and 12 are the right and left projections. In particular, no candidate is verified for OR or NOT in this prior. This is a finite-prior result, not an IC expressiveness limitation. The contracts, syntax, inputs, and graph postconditions were not narrowed to relabel those outcomes as success.
+
+All 352 distinct verified elementary input instances are explored over every active pair under fixed limits of 4,096 quotient states, 32,768 attempted transitions, and 128 live cells. Every exploration is complete and acyclic, with the independent complete normal form at every terminal. State counts range 1–63, transitions and attempted transitions 0–136, atomic peaks 1–13 cells, and longest interaction paths 0–13. Total attempted transitions are 3,980. This is concrete all-schedule evidence for those elementary instances, not exhaustive exploration of the later composed/compiler networks.
+
+The selected library uses the lowest verified literal fingerprint per required contract. The roles are AND on A, Copy A, A→B identity adaptation, Copy B, Erase B, and B→A identity adaptation. Copy A and Copy B select the same literal delta graph but retain separate representation contracts and witnesses. The selected AND is a gamma whose principal receives RIGHT, with LEFT at auxiliary 1 and OUT at auxiliary 2. The selected A→B adapter has gamma/epsilon cells; the selected B→A adapter has epsilon/gamma cells. These descriptions are observations of selected graph specimens, not generator restrictions. Full literal graphs, fingerprints, and source witness IDs are in the report.
+
+Every verified B eraser is a variant: delta with its auxiliaries joined, epsilon, and gamma with its auxiliaries joined. Their fingerprints in variant order are 1bcd655e9ff66a6b1d2095cf9ab76559166b66b0010eb1200bef19df9bccb8fe, 96046a32808f434fc25b2c19280aca7b3eb65e833f03fccf11d1824694856b0d, and eea142ff5908bfd482c8d58d5a915fa2082428f6dcb327ae4ef45062cb08c63b. Selection is by fingerprint, not by post hoc cost optimization.
+
+[ic_discovered_programs.py](../ic_discovered_programs.py) builds one fixed linear DAG. It copies a, computes AND(a,b) and AND(a,c), ANDs their results, adapts A→B, copies B, erases one copy, and adapts the other B→A. Its complete reference output is A(a AND b AND c). All component instances precede the three supplied input tokens in construction, and no constructor evaluates an answer. Missing/wrong representations, incorrect truth masks or interfaces, stale graph fingerprints, repeated consumers including reused external outputs, and forward/cyclic dependencies are rejected. Runtime only selects primitive pairs in the one prewired graph.
+
+[ic_component_witnesses.py](../ic_component_witnesses.py) constructs actual staged global traces by matching input-value footprints, binding each original candidate instance, and translating the discovered local pair sequence with fresh-cell renaming. Local and context cell sets are disjoint. It checks every ordered port and wire, fresh-allocation counts/kinds, unchanged outside cells and non-interface wiring, exact local outputs, and disjoint output packages. These are recorded primitive interactions of the global initial graph; separate reference instances are verifier tools. Constant outside size makes each stage's global cell count equal its local count plus that exterior size, so the maximum of those local peaks plus context equals the measured staged global peak. Other schedules have their own peaks.
+
+| Positive execution family | Cases | Recorded interactions | Initial cells | Peak live cells | Final cells |
+|---|---:|---:|---:|---:|---:|
+| M1 ready-input code baselines, false/true | 2 | 8,109 | 3,242 | 3,242–5,880 | 2–5,874 |
+| Discovered DAG staged witnesses | 24 | 381 | 13 | 13–15 | 1 |
+| Discovered DAG FIFO/LIFO/seeded joint runs | 72 | 1,143 | 13 | 13–17 | 1 |
+| Compiler-facing staged witnesses | 8 | 29,976 | 3,254 | 3,254–5,880 | 2–5,874 |
+| Compiler-facing FIFO/LIFO/seeded joint runs | 24 | 89,928 | 3,254 | 3,254–6,470 | 2–5,874 |
+
+The small matrix covers all 8 triples and all 3 B-eraser variants. The native step/live-cell bounds are 4,096/256 for each whole small case. Its 24 staged witnesses comprise 192 local-stage prefixes. The joint policies are FIFO, LIFO, and SplitMix64 seeded selection with seed 17. Every joint run matches the entire independent A output and exactly the staged sum of primitive-rule censuses and interactions. No host stage transition or runtime rebuild occurs.
+
+| B-eraser variant | Interactions per small case | Staged peak | Joint-policy peak |
+|---|---:|---:|---:|
+| Delta auxiliary self-wire | 16–21 | 13–15 | 13–17 |
+| Epsilon | 13–18 | 13–15 | 13–17 |
+| Gamma auxiliary self-wire | 12–17 | 13–15 | 13–17 |
+
+These same-contract local cost differences do not establish a net benefit of structure reuse. Search, compilation, exploration, proof/reference construction, and host memory are outside these symbolic native counts. Runtime allocations range 12–30 cells per small case; total symbolic cells allocated, including the initial network, range 25–43.
+
+For the compiler-facing extension, the selected delta-eraser variant's computed A output controls the first frozen M1 gate and the real !Gamma copy_decode consumer. There is one original 3,231-cell code payload. A staged witness first lifts the complete small-DAG trace through that prewired body, then requires an exact whole-graph boundary map to an independently constructed M1 ready-input instance before replaying its code-consumer witness. All 8 staged compiler cases and 24 independent joint runs pass. Every joint run consumes all original code-payload cells. True produces two exact original Gamma objects (5,874 cells total); false produces two epsilons. No extra component or pure wire cycle remains.
+
+Each complete compiler case has bounds of 100,000 interactions and 20,000 live cells; staged parts share the remaining whole-case interaction budget. Each joint native count/census matches the sum of the discovered-DAG witness and the appropriate M1 ready-input baseline. Native runtime allocations range 4,020–11,638 and total symbolic allocations 7,274–14,892. The two standalone M1 baseline costs are 3,620 interactions for false and 4,489 for true. Their code-consumer behavior is reused under its frozen representation contract, without inferring new source-extension activation/erasure semantics.
+
+| Input abc | Interactions per compiler case | Staged peak | FIFO peak | LIFO peak | Seeded peak |
+|---|---:|---:|---:|---:|---:|
+| 000 | 3,638 | 3,254 | 3,256 | 3,256 | 3,256 |
+| 001 | 3,637 | 3,254 | 3,254 | 3,256 | 3,256 |
+| 010 | 3,637 | 3,254 | 3,254 | 3,256 | 3,256 |
+| 011 | 3,636 | 3,254 | 3,254 | 3,256 | 3,256 |
+| 100 | 3,641 | 3,256 | 3,258 | 3,256 | 3,256 |
+| 101 | 3,638 | 3,256 | 3,256 | 3,256 | 3,256 |
+| 110 | 3,640 | 3,256 | 3,256 | 3,256 | 3,256 |
+| 111 | 4,509 | 5,880 | 5,880 | 6,470 | 5,998 |
+
+Exact primitive resource balances and the per-trace I+2*c_gd peak bound are checked throughout. The staged peak is not applied as a bound to the other policy traces; the table contains counterexamples to doing so. The counts refer to initial and post-atomic-interaction symbolic cells, including every future component and code consumer, not interpreter bytes or a physical stock of parts.
+
+Two durable negative boundaries reuse existing observation intervals. The selected delta B eraser, applied without an adapter to A(true), performs 3 interactions and leaves zero cells but one closed wire cycle, not the empty graph; its interval is [10786,10789). The weak-observation survivor with fingerprint 01ae8b67c5ed06aa6bce79395039e535c5ea9c97f84bbe0cc90632fdf06b5648 agrees with the first false-input observation for unary A→A constant false, but returns Loop on true in 4 interactions, interval [5437,5441). Neither is counted as a valid component in the refuted contract. These also show why node counts, weak probes, and interface shape alone are insufficient replacement evidence.
+
+The archive is [multitask_discovery.json.gz](../results/multitask_discovery.json.gz) with [multitask_discovery.ictrace.gz](../results/multitask_discovery.ictrace.gz). The raw stream has 140,341 pair records: 10,804 search-observation interactions and 129,537 positive baseline/composition interactions. Pair-record SHA-256 is 0894dea99e03f1cf8f34837c30ee61b08841fce7ed2b2d4e08051ea146afd04c. Compressed report SHA-256 is 10b65298e08c366e4a5da7ba00a14caf03e7fd6115fc2e818d77c8e42b64b08e. Generation and a complete independent CLI replay passed with exact report equality, including every rejected, resource-limited, and unfinished search prefix. No incomplete observation is a passing computation, and no candidate/contract assignment is accepted on incomplete evidence.
+
+The new integrity suites are [component_candidates_integrity.py](../tests/component_candidates_integrity.py), [observation_contracts_integrity.py](../tests/observation_contracts_integrity.py), [discovered_programs_integrity.py](../tests/discovered_programs_integrity.py), [component_witnesses_integrity.py](../tests/component_witnesses_integrity.py), and [multitask_discovery_integrity.py](../tests/multitask_discovery_integrity.py). Their respective test-group counts are 9,11,11,10,6. They test syntax completeness and literal identity, strict interfaces/values, oracle-free builders, linear typed DAG wiring, stale specimen fingerprints, actual discovered local-trace imports and reduced staged replay, exact boundary matchings and context preservation, fresh-name shifts, allocation/budget handling, and tampered contracts, policies, traces, graphs, and resource fields. The reduced fixture is not the full matrix; the CLI independently replays that matrix in the existing CI runner.
+
+The unchanged M3 baseline, including all 40 original runner commands, completed successfully on GitHub Actions for both main and its research branch before M4 acceptance (commit 67b7b608d6888af0da7bcd932fa1d06a97e34193). M4 changes no prior reducer, implementation, report, or trace; it appends its integrity suites and complete replay to the existing runner. No new dependency, external solver, or compute service was added.
+
+This establishes bounded discovery under distinct observation contracts and explicit composition of selected discovered specimens into native computation and real compiler-code consumers. The written abstract-model arguments remain conditional on faithful implementation; selected-policy composed execution is not exhaustive large-network implementation verification. Arbitrary semantic synthesis/context equivalence, full source activation extensions, physical inventory, polynomial/complex-structure derivations, a general indexed structure library, and a common-cost rebuilding/copying/reuse benefit comparison remain separate objectives. M5 retains the possibility of no reuse benefit.

@@ -51,3 +51,5 @@ The archive includes a delta-copy precondition counterexample, rejection of stal
 The peak counterexample refers to its activation-case records. It requires every compared policy to match the same complete independent reference graph and to have equal interaction counts before differing peaks count as a refutation. It makes no inference about peak space from equal work alone.
 
 The existing CI runner retains the earlier audits and appends these integrity checks and the full new replay. General semantic discovery, arbitrary observational contexts, physical stock, polynomial/complex-structure derivations, and a general structure library remain separate goals.
+
+The separate [M4 environment](MULTITASK_DISCOVERY.md) now applies this lifting basis to components discovered under distinct finite observation contracts. It preserves the M3 implementation/proof boundary and records its own complete syntax ledger, counterexamples, resource-limited and unfinished observations, and composed native traces in [ledger §U](CLAIM_LEDGER.md#u-multiple-observation-contracts-and-discovered-composition-e_multitask).

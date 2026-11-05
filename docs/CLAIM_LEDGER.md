@@ -1,6 +1,21 @@
 # Claim ledger and proof boundaries
 
-This document separates results that have executable evidence from claims that remain unproved.
+This ledger separates results with executable evidence from conditional accounting, mathematical arguments, and open goals. It is the sole source for detailed test sizes, coverage counts, and proof boundaries. The research route and terminology are defined in [RESEARCH_FRAMEWORK.md](RESEARCH_FRAMEWORK.md); this file records what the current code does and does not establish.
+
+## Evidence classification
+
+The entries below use six evidence classes to distinguish the scope of results. An entry can belong to more than one class; classification does not add coverage.
+
+| Class | Meaning | Current entries |
+|---|---|---|
+| Structural representation | A source object is stored losslessly as IC data, with an explicit decoder and copying or erasing behavior. | [F](#f-lossless-source-net-storage-in-primitive-ic-structural-bridge) |
+| Primitive mechanism | Literal gamma/delta/epsilon cells execute the six Lafont rules; no source-rule meaning is implied by this alone. | [B](#b-actual-primitive-lafont-ic-experiments), [H-M](#h-pure-ic-signed-unary-cancellation-observable-before-global-quiescence) |
+| Coherent typed fragment | One typed sublanguage has a consistent operational refinement and contextual checks; alternate encodings of the same rules add no distinct rule coverage. | [G](#g-four-source-rules-operationally-refined-to-primitive-ic), [J](#j-tagged-unary-local-zerosuccessor-discrimination) |
+| Isolated projection | A typed source redex has a local IC certificate, without a globally coherent encoding. | [N](#n-typed-isolated-source-entry-rule-certificates-not-coherent-compiler-coverage) |
+| Restricted-consumer composition | Components compose with declared consumers under explicit interface preconditions; tests retain their recorded scope. | [I](#i-composable-signed-difference-with-native-ic-consumers), [J-M](#j-tagged-unary-local-zerosuccessor-discrimination), [N](#n-typed-isolated-source-entry-rule-certificates-not-coherent-compiler-coverage) |
+| Full program execution | A complete source program is compiled to IC and executed with a decoded result. | None; see [E](#e-not-yet-established). |
+
+Source-level results in §A and §C and conditional static accounting in §D are not themselves IC execution evidence. In particular, the coherent fragment in §G and the isolated projections in §N use different typing assumptions and cannot be added into a single rule-coverage total. Finite consumer tests do not establish equivalence in arbitrary contexts, and randomized schedules do not establish all executions.
 
 ## A. Source interaction system
 
@@ -19,11 +34,13 @@ The unary square-checking feedback is tested for inputs 0 through 200. The sourc
 
 ## B. Actual primitive Lafont IC experiments
 
-`ic_primitive_port_verifier.py` implements the six original interaction rules over explicit port graphs. The remaining IC demo scripts test:
+`ic_primitive_port_verifier.py` implements the six original interaction rules over explicit port graphs. It checks the six rules and **1160 two-redex local diamonds** (paired port contexts, with cyclic-wire handling).
 
-- copying finite gamma/epsilon constructor trees;
-- copying delta-free reduced packages with internal wiring;
-- erasing finite trees with an epsilon interaction structure.
+The remaining IC demo scripts provide the following primitive-mechanism evidence:
+
+- The gamma-tree copier checks balanced full binary trees to depth six and **200 random ordered irregular trees**. Copying an original delta-free gamma/epsilon constructor tree with `n` cells takes exactly `n` IC interactions and yields two disjoint copies. For full balanced trees, the maximal parallel redex layers have sizes `1,2,4,...,2^depth`; no clock is needed to perform the transitions.
+- The reduced-package copier checks a gamma node with a self-wire, a 3-gamma package with two non-tree internal wires, and **200 randomly generated delta-free wired reduced packages**. For these packages, IC copying takes exactly `#gamma + #epsilon + #internal_wiring_pairs` interactions and reproduces two disjoint, structurally identical copies. The deltas at internal wiring pairs annihilate via the original delta-delta rule.
+- The tree eraser checks **200 random gamma/delta/epsilon trees**. One epsilon on the principal root erases the tree in exactly `n` interactions for a tree with `n` cells.
 
 These are actual gamma/delta/epsilon reductions. They are not a compilation of the 14-symbol source system.
 
@@ -41,7 +58,9 @@ The JSON output is a source-level split specification, not an IC target graph.
 - delta-cut Gamma-prime: 442 free ports;
 - encoded delta-free package: 1990 gamma + 1241 epsilon = 3231 cells.
 
-The script checks package port-parity constraints. These counts are conditional static accounting, not a generated or reduced complete IC graph. Alternative macro conventions or a different valid decomposition may change the budget.
+The script checks all 30 single-port subpackage parity conditions. These counts are conditional static accounting, not a generated or reduced complete IC graph. Alternative macro conventions or a different valid decomposition may change the budget.
+
+**Historical correction:** the earlier `ic_feedback_audit_bundle.zip` figures of **197 delta** in decoded Gamma and **592 exposed ports** after the delta cut are obsolete. They used the source interaction interface width `arity(A)+arity(B)` for `T_sigma`. In the supplied noncanonical Figure-6 split, sigma acts only on cross-half wiring strands, whose widths are recorded in §C. This changes the `T_sigma` contribution from 52 delta to **2 delta**. The revised totals above use epsilon fillers for 166 undefined entries and the specified standard macro choices. The cut package has `3*147 + 1 = 442` free ports and no delta; the encoded package is also delta-free. No completed Figure-10 IC port graph has been built or independently reduced.
 
 ## E. Not yet established
 

@@ -31,6 +31,10 @@ python tests/program_code_bridge_integrity.py
 python ic_program_code_bridge.py --verify-report results/program_code_bridge.json.gz --trace results/program_code_bridge.ictrace.gz
 python tests/safe_program_activation_integrity.py
 python ic_safe_program_activation.py --verify-report results/safe_program_activation.json.gz --trace results/safe_program_activation.ictrace.gz
+python tests/typed_programs_integrity.py
+python tests/schedule_audit_integrity.py
+python tests/composition_evidence_integrity.py
+python ic_composition_certificates.py --verify-report results/composition_certificates.json.gz --trace results/composition_certificates.ictrace.gz
 python ic_coherent_feedback.py --input 0
 python ic_coherent_feedback.py --input 2
 python ic_coherent_feedback.py --verify-report results/coherent_feedback_81.json.gz --replay-trace results/coherent_feedback_81.ictrace.gz --verify-final results/coherent_feedback_81.final.json.gz

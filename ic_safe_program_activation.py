@@ -212,12 +212,12 @@ def binding(compiler, discovery, suspensions, case_specs):
                                         for n in suspensions}}
 
 
-def run_case(built, target, trace, *, max_steps=2_000_000, max_cells=250_000):
+def run_case(built, target, trace, *, max_steps=2_000_000, max_cells=250_000, net_factory=FastNet):
     if any(type(v) is not int or v < 0 for v in (max_steps, max_cells)):
         raise ValueError("execution bounds must be non-negative integers")
     original = GraphSpec.from_net(built.net)
     renamed = {name: "c" + str(i) for i, name in enumerate(built.net.nodes)}
-    running = original.instantiate(FastNet())
+    running = original.instantiate(net_factory())
     watches, events = {}, []
     for stage in built.stages:
         for kind, key in (("grant", "grant_receiver"), ("delivery", "delivery_gate"),

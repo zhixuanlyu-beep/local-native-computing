@@ -65,9 +65,8 @@ The report retains four boundary checks. An epsilon supplied directly to the pac
 
 ## From M1 to later milestones
 
-M1 establishes this program-code bridge and its replayable evidence. M2 now records finite evidence for safe activation and prewired continuations in [SAFE_PROGRAM_ACTIVATION.md](SAFE_PROGRAM_ACTIVATION.md); later milestones remain open:
+M1 establishes this program-code bridge and its replayable evidence. M2 records finite evidence for safe activation and prewired continuations in [SAFE_PROGRAM_ACTIVATION.md](SAFE_PROGRAM_ACTIVATION.md). M3 adds [composition arguments](COMPOSITION_LEMMAS.md) and a [finite verification environment](COMPOSITION_CONTRACTS.md), with measured acceptance and remaining hypotheses in [ledger §T](CLAIM_LEDGER.md#t-composition-arguments-and-schedule-evidence-e_composition). Later milestones remain open:
 
-- M3, compositional correctness and resources: prove macro, decode, source-rule replacement, and readout composition lemmas for larger programs, supported by finite typed programs and explicit resource arguments.
 - M4, multi-task constraint discovery: discover composable components from distinct observation contracts, including Boolean combinations, copying/erasing, and representation adapters.
 - M5, structure library and benefit evaluation: index retained structures by representation, interface, and evidence scope, then compare rebuilding, native copying, and reuse under one cost model.
 

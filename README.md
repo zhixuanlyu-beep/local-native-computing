@@ -15,8 +15,9 @@ The research route is:
 These related lines retain separate obligations:
 
 - **Constraint discovery from problem semantics** has a bounded carrier/gate graph-search instance with executable counterexamples and retained-artifact reuse. General derivation from arbitrary task semantics remains open.
-- **Compilation of known source rules** now has a unified primitive-IC compiler and the concrete 81 -> SQ(9) execution; arbitrary-context equivalence, all-schedule verification, and automatic rule discovery remain open.
+- **Compilation of known source rules** has a unified primitive-IC compiler and concrete feedback execution. [Composition arguments](docs/COMPOSITION_LEMMAS.md) now connect local witnesses to finite source reductions under explicit abstract-model hypotheses; implementation evidence and remaining equivalence obligations are recorded separately.
 - **Safe program activation** now provides finite FIFO evidence for enabled and disabled whole feedback programs, skip-and-continue transitions, one shared literal !Gamma supply, and prewired continuations. Arbitrary-context equivalence, all-schedule behavior, exhaustive bound coverage, and a cost-benefit claim remain open.
+- **Composition and resources** adds bounded typed programs, lifted rule prefixes, alternative native schedules, source-predicted interaction costs, structural readout, and symbolic resource ledgers. See the [contract](docs/COMPOSITION_CONTRACTS.md) and [ledger](docs/CLAIM_LEDGER.md#t-composition-arguments-and-schedule-evidence-e_composition) for the distinction between written arguments and finite tests.
 
 The [claim ledger](docs/CLAIM_LEDGER.md) is the sole source for detailed evidence, test sizes, coverage counts, and proof boundaries. Read it before interpreting any result.
 
@@ -42,6 +43,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 | Bounded semantic synthesis and reuse | A finite literal-IC graph search refines candidates with counterexamples; native copy products are archived and reconstructed for independent-input consumer checks. |
 | Program-code bridge | Frozen discovered gates control the compiler's real !Gamma code, with native copy, retain, decode, and copy-decode consumers. |
 | Safe program activation | Suspended bare feedback programs use one shared !Gamma supply; enabled, disabled, and prewired continuation cases are verified as complete labeled graphs and native event sequences. |
+| Composition and resources | Local source-rule witnesses lift through explicit contexts; finite typed programs and selected activation sequences have native schedule comparisons and exact symbolic cost records. |
 | Full program execution | The unified compiler certifies the full source rule table and executes input 81 to `SQ(9)`; measurements and limits are in [ledger Q](docs/CLAIM_LEDGER.md#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution). |
 
 ## Repository layout
@@ -54,6 +56,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `docs/BOUNDED_IC_INSTANCE.md`: a runnable finite observation-to-IC instance and its exact scope.
 - `docs/PROGRAM_CODE_BRIDGE.md`: E_code contract, trace replay, offline artifact reuse, and the M1-M5 research route.
 - `docs/SAFE_PROGRAM_ACTIVATION.md`: E_activation contract, prewired continuations, bounded result reader, native readiness events, and replay verification.
+- `docs/COMPOSITION_LEMMAS.md`, `docs/COMPOSITION_CONTRACTS.md`: abstract composition arguments, implementation hypotheses, finite typed programs, schedule policies, and resource verification.
 - `source_feedback_audit.py`, `source_rule_audit_v3.py`: source-level feedback simulator and rule audit.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
 - `lafont_macro_budget_v2.py`: conditional static accounting for one proposed Figure-10 macro expansion.
@@ -97,6 +100,8 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `results/native_ic_research.json.gz`: complete candidate records and archived artifacts; replay with `python ic_research_pipeline.py --verify-report results/native_ic_research.json.gz`.
 - `results/program_code_bridge.json.gz`, `results/program_code_bridge.ictrace.gz`: E_code bridge evidence and replayable primitive trace.
 - `results/safe_program_activation.json.gz`, `results/safe_program_activation.ictrace.gz`: M2 activation evidence and replayable primitive trace.
+- `ic_typed_programs.py`, `ic_schedule_audit.py`, `ic_composition_examples.py`, `ic_rule_trace_lifting.py`, `ic_composition_certificates.py`: bounded typed syntax, primitive scheduling/resource instrumentation, independent macro examples, contextual witness translation, and M3 evidence replay.
+- `results/composition_certificates.json.gz`, `results/composition_certificates.ictrace.gz`: M3 finite composition evidence and primitive trace.
 - `tests/program_code_bridge_integrity.py`: adversarial report/trace/input checks for the bridge.
 
 ### Continuous audit
@@ -127,6 +132,10 @@ python ic_research_pipeline.py
 python ic_program_code_bridge.py --verify-report results/program_code_bridge.json.gz --trace results/program_code_bridge.ictrace.gz
 python tests/safe_program_activation_integrity.py
 python ic_safe_program_activation.py --verify-report results/safe_program_activation.json.gz --trace results/safe_program_activation.ictrace.gz
+python tests/typed_programs_integrity.py
+python tests/schedule_audit_integrity.py
+python tests/composition_evidence_integrity.py
+python ic_composition_certificates.py --verify-report results/composition_certificates.json.gz --trace results/composition_certificates.ictrace.gz
 python lafont_ic_macro_builder.py
 python ic_package_codec.py
 python ic_coherent_output_decoder.py
@@ -146,8 +155,8 @@ The earlier `ic_feedback_audit_bundle.zip` figures are obsolete. Its accounting 
 
 ## Remaining gaps
 
-1. Extend finite typed-context checks beyond the current passive-output/bounded-unary-input contract toward broader contextual-equivalence evidence.
-2. Verify additional feedback inputs and schedules without claiming all executions from a single FIFO run.
+1. Strengthen the conditional forward-simulation arguments into broader contextual-equivalence results and implementation-conformance proofs.
+2. Extend the declared finite program grammar and schedule comparisons while preserving their evidence boundaries.
 3. Derive local constraints automatically from broader task semantics.
 4. Study synthesis from polynomial-term structure and the three-cycle or complex-structure claim.
 5. Keep physical-inventory, optimality, and arbitrary-context claims separate from symbolic allocation and measured concrete runs.

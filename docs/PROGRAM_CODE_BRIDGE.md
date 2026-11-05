@@ -1,8 +1,8 @@
 # Program-code bridge and the E_code environment
 
-This guide describes the first bridge between two previously separate results: the retained/erased gates found by bounded semantic synthesis, and the literal program code produced by the unified source-to-IC compiler. The detailed counts and measured resources are recorded only in [claim ledger §R](CLAIM_LEDGER.md#r-program-code-bridge-e_code); this page states the contract, construction and verification procedure without repeating those totals.
+This guide describes the first bridge between two previously separate results: the retained/erased gates found by bounded semantic synthesis, and the literal program code produced by the unified source-to-IC compiler. The detailed counts and measured resources are recorded only in [claim ledger §R](CLAIM_LEDGER.md#r-program-code-bridge-e_code); this page states the contract, construction and verification procedure without repeating those totals. For the next stage, see [Safe program activation](SAFE_PROGRAM_ACTIVATION.md).
 
-The bridge answers a narrow question: can the discovered gates control a real compiler artifact, specifically the delta-free !Gamma program package, so that native IC consumers copy, retain, erase, or decode it? It does not activate a complete feedback program, represent a disabled program, or implement continuous reuse in one network.
+The bridge answers a narrow question: can the discovered gates control a real compiler artifact, specifically the delta-free !Gamma program package, so that native IC consumers copy, retain, erase, or decode it? It does not by itself activate a complete feedback program, represent a disabled program, or implement continuous reuse in one network. Those latter boundaries are addressed separately by [safe program activation](SAFE_PROGRAM_ACTIVATION.md).
 
 ## Frozen inputs and the E_code contract
 
@@ -65,9 +65,8 @@ The report retains four boundary checks. An epsilon supplied directly to the pac
 
 ## From M1 to later milestones
 
-M1 establishes this program-code bridge and its replayable evidence. Later milestones remain open:
+M1 establishes this program-code bridge and its replayable evidence. M2 now records finite evidence for safe activation and prewired continuations in [SAFE_PROGRAM_ACTIVATION.md](SAFE_PROGRAM_ACTIVATION.md); later milestones remain open:
 
-- M2, safe activation and continuous tasks: activate a complete program, represent disabled state explicitly, and define full terminal state conventions.
 - M3, compositional correctness and resources: prove macro, decode, source-rule replacement, and readout composition lemmas for larger programs, supported by finite typed programs and explicit resource arguments.
 - M4, multi-task constraint discovery: discover composable components from distinct observation contracts, including Boolean combinations, copying/erasing, and representation adapters.
 - M5, structure library and benefit evaluation: index retained structures by representation, interface, and evidence scope, then compare rebuilding, native copying, and reuse under one cost model.

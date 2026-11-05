@@ -29,6 +29,8 @@ python ic_coherent_certificates.py --verify-report results/coherent_rule_certifi
 python ic_coherent_contexts.py
 python tests/program_code_bridge_integrity.py
 python ic_program_code_bridge.py --verify-report results/program_code_bridge.json.gz --trace results/program_code_bridge.ictrace.gz
+python tests/safe_program_activation_integrity.py
+python ic_safe_program_activation.py --verify-report results/safe_program_activation.json.gz --trace results/safe_program_activation.ictrace.gz
 python ic_coherent_feedback.py --input 0
 python ic_coherent_feedback.py --input 2
 python ic_coherent_feedback.py --verify-report results/coherent_feedback_81.json.gz --replay-trace results/coherent_feedback_81.ictrace.gz --verify-final results/coherent_feedback_81.final.json.gz

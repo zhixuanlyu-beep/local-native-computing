@@ -20,6 +20,16 @@ python ic_bounded_execution.py
 python ic_research_artifacts.py
 python ic_research_pipeline.py
 python ic_research_pipeline.py --verify-report results/native_ic_research.json.gz
+python lafont_ic_macro_builder.py
+python ic_package_codec.py
+python ic_coherent_output_decoder.py
+python tests/coherent_artifact_integrity.py
+python ic_fast_reducer.py
+python ic_coherent_certificates.py --verify-report results/coherent_rule_certificates.json.gz --trace results/coherent_rule_certificates.ictrace.gz
+python ic_coherent_contexts.py
+python ic_coherent_feedback.py --input 0
+python ic_coherent_feedback.py --input 2
+python ic_coherent_feedback.py --verify-report results/coherent_feedback_81.json.gz --replay-trace results/coherent_feedback_81.ictrace.gz --verify-final results/coherent_feedback_81.final.json.gz
 python lafont_sigma_width_audit.py
 python lafont_phi_psi_split.py
 python lafont_macro_budget_v2.py

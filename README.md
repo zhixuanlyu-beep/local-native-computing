@@ -10,12 +10,12 @@ The research route is:
 4. **Local evolution** — let only declared local IC interactions execute under the allowed environments and schedules.
 5. **Readout and retained structure** — decode boundary results and record reusable components with their contracts and replacement conditions.
 
-[docs/RESEARCH_FRAMEWORK.md](docs/RESEARCH_FRAMEWORK.md) defines this route and maps the existing implementations to it. The repository currently supports source-level feedback audits, literal IC reductions, structural source-net storage, a coherent four-rule typed fragment, and several native IC components. It does not yet contain a complete IC compilation and execution of the source feedback program.
+[docs/RESEARCH_FRAMEWORK.md](docs/RESEARCH_FRAMEWORK.md) defines this route and maps the existing implementations to it. The repository now includes a complete coherent source-to-IC compiler for the 14-symbol / 15-rule system, all 15 rule certificates, 26 finite typed-context cases, and the concrete 81 -> SQ(9) primitive-IC feedback execution.
 
 Two related but distinct lines of work are kept separate:
 
 - **Constraint discovery from problem semantics** has a bounded carrier/gate graph-search instance with executable counterexamples and retained-artifact reuse. General derivation from arbitrary task semantics remains open.
-- **Compilation of known source rules** is the current concrete engineering line. It has a coherent typed four-rule fragment and two separately typed isolated projections, but not a globally coherent source-to-IC compiler.
+- **Compilation of known source rules** now has a unified primitive-IC compiler and the concrete 81 -> SQ(9) execution; arbitrary-context equivalence, all-schedule verification, and automatic rule discovery remain open.
 
 The [claim ledger](docs/CLAIM_LEDGER.md) is the sole source for detailed evidence, test sizes, coverage counts, and proof boundaries. Read it before interpreting any result.
 
@@ -39,7 +39,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 | Isolated projections | `ic_typed_entry_rules.py` certifies two typed source-entry redexes separately from the coherent fragment. |
 | Restricted-consumer components | The comparator provides path readout; difference, pruning, and selector scripts check native behavior under declared interfaces and consumers. |
 | Bounded semantic synthesis and reuse | A finite literal-IC graph search refines candidates with counterexamples; native copy products are archived and reconstructed for independent-input consumer checks. |
-| Full program execution | Not established; the complete source-to-IC compiler and the `81 -> SQ(9)` IC trace remain open. |
+| Full program execution | The unified compiler certifies the full source rule table and executes input 81 to `SQ(9)`; measurements and limits are in [ledger Q](docs/CLAIM_LEDGER.md#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution). |
 
 ## Repository layout
 
@@ -47,6 +47,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 
 - `docs/RESEARCH_FRAMEWORK.md`: research route, terminology, component contracts, and evidence boundaries.
 - `docs/CLAIM_LEDGER.md`: executable evidence, conditional results, coverage boundaries, and open goals.
+- `docs/COHERENT_IC_COMPILER.md`: unified compiler conventions, trace format, structural readout, and reproduction commands.
 - `docs/BOUNDED_IC_INSTANCE.md`: a runnable finite observation-to-IC instance and its exact scope.
 - `source_feedback_audit.py`, `source_rule_audit_v3.py`: source-level feedback simulator and rule audit.
 - `lafont_sigma_width_audit.py`, `lafont_phi_psi_split.py`, `lafont_15_rules_phi_psi_split.json`: source-level rule decomposition data.
@@ -68,6 +69,17 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `ic_signed_sum_selector.py`: single-output native IC tagged sum with checked downstream consumers.
 - `ic_three_way_selector.py`: three-way tagged selector with an equality payload and native consumers.
 - `ic_typed_entry_rules.py`: isolated typed certificates for `INIT-Z` and `CMP0-Z`.
+
+### Unified source-to-IC compiler and feedback execution
+
+- `source_ic_coherent_compiler.py`: actual Figure-10-style construction for all 14 symbols and 15 rules.
+- `lafont_ic_macro_builder.py`, `ic_package_codec.py`: Lafont macro builders, package encoder, and `!Gamma` decoder.
+- `ic_fast_reducer.py`: FIFO-indexed native primitive-IC reducer.
+- `ic_coherent_certificates.py`: 15/15 rule certificates with a replayable primitive trace.
+- `ic_coherent_contexts.py`: 26 finite typed-context refinement cases.
+- `ic_coherent_output_decoder.py`: structural source-graph and output decoder.
+- `ic_coherent_feedback.py`: complete compiled feedback execution, trace replay, final-graph verification, and readout.
+- `results/coherent_rule_certificates.json.gz`, `results/coherent_rule_certificates.ictrace.gz`, `results/coherent_feedback_81.json.gz`, `results/coherent_feedback_81.final.json.gz`, `results/coherent_feedback_81.ictrace.gz`, `results/coherent_context_cases.json.gz`: stored certificate and execution evidence.
 
 ### Bounded discovery and retained artifacts
 
@@ -102,6 +114,14 @@ python ic_typed_entry_rules.py
 python ic_bounded_execution.py
 python ic_research_artifacts.py
 python ic_research_pipeline.py
+python lafont_ic_macro_builder.py
+python ic_package_codec.py
+python ic_coherent_output_decoder.py
+python ic_fast_reducer.py
+python tests/coherent_artifact_integrity.py
+python ic_coherent_certificates.py --verify-report results/coherent_rule_certificates.json.gz --trace results/coherent_rule_certificates.ictrace.gz
+python ic_coherent_contexts.py
+python ic_coherent_feedback.py --verify-report results/coherent_feedback_81.json.gz --replay-trace results/coherent_feedback_81.ictrace.gz --verify-final results/coherent_feedback_81.final.json.gz
 python lafont_sigma_width_audit.py
 python lafont_phi_psi_split.py
 python lafont_macro_budget_v2.py
@@ -109,16 +129,15 @@ python lafont_macro_budget_v2.py
 
 ## Budget correction
 
-The earlier `ic_feedback_audit_bundle.zip` figures are obsolete. Its accounting used the source interaction interface width for the `T_sigma` macro, while the supplied noncanonical Figure-6 split applies sigma only to cross-half wiring strands. The corrected conditional budget, its assumptions, and the current cell and free-port counts are recorded in [claim ledger §D](docs/CLAIM_LEDGER.md#d-conditional-macro-budget). No completed Figure-10 IC port graph has been built or independently reduced.
+The earlier `ic_feedback_audit_bundle.zip` figures are obsolete. Its accounting used the source interaction interface width for the `T_sigma` macro, while the supplied noncanonical Figure-6 split applies sigma only to cross-half wiring strands. The corrected conditional budget is recorded in [claim ledger §D](docs/CLAIM_LEDGER.md#d-conditional-macro-budget). Actual generated graphs now confirm the same convention and inventories; measured rule certificates and the concrete feedback run are recorded in [claim ledger §Q](docs/CLAIM_LEDGER.md#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution).
 
 ## Remaining gaps
 
-1. Expand the Figure-10 macros into complete gamma/delta/epsilon port pairings.
-2. Generate and check IC simulation certificates for all source rules.
-3. Expand the actual IC initial network for input 81 and reduce it to the encoding of `SQ(9)`.
-4. Verify source-to-IC output decoding and runtime resource bounds for the concrete compiler.
-5. Derive local constraints automatically from broader task semantics.
-6. After the compiler is complete, study synthesis from polynomial-term structure and the three-cycle or complex-structure claim.
+1. Extend finite typed-context checks beyond the current passive-output/bounded-unary-input contract toward broader contextual-equivalence evidence.
+2. Verify additional feedback inputs and schedules without claiming all executions from a single FIFO run.
+3. Derive local constraints automatically from broader task semantics.
+4. Study synthesis from polynomial-term structure and the three-cycle or complex-structure claim.
+5. Keep physical-inventory, optimality, and arbitrary-context claims separate from symbolic allocation and measured concrete runs.
 
 ## Source
 

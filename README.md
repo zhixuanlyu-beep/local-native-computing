@@ -10,7 +10,7 @@ The research route is:
 4. **Local evolution** — let only declared local IC interactions execute under the allowed environments and schedules.
 5. **Readout and retained structure** — decode boundary results and record reusable components with their contracts and replacement conditions.
 
-[docs/RESEARCH_FRAMEWORK.md](docs/RESEARCH_FRAMEWORK.md) defines this route and maps the existing implementations to it. The repository now includes a complete coherent source-to-IC compiler for the 14-symbol / 15-rule system, all 15 rule certificates, 26 finite typed-context cases, and the concrete 81 -> SQ(9) primitive-IC feedback execution.
+[docs/RESEARCH_FRAMEWORK.md](docs/RESEARCH_FRAMEWORK.md) defines this route and maps the existing implementations to it. The repository now includes a complete coherent source-to-IC compiler for the 14-symbol / 15-rule system, complete rule certificates, declared finite typed-context checks, and the concrete 81 -> SQ(9) primitive-IC feedback execution.
 
 Two related but distinct lines of work are kept separate:
 
@@ -35,8 +35,8 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 | Observation semantics and contracts | The framework defines problem inputs, observation boundaries, environments, and resource bounds. |
 | Structural representation | `source_ic_structure_encoding.py` stores finite source nets losslessly as primitive IC data. |
 | Primitive local mechanisms | The IC verifier and copy/erase demos exercise the six Lafont rules on literal gamma/delta/epsilon graphs. |
-| Coherent typed fragment | `ic_unary_operational_fragment.py` operationally refines four typed source rules. |
-| Isolated projections | `ic_typed_entry_rules.py` certifies two typed source-entry redexes separately from the coherent fragment. |
+| Coherent typed fragment | `ic_unary_operational_fragment.py` operationally refines a restricted typed source fragment. |
+| Isolated projections | `ic_typed_entry_rules.py` certifies typed source-entry redexes separately from the coherent fragment. |
 | Restricted-consumer components | The comparator provides path readout; difference, pruning, and selector scripts check native behavior under declared interfaces and consumers. |
 | Bounded semantic synthesis and reuse | A finite literal-IC graph search refines candidates with counterexamples; native copy products are archived and reconstructed for independent-input consumer checks. |
 | Full program execution | The unified compiler certifies the full source rule table and executes input 81 to `SQ(9)`; measurements and limits are in [ledger Q](docs/CLAIM_LEDGER.md#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution). |
@@ -75,8 +75,8 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `source_ic_coherent_compiler.py`: actual Figure-10-style construction for all 14 symbols and 15 rules.
 - `lafont_ic_macro_builder.py`, `ic_package_codec.py`: Lafont macro builders, package encoder, and `!Gamma` decoder.
 - `ic_fast_reducer.py`: FIFO-indexed native primitive-IC reducer.
-- `ic_coherent_certificates.py`: 15/15 rule certificates with a replayable primitive trace.
-- `ic_coherent_contexts.py`: 26 finite typed-context refinement cases.
+- `ic_coherent_certificates.py`: complete rule certificates with a replayable primitive trace.
+- `ic_coherent_contexts.py`: finite typed-context refinement cases.
 - `ic_coherent_output_decoder.py`: structural source-graph and output decoder.
 - `ic_coherent_feedback.py`: complete compiled feedback execution, trace replay, final-graph verification, and readout.
 - `results/coherent_rule_certificates.json.gz`, `results/coherent_rule_certificates.ictrace.gz`, `results/coherent_feedback_81.json.gz`, `results/coherent_feedback_81.final.json.gz`, `results/coherent_feedback_81.ictrace.gz`, `results/coherent_context_cases.json.gz`: stored certificate and execution evidence.

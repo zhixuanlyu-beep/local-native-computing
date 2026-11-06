@@ -97,3 +97,9 @@ python ic_structure_reuse.py --verify-report results/structure_reuse.json.gz --l
 ```
 
 The library test checks strict schemas, fingerprints, nested immutability, source report/trace mutations, exact queries, evidence-tier escalation, and full FIFO replay. The reuse verifier independently reconstructs the library and report and replays the native production and benchmark traces. A generation or verification failure exits nonzero and preserves the concrete failure evidence. Measured dimensions, workloads, and outcomes are recorded only in [claim ledger V](CLAIM_LEDGER.md#v-evidence-indexed-structure-library-and-native-reuse-e_structure_library), together with remaining proof and resource boundaries.
+
+[M6](RESULT_CONTROLLED_EXECUTION.md) loads the actual archived `copy_A` packet
+and uses its decoded component in result-controlled whole-program continuations.
+The M5 Gamma erasure entry retains its data-only interface and cannot stand in
+for the compiler's `!Gamma` program code. Later evidence and cost accounting are
+separate in [ledger W](CLAIM_LEDGER.md#w-result-controlled-complete-programs-e_result_controlled).

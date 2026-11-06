@@ -122,6 +122,14 @@ Cost records should separate representation/constraint discovery, candidate vali
 
 The agenda leaves the following concrete work open:
 
+The [M6 result-control protocol](RESULT_CONTROLLED_EXECUTION.md) now connects
+complete feedback results to subsequent task enable/skip decisions, using the
+archived component supply and explicit local interface lifts. Its evidence is
+scoped in [ledger W](CLAIM_LEDGER.md#w-result-controlled-complete-programs-e_result_controlled).
+The next connection is result numerals as subsequent numerical inputs, followed
+by broader representation adaptation/discovery and renewed full-computation
+reuse-cost evaluation.
+
 - Native adapters between the relevant unary, path, tag, and control protocols, with interface and resource certificates.
 - Broader composition/replacement results beyond the explicit hypotheses of [the M3 arguments](COMPOSITION_LEMMAS.md), including implementation-conformance proofs and stronger observational environments.
 - Broader contextual equivalence and schedule coverage for the unified compiler and safe activation. The separate [M3 contract](COMPOSITION_CONTRACTS.md) adds finite typed-program and native schedule evidence with symbolic resource records; its scope is recorded in [ledger T](CLAIM_LEDGER.md#t-composition-arguments-and-schedule-evidence-e_composition), alongside the original evidence in sections Q and S.

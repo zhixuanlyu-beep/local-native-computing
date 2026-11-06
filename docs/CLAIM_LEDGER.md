@@ -13,7 +13,7 @@ The entries below use six evidence classes to distinguish the scope of results. 
 | Coherent typed fragment | One typed sublanguage has a consistent operational refinement and contextual checks; alternate encodings of the same rules add no distinct rule coverage. | [G](#g-four-source-rules-operationally-refined-to-primitive-ic), [J](#j-tagged-unary-local-zerosuccessor-discrimination) |
 | Isolated projection | A typed source redex has a local IC certificate, without a globally coherent encoding. | [N](#n-typed-isolated-source-entry-rule-certificates-not-coherent-compiler-coverage) |
 | Restricted-consumer composition | Components compose with declared consumers under explicit interface preconditions; tests retain their recorded scope. | [I](#i-composable-signed-difference-with-native-ic-consumers), [J-M](#j-tagged-unary-local-zerosuccessor-discrimination), [N](#n-typed-isolated-source-entry-rule-certificates-not-coherent-compiler-coverage), [R](#r-program-code-bridge-e_code), [S](#s-safe-program-activation-e_activation) |
-| Full program execution | A complete source program is compiled to IC and executed with a decoded result. | [Q](#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution), [S](#s-safe-program-activation-e_activation) |
+| Full program execution | A complete source program is compiled to IC and executed with a decoded result. | [Q](#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution), [S](#s-safe-program-activation-e_activation), [W](#w-result-controlled-complete-programs-e_result_controlled) |
 
 Source-level results in §A and §C and conditional static accounting in §D are not themselves IC execution evidence. In particular, the coherent fragment in §G and the isolated projections in §N use different typing assumptions and cannot be added into the separate unified compiler coverage in §Q. Finite consumer tests do not establish equivalence in arbitrary contexts, and randomized schedules do not establish all executions.
 
@@ -480,3 +480,139 @@ The archive is [structure_library.json.gz](../results/structure_library.json.gz)
 The four new integrity suites contain **9, 8, 8 and 7** groups respectively: [catalog](../tests/structure_library_integrity.py), [capsules](../tests/structure_capsules_integrity.py), [constructors](../tests/reuse_benchmarks_integrity.py), and [reuse/report](../tests/structure_reuse_integrity.py). All passed locally. Capsule checks include the real Gamma complete graph round trip and two separately activated native code copies, with independent references, disjoint full outputs and consumed source cells. The original M4 baseline's **46 runner commands** were already green on main and its research branch at commit `491faa9292727cb42ee90456ccb830d4829901d6`; M5 changes no earlier reducer, implementation, report or trace, and appends its suites and complete replay to the same existing CI runner. No dependency, external solver, proof tool, or compute service was added.
 
 This establishes a finite reusable structure catalog, native storage production, prewired staged code use and measured resource tradeoffs. The arithmetic remains conditional on the abstract proper-package/composition hypotheses and faithful implementation. Larger program activation, arbitrary-context replacement, all-schedule composed execution, general semantic discovery, a general runtime-formed structure library, physical finite inventory and universal or optimal reuse benefit remain independent research obligations.
+
+## W. Result-controlled complete programs (E_result_controlled)
+
+M6 connects whole feedback tasks through their actual SQ/BR results. The first
+task is enabled; SQ enables the next task, BR skips it, and a skipped task emits
+epsilon and restores enable for its successor. Numerical inputs and every
+connection remain prewired. The constructor accepts no per-task flags and
+neither construction nor the primitive scheduler evaluates a source result.
+Independent `isqrt` references are checked against the source simulator, then
+used only to construct postconditions and validate observations.
+
+Implementation: [control packets](../ic_native_control_packets.py),
+[execution](../ic_result_controlled_execution.py),
+[library source](../ic_result_controlled_library.py),
+[local lifts](../ic_result_controlled_composition.py),
+[events/resources](../ic_result_controlled_evidence.py),
+[report/replay](../ic_result_controlled_report.py),
+[local experiment workers](../ic_result_controlled_parallel.py), and
+[lossless trace storage](../ic_result_controlled_trace.py).
+The [guide](RESULT_CONTROLLED_EXECUTION.md) states the protocol and proof
+boundary. The [frozen matrix](M6_ACCEPTANCE_MATRIX.json) retains input/task bounds
+4/3, reader depth 5, per-execution budgets of 2,000,000 interactions and 250,000
+live cells, and small exploration budgets of 4,096 states, 32,768 attempted
+transitions and 128 live cells. No case or budget was narrowed after execution.
+
+The control protocol passed **8 concrete all-schedule explorations**: either
+Boolean with epsilon, Loop, B(false), or B(true) payloads. These comprise **47
+quotient states and 42 attempted transitions**, with complete exploration,
+termination and exact whole-terminal agreement in every case. Their saved FIFO
+intervals contain **38 interactions**. This exhaustive claim concerns those
+small networks only.
+
+The **8 independent local contracts** use inputs 0,1,2,4 and either incoming
+control. Their FIFO interactions are respectively **17,640 / 59,830**,
+**24,929 / 220,781**, **32,218 / 538,075**, and **46,796 / 510,734**, in
+disabled/enabled order. Each preserves the complete task observation and the
+outgoing program/GO/control packet. For each whole sequence, actual local
+witnesses are plugged into the original prewired graph by an explicit port map,
+forced supplied-graph matching and fresh RHS node renaming. Every mapped pair
+must be active; context cells and internal context wires remain intact. Native
+source production/distribution precedes the lifts and final cleanup follows
+them. Normal FIFO/LIFO/seed-17 execution chooses its own interactions.
+
+The whole matrix contains **24 sequences**: four singles, every ordered pair
+over 0,1,2,4, and the four fixed triples. All **72 policy executions and 24
+independent staged certificates passed generation**. Whole targets include
+every task output, every A status, NEXT_ENABLE, exact **3,231-cell compiler
+`code_spec`** at LIBRARY, exact **7-cell copy_A code** at CONTROL_LIBRARY, and
+DONE, with no extra components or cyclic wires. Passing terminals are rebuilt
+completely during replay and bound by whole-graph digests; counterexamples
+retain full initial/reference/actual graphs.
+
+The copy source is the exact M5 retained `copy_A` artifact, with its FIFO
+production interval **[34,62)** and source component's finite all-schedule tier
+preserved separately. Each full run charges a fresh native copy/erase producer,
+code distribution, per-stage decoding, Boolean copying, the program supply,
+every future task/reader, both reserves and cleanup. M5's Gamma data-erasure
+entry, including its capsule code, cannot satisfy the compiler-program code
+interface. No earlier archive is rewritten or promoted to a stronger scope.
+
+Capsule extraction READY and original unary-result recognition are distinct
+observations. Enabled handoff must follow recognition of all original unary
+constructors (both BR arguments joined), consume the selected result progress
+token, and precede the next grant. Skip handoff consumes its recovery token.
+Each grant consumes its predecessor's actual packet. Reconstruction and
+cleanup may overlap subsequent work; these events do not assert quiescence.
+
+Across the 72 policy runs, initial cells range **6,230–12,734**, interactions
+**59,879–1,123,017**, total symbolic allocation **130,140–2,293,312**, measured
+peak **11,276–131,036**, and final cells **10,382–47,278**. All positive runs
+remain within the original budgets. All four schedules have identical exact
+primitive rule censuses for each sequence; their peaks can differ. For the
+triples, I/T/A/F are common to all schedules:
+
+| Inputs | Enables | I | T | A | F | FIFO peak | LIFO peak | seed-17 peak | staged peak |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 0,1,4 | 111 | 12,524 | 791,416 | 1,618,520 | 35,688 | 79,140 | 131,036 | 80,314 | 79,140 |
+| 1,2,4 | 110 | 12,664 | 805,723 | 1,647,522 | 36,076 | 69,634 | 112,234 | 71,072 | 69,718 |
+| 2,1,0 | 101 | 12,384 | 622,905 | 1,278,212 | 32,402 | 61,642 | 95,838 | 64,810 | 61,670 |
+| 2,4,2 | 101 | 12,734 | 1,123,017 | 2,293,312 | 47,278 | 77,664 | 119,078 | 78,716 | 77,664 |
+
+I includes the entire prewired network. A includes I and every primitive RHS
+allocation; per-kind balances, the rule-census final-size equation and
+`A=F+2T` are checked. P is the initial/post-atomic-interaction peak of the whole
+symbolic graph. Isolated witness shadow replay and worker orchestration are
+host verification work, not extra interactions in the designated whole net.
+These are measured costs, with no profitability condition or universal saving.
+
+The shallow-reader probe reaches an incorrect terminal in **215,966**
+interactions. The required enabled-input-1 fault connects readiness selection
+to skip: after **220,830** interactions its final graph is correct, but the
+selected result progress token did not authorize handoff and its event order
+is invalid. It is preserved as **protocol-violation**. Invalid control encoding
+and Gamma-data-as-program probes are preserved as precondition rejections.
+Unit fixtures also retain incomplete/resource-violation outcomes and reject
+changed graphs, resources, source representations/evidence, maps, contracts,
+raw pairs, truncation, trailing records and shard metadata.
+
+Archive: [report](../results/result_controlled_execution.json.gz) and
+[trace manifest](../results/result_controlled_execution.ictrace.gz), with ten
+gzip sibling shards. The stream contains **58,292,477 original pair records**:
+38 control, 1,451,003 local, 42,303,480 policy, 14,101,160 staged and 436,796
+negative-probe interactions. Raw-pair SHA-256 is
+`f002ea2b6bbe08cbbe6c84252735da68e5573973d705e4bc75f2ec674bbd77ca`.
+The manifest's semantic SHA-256 is
+`4e46056771676ce266143b9e3665a86926785c6eec71db6c4081f3753a76e785`;
+it binds every part's name, exact record count, raw digest, compressed-file
+digest and common metadata. Compressed report/manifest SHA-256 values are
+`87a922208dc9a23a0cbcab2917fea71dbdec9dae85e0b08674ae5032eb6e36be`
+and `acbc921c178f3370566400a72c357812e0649482a0f33bca3468619afdd1d544`.
+Complete independent CLI reconstruction/replay passed with exact report and
+manifest equality. Every saved primitive pair, event, resource field, complete
+terminal digest, shard boundary and whole-stream EOF was accounted for.
+
+The seven new integrity suites contain **3,5,4,6,7,1,2** groups respectively:
+[control](../tests/native_control_packets_integrity.py),
+[library](../tests/result_controlled_library_integrity.py),
+[events](../tests/result_controlled_evidence_integrity.py),
+[maps/cutoffs](../tests/result_controlled_composition_integrity.py),
+[execution/report](../tests/result_controlled_execution_integrity.py),
+[parallel chunks](../tests/result_controlled_parallel_integrity.py), and
+[shards](../tests/result_controlled_trace_integrity.py). All **28 groups passed
+locally**. The existing **51
+M1–M5 runner commands passed locally**, including full input-81 replay. The
+same runner now appends these suites and complete M6 replay, for **59 commands**.
+The primitive reducers, historical interfaces, reports and traces are preserved;
+the unary reader receives an optional backwards-compatible progress adapter.
+No dependency, external compute service, solver or proof tool was introduced.
+
+This establishes the listed finite result-controlled whole computations and
+actual local-trace composition under the existing abstract-model and faithful
+implementation hypotheses. It does not establish arbitrary contextual
+equivalence, all-schedule large-network execution, physical finite stock or
+general reuse benefit. The next priority is result numerals as subsequent
+inputs, then broader adaptation/discovery and renewed complete-computation
+reuse-cost evaluation.

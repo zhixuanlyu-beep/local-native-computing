@@ -75,3 +75,10 @@ These probes are finite witnesses, not a general impossibility claim.
 This work establishes finite FIFO evidence for safe activation, explicit disabled state, skip-and-continue behavior, one shared native program supply, and prewired native continuations in the recorded cases. It does not claim arbitrary-context equivalence, all-schedule behavior, exhaustive coverage of the representation bounds, optimality, physical inventory, or a demonstrated cost benefit. The earlier M1 offline archive/reuse boundary remains unchanged.
 
 The separate [M3 environment](COMPOSITION_CONTRACTS.md) compares additional native scheduling policies on selected activation sequences while preserving these readiness and reuse boundaries. Its [written arguments](COMPOSITION_LEMMAS.md) distinguish the abstract IC calculus from finite implementation evidence; all new measured results are in [ledger §T](CLAIM_LEDGER.md#t-composition-arguments-and-schedule-evidence-e_composition).
+
+[M6 result-controlled execution](RESULT_CONTROLLED_EXECUTION.md) replaces the
+preassigned per-task flags in a separate protocol: actual SQ/BR results generate
+the next control, and a skipped task restores enable. Numerical inputs remain
+prewired. M2's original contract, report and trace retain their historical scope;
+the later acceptance evidence is recorded in
+[ledger W](CLAIM_LEDGER.md#w-result-controlled-complete-programs-e_result_controlled).

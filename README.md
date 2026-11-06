@@ -23,6 +23,13 @@ These related lines retain separate obligations:
 
 The [claim ledger](docs/CLAIM_LEDGER.md) is the sole source for detailed evidence, test sizes, coverage counts, and proof boundaries. Read it before interpreting any result.
 
+M6 connects complete tasks through their actual SQ/BR results: native control
+enables or skips the next prewired program, and a skipped task restores enable.
+The [result-controlled execution guide](docs/RESULT_CONTROLLED_EXECUTION.md)
+describes the control packets, archived component supply, local interface
+certificates and strict replay. Detailed acceptance evidence remains in
+[ledger W](docs/CLAIM_LEDGER.md#w-result-controlled-complete-programs-e_result_controlled).
+
 ## Quick start
 
 ```sh
@@ -49,6 +56,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 | Multi-task component discovery | A frozen complete syntax ledger is refined by distinct observation contracts; verified specimens compose through typed linear wiring and actual lifted traces. |
 | Evidence-indexed structure library and native reuse | Verified M4 assignments are retrieved by exact representations, interface, and evidence scope; literal, native-fanout, and retained-chain executions are compared under complete declared native cost vectors. |
 | Full program execution | The unified compiler certifies the full source rule table and executes input 81 to `SQ(9)`; measurements and limits are in [ledger Q](docs/CLAIM_LEDGER.md#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution). |
+| Result-controlled continuations | Complete program results generate native controls for subsequent prewired tasks; exact source outputs, status, retained code and handoff events are verified together. See [ledger W](docs/CLAIM_LEDGER.md#w-result-controlled-complete-programs-e_result_controlled). |
 
 ## Repository layout
 
@@ -160,6 +168,15 @@ python tests/reuse_benchmarks_integrity.py
 python tests/structure_reuse_integrity.py
 python ic_structure_reuse.py --report results/structure_reuse.json.gz --library results/structure_library.json.gz --trace results/structure_reuse.ictrace.gz
 python ic_structure_reuse.py --verify-report results/structure_reuse.json.gz --library results/structure_library.json.gz --trace results/structure_reuse.ictrace.gz
+python tests/native_control_packets_integrity.py
+python tests/result_controlled_library_integrity.py
+python tests/result_controlled_evidence_integrity.py
+python tests/result_controlled_composition_integrity.py
+python tests/result_controlled_execution_integrity.py
+python tests/result_controlled_parallel_integrity.py
+python tests/result_controlled_trace_integrity.py
+python ic_result_controlled_execution.py --report results/result_controlled_execution.json.gz --library results/structure_library.json.gz --trace results/result_controlled_execution.ictrace.gz
+python ic_result_controlled_execution.py --verify-report results/result_controlled_execution.json.gz --library results/structure_library.json.gz --trace results/result_controlled_execution.ictrace.gz
 python lafont_ic_macro_builder.py
 python ic_package_codec.py
 python ic_coherent_output_decoder.py
@@ -186,6 +203,7 @@ The earlier `ic_feedback_audit_bundle.zip` figures are obsolete. Its accounting 
 5. Keep physical-inventory, optimality, and arbitrary-context claims separate from symbolic allocation and measured concrete runs.
 6. Extend safe activation beyond its finite validated case list and representation bounds, and study structure reuse across continuous tasks without collapsing the E_code boundary into full-program semantics.
 7. Extend the delivered, evidence-scoped structure library beyond its frozen sources and finite schedules without turning no measured benefit into a universal failure result; reuse may have no net benefit under the current contract.
+8. Connect result numerals to subsequent task inputs, then extend representation adaptation and discovery and reevaluate reuse costs under complete computation contracts. M6 currently prewires numerical inputs.
 
 ## Source
 

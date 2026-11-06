@@ -1,0 +1,19 @@
+{
+  "contract": "E_result_controlled-v1",
+  "frozen_before_execution": true,
+  "control_bits": [false, true],
+  "control_payloads": ["epsilon", "Loop", "B_false", "B_true"],
+  "local_numbers": [0, 1, 2, 4],
+  "local_controls": [false, true],
+  "single_numbers": [0, 1, 2, 4],
+  "ordered_pair_domain": [0, 1, 2, 4],
+  "triples": [[0, 1, 4], [1, 2, 4], [2, 1, 0], [2, 4, 2]],
+  "policies": [{"policy": "fifo"}, {"policy": "lifo"}, {"policy": "seeded", "seed": 17}],
+  "separate_staged_witness_per_sequence": true,
+  "execution_budget": {"max_steps": 2000000, "max_cells": 250000},
+  "all_schedule_budget": {"max_states": 4096, "max_transitions": 32768, "max_cells": 128},
+  "max_input": 4,
+  "max_tasks": 3,
+  "reader_depth": 5,
+  "negative_probes": ["wrong_control_encoding", "Gamma_data_as_program", "shallow_reader", "premature_handoff_enabled_input_1"]
+}

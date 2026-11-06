@@ -35,7 +35,8 @@ def _take_proxy(net, endpoint):
     return neighbor
 
 
-def build_reader(net, compiler, gate, depth, *, value_out, ready_out, kind="result"):
+def build_reader(net, compiler, gate, depth, *, value_out, ready_out, kind="result",
+                 result_progress=None):
     if not isinstance(net, Net) or not isinstance(compiler, CoherentICCompiler):
         raise TypeError("native reader requires Net and CoherentICCompiler")
     if not isinstance(gate, GraphSpec) or set(gate.boundaries) != {"CTRL", "DATA", "OUT"} or len(gate.kinds) != 1:
@@ -44,6 +45,8 @@ def build_reader(net, compiler, gate, depth, *, value_out, ready_out, kind="resu
         raise ValueError("invalid bounded reader grammar")
     if value_out == ready_out:
         raise ValueError("value and readiness need distinct output ports")
+    if result_progress is not None and (kind != "result" or not callable(result_progress)):
+        raise ValueError("result progress adapter requires the result grammar and a callable")
 
     observer, splitter = net.cell("d"), net.cell("g")
     net.link((observer, 1), (splitter, 0))
@@ -75,12 +78,15 @@ def build_reader(net, compiler, gate, depth, *, value_out, ready_out, kind="resu
         packet = net.cell("g")
         net.link((packet, 1), header.principal)
         macro_connect(net, frame.auxiliaries[-1], (packet, 0))
+        readiness = (packet, 2)
+        if result_progress is not None and symbol in ("SQ", "BR"):
+            readiness = result_progress(symbol, readiness)
         if symbol == "Z":
             ready = _loop(net)
-            net.link((packet, 2), ready)
+            macro_connect(net, readiness, ready)
             metadata["ready_emitters"].append(ready[0])
         elif symbol in ("S", "SQ"):
-            unary_child(frame.auxiliaries[1], header.auxiliaries[0], (packet, 2),
+            unary_child(frame.auxiliaries[1], header.auxiliaries[0], readiness,
                         depth - 1 if symbol == "S" else depth)
         elif symbol == "BR":
             serial = getattr(net, "_reader_join_serial", 0)
@@ -91,7 +97,7 @@ def build_reader(net, compiler, gate, depth, *, value_out, ready_out, kind="resu
             unary_child(frame.auxiliaries[2], header.auxiliaries[1], right, depth)
             before = set(net.nodes)
             append_spec(gate, net, {"CTRL": _take_proxy(net, left), "DATA": _take_proxy(net, right),
-                                    "OUT": (packet, 2)})
+                                    "OUT": _take_proxy(net, readiness) if readiness[0] == "F" else readiness})
             metadata["join_gates"].extend(sorted(set(net.nodes) - before))
         else:
             raise ValueError("unsupported handler")

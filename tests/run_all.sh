@@ -46,6 +46,14 @@ python tests/structure_capsules_integrity.py
 python tests/reuse_benchmarks_integrity.py
 python tests/structure_reuse_integrity.py
 python ic_structure_reuse.py --verify-report results/structure_reuse.json.gz --library results/structure_library.json.gz --trace results/structure_reuse.ictrace.gz
+python tests/native_control_packets_integrity.py
+python tests/result_controlled_library_integrity.py
+python tests/result_controlled_evidence_integrity.py
+python tests/result_controlled_composition_integrity.py
+python tests/result_controlled_execution_integrity.py
+python tests/result_controlled_parallel_integrity.py
+python tests/result_controlled_trace_integrity.py
+python ic_result_controlled_execution.py --verify-report results/result_controlled_execution.json.gz --library results/structure_library.json.gz --trace results/result_controlled_execution.ictrace.gz
 python ic_coherent_feedback.py --input 0
 python ic_coherent_feedback.py --input 2
 python ic_coherent_feedback.py --verify-report results/coherent_feedback_81.json.gz --replay-trace results/coherent_feedback_81.ictrace.gz --verify-final results/coherent_feedback_81.final.json.gz

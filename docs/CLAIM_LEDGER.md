@@ -616,3 +616,79 @@ equivalence, all-schedule large-network execution, physical finite stock or
 general reuse benefit. The next priority is result numerals as subsequent
 inputs, then broader adaptation/discovery and renewed complete-computation
 reuse-cost evaluation.
+
+## X. Size-parametric construction and tree-copy audit
+
+[The size/uniformity guide](SIZE_AND_UNIFORMITY.md) defines separate fixed
+descriptions, size-generated instances and runtime evolution. Its `Build(P_f,n)`
+contract requires an effective common generator independent of input values;
+a size bound alone establishes neither uniformity nor efficient construction.
+These are definitions and reporting obligations, not new compiler coverage.
+
+[ic_size_family_audit.py](../ic_size_family_audit.py) adds a finite native
+experiment using the unchanged literal reducer and existing ordered tree
+builder/decoder. A fixed generator produces a balanced or comb-shaped full
+gamma/epsilon tree from its epsilon-leaf count `n`. One delta copier and two
+labeled outputs complete the initial graph. The report selects leaf counts
+**1,2,3,4,8,16,32,64**, both shapes, and both **first-active** and
+**snapshot-rounds** policies: **32 cases**, totaling **1,008 primitive
+interactions**. It binds all three source files by SHA-256 and stores every
+selected primitive pair.
+
+Construction records **2n cell calls, 2 boundary calls and 2n+1 link calls**,
+with **zero primitive interactions**. These are graph API counts, not total
+host build time: shape generation, invariant checking, scheduler scans and
+other Python work are not included. No host time is added to native work.
+
+The tree's combinatorics give `n-1` gamma and `n` epsilon cells. Its copy has
+one gamma/delta interaction per internal node and one delta/epsilon interaction
+per leaf. Conditional on the primitive rules and correct tree construction,
+this yields the following accounting, checked in every recorded execution:
+
+| Quantity | Formula |
+|---|---:|
+| Input tree cells | `2n-1` |
+| Whole initial cells `I`, including copier | `2n` |
+| Primitive work `W` | `2n-1` |
+| Runtime RHS allocation | `6n-4` |
+| Total symbolic allocation `A` | `8n-4` |
+| Final cells `F` | `4n-2` |
+| Initial/post-atomic-state peak `P` | `4n-2` |
+| Balanced synchronous rounds | `ceil(log2(n))+1` |
+| Comb synchronous rounds | `n` |
+
+The census is exactly `gd=n-1`, `de=n`, with every other rule count zero.
+The balance `A=F+2W` holds. Live size grows by two on `gd` and stays constant
+on `de`, so the final size is also the recorded atomic-state peak. Readout
+visits every final cell across two ordered copies; both match the generated
+input, with no extra components, shared output cells, or cyclic wires.
+
+For **n=64**, either tree has **128 initial cells**, **127 interactions**,
+**508 total allocated cells**, and **254 peak/final cells**. The balanced
+snapshot execution has **7 rounds**, while the comb has **64**. Each snapshot
+reduces all pairs present at round start and defers newly created pairs. The
+host executes those rewrites sequentially; rounds model unlimited simultaneous
+disjoint interactions, not wall time or a general minimum causal depth.
+The sequential policy records no parallel-depth value.
+
+Archive: [size_family_audit.json](../results/size_family_audit.json), SHA-256
+`dec3033b8dfb79adf1db2d172d47d54088517de64e0521325c1d9cabc1c5f0ef`.
+Generation and independent CLI reconstruction passed: every field, source
+binding, primitive pair, census, resource count and complete output is checked.
+[The integrity suite](../tests/size_family_integrity.py) passed **5 groups**,
+including non-power-of-two sizes, sequential/round distinction, rejected
+parameters, wrong outputs, and nine report mutations (resource/round changes,
+altered pairs, source hashes, JSON types, missing cases, extra fields/records).
+The unchanged primitive verifier's **1,160 two-redex contexts**, the existing
+balanced-tree randomized trials and **200 irregular-tree copy checks** also
+passed locally. The CI runner adds the integrity suite and full report
+reconstruction; the entire historical compiler/archive suite was not rerun
+locally for this change.
+
+This demonstrates growing structure/work and different dependency rounds under
+a fixed primitive rule table. Both generators choose the complete input tree;
+all leaves are epsilon. It does not test a single framework on arbitrary
+same-length bitstrings, native decompression of a size descriptor, full-compiler
+unfolding, all-schedule execution, general time/space optimality, physical
+stock, or reuse benefit. Algebraic arguments, finite implementation checks and
+future family-level obligations retain their separate scopes.

@@ -1,0 +1,5557 @@
+{
+  "cases": [
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 2,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 2,
+          "link": 3
+        },
+        "primitive_interactions": 0,
+        "wires": 3
+      },
+      "execution": {
+        "final_cells": 2,
+        "peak_live_cells": 2,
+        "primitive_interactions": 1,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 1,
+          "ee": 0,
+          "gd": 0,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 2,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 4
+      },
+      "input_tree_cells": 1,
+      "leaves": 1,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c1"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 2,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 2,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 2,
+          "link": 3
+        },
+        "primitive_interactions": 0,
+        "wires": 3
+      },
+      "execution": {
+        "final_cells": 2,
+        "peak_live_cells": 2,
+        "primitive_interactions": 1,
+        "round_widths": [
+          1
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 1,
+          "ee": 0,
+          "gd": 0,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 2,
+        "synchronous_rounds": 1,
+        "total_symbolic_cells_allocated": 4
+      },
+      "input_tree_cells": 1,
+      "leaves": 1,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c1"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 2,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 2,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 2,
+          "link": 3
+        },
+        "primitive_interactions": 0,
+        "wires": 3
+      },
+      "execution": {
+        "final_cells": 2,
+        "peak_live_cells": 2,
+        "primitive_interactions": 1,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 1,
+          "ee": 0,
+          "gd": 0,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 2,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 4
+      },
+      "input_tree_cells": 1,
+      "leaves": 1,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c1"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 2,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 2,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 2,
+          "link": 3
+        },
+        "primitive_interactions": 0,
+        "wires": 3
+      },
+      "execution": {
+        "final_cells": 2,
+        "peak_live_cells": 2,
+        "primitive_interactions": 1,
+        "round_widths": [
+          1
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 1,
+          "ee": 0,
+          "gd": 0,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 2,
+        "synchronous_rounds": 1,
+        "total_symbolic_cells_allocated": 4
+      },
+      "input_tree_cells": 1,
+      "leaves": 1,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c1"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 2,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 4,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 4,
+          "link": 5
+        },
+        "primitive_interactions": 0,
+        "wires": 5
+      },
+      "execution": {
+        "final_cells": 6,
+        "peak_live_cells": 6,
+        "primitive_interactions": 3,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 2,
+          "ee": 0,
+          "gd": 1,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 8,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 12
+      },
+      "input_tree_cells": 3,
+      "leaves": 2,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c3"
+        ],
+        [
+          "c1",
+          "c4"
+        ],
+        [
+          "c2",
+          "c5"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 6,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 4,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 4,
+          "link": 5
+        },
+        "primitive_interactions": 0,
+        "wires": 5
+      },
+      "execution": {
+        "final_cells": 6,
+        "peak_live_cells": 6,
+        "primitive_interactions": 3,
+        "round_widths": [
+          1,
+          2
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 2,
+          "ee": 0,
+          "gd": 1,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 8,
+        "synchronous_rounds": 2,
+        "total_symbolic_cells_allocated": 12
+      },
+      "input_tree_cells": 3,
+      "leaves": 2,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c3"
+        ],
+        [
+          "c1",
+          "c4"
+        ],
+        [
+          "c2",
+          "c5"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 6,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 4,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 4,
+          "link": 5
+        },
+        "primitive_interactions": 0,
+        "wires": 5
+      },
+      "execution": {
+        "final_cells": 6,
+        "peak_live_cells": 6,
+        "primitive_interactions": 3,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 2,
+          "ee": 0,
+          "gd": 1,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 8,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 12
+      },
+      "input_tree_cells": 3,
+      "leaves": 2,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c3"
+        ],
+        [
+          "c1",
+          "c4"
+        ],
+        [
+          "c2",
+          "c5"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 6,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 4,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 4,
+          "link": 5
+        },
+        "primitive_interactions": 0,
+        "wires": 5
+      },
+      "execution": {
+        "final_cells": 6,
+        "peak_live_cells": 6,
+        "primitive_interactions": 3,
+        "round_widths": [
+          1,
+          2
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 2,
+          "ee": 0,
+          "gd": 1,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 8,
+        "synchronous_rounds": 2,
+        "total_symbolic_cells_allocated": 12
+      },
+      "input_tree_cells": 3,
+      "leaves": 2,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c3"
+        ],
+        [
+          "c1",
+          "c4"
+        ],
+        [
+          "c2",
+          "c5"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 6,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 6,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 6,
+          "link": 7
+        },
+        "primitive_interactions": 0,
+        "wires": 7
+      },
+      "execution": {
+        "final_cells": 10,
+        "peak_live_cells": 10,
+        "primitive_interactions": 5,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 3,
+          "ee": 0,
+          "gd": 2,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 14,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 20
+      },
+      "input_tree_cells": 5,
+      "leaves": 3,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c5"
+        ],
+        [
+          "c1",
+          "c6"
+        ],
+        [
+          "c2",
+          "c7"
+        ],
+        [
+          "c12",
+          "c3"
+        ],
+        [
+          "c13",
+          "c4"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 10,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 6,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 6,
+          "link": 7
+        },
+        "primitive_interactions": 0,
+        "wires": 7
+      },
+      "execution": {
+        "final_cells": 10,
+        "peak_live_cells": 10,
+        "primitive_interactions": 5,
+        "round_widths": [
+          1,
+          2,
+          2
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 3,
+          "ee": 0,
+          "gd": 2,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 14,
+        "synchronous_rounds": 3,
+        "total_symbolic_cells_allocated": 20
+      },
+      "input_tree_cells": 5,
+      "leaves": 3,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c5"
+        ],
+        [
+          "c1",
+          "c6"
+        ],
+        [
+          "c2",
+          "c7"
+        ],
+        [
+          "c12",
+          "c3"
+        ],
+        [
+          "c13",
+          "c4"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 10,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 6,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 6,
+          "link": 7
+        },
+        "primitive_interactions": 0,
+        "wires": 7
+      },
+      "execution": {
+        "final_cells": 10,
+        "peak_live_cells": 10,
+        "primitive_interactions": 5,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 3,
+          "ee": 0,
+          "gd": 2,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 14,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 20
+      },
+      "input_tree_cells": 5,
+      "leaves": 3,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c5"
+        ],
+        [
+          "c1",
+          "c6"
+        ],
+        [
+          "c2",
+          "c7"
+        ],
+        [
+          "c12",
+          "c3"
+        ],
+        [
+          "c13",
+          "c4"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 10,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 6,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 6,
+          "link": 7
+        },
+        "primitive_interactions": 0,
+        "wires": 7
+      },
+      "execution": {
+        "final_cells": 10,
+        "peak_live_cells": 10,
+        "primitive_interactions": 5,
+        "round_widths": [
+          1,
+          2,
+          2
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 3,
+          "ee": 0,
+          "gd": 2,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 14,
+        "synchronous_rounds": 3,
+        "total_symbolic_cells_allocated": 20
+      },
+      "input_tree_cells": 5,
+      "leaves": 3,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c5"
+        ],
+        [
+          "c1",
+          "c6"
+        ],
+        [
+          "c2",
+          "c7"
+        ],
+        [
+          "c12",
+          "c3"
+        ],
+        [
+          "c13",
+          "c4"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 10,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 8,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 8,
+          "link": 9
+        },
+        "primitive_interactions": 0,
+        "wires": 9
+      },
+      "execution": {
+        "final_cells": 14,
+        "peak_live_cells": 14,
+        "primitive_interactions": 7,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 4,
+          "ee": 0,
+          "gd": 3,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 20,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 28
+      },
+      "input_tree_cells": 7,
+      "leaves": 4,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c7"
+        ],
+        [
+          "c1",
+          "c8"
+        ],
+        [
+          "c4",
+          "c9"
+        ],
+        [
+          "c12",
+          "c2"
+        ],
+        [
+          "c13",
+          "c3"
+        ],
+        [
+          "c16",
+          "c5"
+        ],
+        [
+          "c17",
+          "c6"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 14,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 8,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 8,
+          "link": 9
+        },
+        "primitive_interactions": 0,
+        "wires": 9
+      },
+      "execution": {
+        "final_cells": 14,
+        "peak_live_cells": 14,
+        "primitive_interactions": 7,
+        "round_widths": [
+          1,
+          2,
+          4
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 4,
+          "ee": 0,
+          "gd": 3,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 20,
+        "synchronous_rounds": 3,
+        "total_symbolic_cells_allocated": 28
+      },
+      "input_tree_cells": 7,
+      "leaves": 4,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c7"
+        ],
+        [
+          "c1",
+          "c8"
+        ],
+        [
+          "c4",
+          "c9"
+        ],
+        [
+          "c12",
+          "c2"
+        ],
+        [
+          "c13",
+          "c3"
+        ],
+        [
+          "c16",
+          "c5"
+        ],
+        [
+          "c17",
+          "c6"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 14,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 8,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 8,
+          "link": 9
+        },
+        "primitive_interactions": 0,
+        "wires": 9
+      },
+      "execution": {
+        "final_cells": 14,
+        "peak_live_cells": 14,
+        "primitive_interactions": 7,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 4,
+          "ee": 0,
+          "gd": 3,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 20,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 28
+      },
+      "input_tree_cells": 7,
+      "leaves": 4,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c7"
+        ],
+        [
+          "c1",
+          "c8"
+        ],
+        [
+          "c2",
+          "c9"
+        ],
+        [
+          "c14",
+          "c3"
+        ],
+        [
+          "c15",
+          "c4"
+        ],
+        [
+          "c20",
+          "c5"
+        ],
+        [
+          "c21",
+          "c6"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 14,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 8,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 8,
+          "link": 9
+        },
+        "primitive_interactions": 0,
+        "wires": 9
+      },
+      "execution": {
+        "final_cells": 14,
+        "peak_live_cells": 14,
+        "primitive_interactions": 7,
+        "round_widths": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 4,
+          "ee": 0,
+          "gd": 3,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 20,
+        "synchronous_rounds": 4,
+        "total_symbolic_cells_allocated": 28
+      },
+      "input_tree_cells": 7,
+      "leaves": 4,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c7"
+        ],
+        [
+          "c1",
+          "c8"
+        ],
+        [
+          "c2",
+          "c9"
+        ],
+        [
+          "c14",
+          "c3"
+        ],
+        [
+          "c15",
+          "c4"
+        ],
+        [
+          "c20",
+          "c5"
+        ],
+        [
+          "c21",
+          "c6"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 14,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 16,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 16,
+          "link": 17
+        },
+        "primitive_interactions": 0,
+        "wires": 17
+      },
+      "execution": {
+        "final_cells": 30,
+        "peak_live_cells": 30,
+        "primitive_interactions": 15,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 8,
+          "ee": 0,
+          "gd": 7,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 44,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 60
+      },
+      "input_tree_cells": 15,
+      "leaves": 8,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c15"
+        ],
+        [
+          "c1",
+          "c16"
+        ],
+        [
+          "c2",
+          "c20"
+        ],
+        [
+          "c17",
+          "c8"
+        ],
+        [
+          "c12",
+          "c29"
+        ],
+        [
+          "c13",
+          "c32"
+        ],
+        [
+          "c14",
+          "c33"
+        ],
+        [
+          "c21",
+          "c5"
+        ],
+        [
+          "c24",
+          "c3"
+        ],
+        [
+          "c25",
+          "c4"
+        ],
+        [
+          "c28",
+          "c9"
+        ],
+        [
+          "c10",
+          "c48"
+        ],
+        [
+          "c11",
+          "c49"
+        ],
+        [
+          "c40",
+          "c6"
+        ],
+        [
+          "c41",
+          "c7"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 30,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 16,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 16,
+          "link": 17
+        },
+        "primitive_interactions": 0,
+        "wires": 17
+      },
+      "execution": {
+        "final_cells": 30,
+        "peak_live_cells": 30,
+        "primitive_interactions": 15,
+        "round_widths": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 8,
+          "ee": 0,
+          "gd": 7,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 44,
+        "synchronous_rounds": 4,
+        "total_symbolic_cells_allocated": 60
+      },
+      "input_tree_cells": 15,
+      "leaves": 8,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c15"
+        ],
+        [
+          "c1",
+          "c16"
+        ],
+        [
+          "c17",
+          "c8"
+        ],
+        [
+          "c2",
+          "c20"
+        ],
+        [
+          "c12",
+          "c25"
+        ],
+        [
+          "c21",
+          "c5"
+        ],
+        [
+          "c24",
+          "c9"
+        ],
+        [
+          "c10",
+          "c40"
+        ],
+        [
+          "c11",
+          "c41"
+        ],
+        [
+          "c13",
+          "c32"
+        ],
+        [
+          "c14",
+          "c33"
+        ],
+        [
+          "c28",
+          "c3"
+        ],
+        [
+          "c29",
+          "c4"
+        ],
+        [
+          "c36",
+          "c6"
+        ],
+        [
+          "c37",
+          "c7"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 30,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 16,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 16,
+          "link": 17
+        },
+        "primitive_interactions": 0,
+        "wires": 17
+      },
+      "execution": {
+        "final_cells": 30,
+        "peak_live_cells": 30,
+        "primitive_interactions": 15,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 8,
+          "ee": 0,
+          "gd": 7,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 44,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 60
+      },
+      "input_tree_cells": 15,
+      "leaves": 8,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c15"
+        ],
+        [
+          "c1",
+          "c16"
+        ],
+        [
+          "c17",
+          "c2"
+        ],
+        [
+          "c22",
+          "c3"
+        ],
+        [
+          "c23",
+          "c4"
+        ],
+        [
+          "c28",
+          "c5"
+        ],
+        [
+          "c29",
+          "c6"
+        ],
+        [
+          "c34",
+          "c7"
+        ],
+        [
+          "c35",
+          "c8"
+        ],
+        [
+          "c10",
+          "c41"
+        ],
+        [
+          "c11",
+          "c44"
+        ],
+        [
+          "c12",
+          "c45"
+        ],
+        [
+          "c13",
+          "c50"
+        ],
+        [
+          "c14",
+          "c51"
+        ],
+        [
+          "c40",
+          "c9"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 30,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 16,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 16,
+          "link": 17
+        },
+        "primitive_interactions": 0,
+        "wires": 17
+      },
+      "execution": {
+        "final_cells": 30,
+        "peak_live_cells": 30,
+        "primitive_interactions": 15,
+        "round_widths": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 8,
+          "ee": 0,
+          "gd": 7,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 44,
+        "synchronous_rounds": 8,
+        "total_symbolic_cells_allocated": 60
+      },
+      "input_tree_cells": 15,
+      "leaves": 8,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c15"
+        ],
+        [
+          "c1",
+          "c16"
+        ],
+        [
+          "c17",
+          "c2"
+        ],
+        [
+          "c22",
+          "c3"
+        ],
+        [
+          "c23",
+          "c4"
+        ],
+        [
+          "c28",
+          "c5"
+        ],
+        [
+          "c29",
+          "c6"
+        ],
+        [
+          "c34",
+          "c7"
+        ],
+        [
+          "c35",
+          "c8"
+        ],
+        [
+          "c10",
+          "c41"
+        ],
+        [
+          "c40",
+          "c9"
+        ],
+        [
+          "c11",
+          "c44"
+        ],
+        [
+          "c12",
+          "c45"
+        ],
+        [
+          "c13",
+          "c52"
+        ],
+        [
+          "c14",
+          "c53"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 30,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 32,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 32,
+          "link": 33
+        },
+        "primitive_interactions": 0,
+        "wires": 33
+      },
+      "execution": {
+        "final_cells": 62,
+        "peak_live_cells": 62,
+        "primitive_interactions": 31,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 16,
+          "ee": 0,
+          "gd": 15,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 92,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 124
+      },
+      "input_tree_cells": 31,
+      "leaves": 16,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c31"
+        ],
+        [
+          "c1",
+          "c32"
+        ],
+        [
+          "c2",
+          "c36"
+        ],
+        [
+          "c3",
+          "c40"
+        ],
+        [
+          "c4",
+          "c44"
+        ],
+        [
+          "c16",
+          "c33"
+        ],
+        [
+          "c17",
+          "c50"
+        ],
+        [
+          "c18",
+          "c54"
+        ],
+        [
+          "c19",
+          "c58"
+        ],
+        [
+          "c20",
+          "c59"
+        ],
+        [
+          "c21",
+          "c55"
+        ],
+        [
+          "c22",
+          "c66"
+        ],
+        [
+          "c23",
+          "c67"
+        ],
+        [
+          "c24",
+          "c51"
+        ],
+        [
+          "c25",
+          "c74"
+        ],
+        [
+          "c26",
+          "c78"
+        ],
+        [
+          "c27",
+          "c79"
+        ],
+        [
+          "c28",
+          "c75"
+        ],
+        [
+          "c29",
+          "c86"
+        ],
+        [
+          "c30",
+          "c87"
+        ],
+        [
+          "c37",
+          "c9"
+        ],
+        [
+          "c10",
+          "c94"
+        ],
+        [
+          "c11",
+          "c98"
+        ],
+        [
+          "c12",
+          "c99"
+        ],
+        [
+          "c13",
+          "c95"
+        ],
+        [
+          "c41",
+          "c6"
+        ],
+        [
+          "c45",
+          "c5"
+        ],
+        [
+          "c106",
+          "c14"
+        ],
+        [
+          "c107",
+          "c15"
+        ],
+        [
+          "c110",
+          "c7"
+        ],
+        [
+          "c111",
+          "c8"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 62,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 32,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 32,
+          "link": 33
+        },
+        "primitive_interactions": 0,
+        "wires": 33
+      },
+      "execution": {
+        "final_cells": 62,
+        "peak_live_cells": 62,
+        "primitive_interactions": 31,
+        "round_widths": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 16,
+          "ee": 0,
+          "gd": 15,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 92,
+        "synchronous_rounds": 5,
+        "total_symbolic_cells_allocated": 124
+      },
+      "input_tree_cells": 31,
+      "leaves": 16,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c31"
+        ],
+        [
+          "c1",
+          "c32"
+        ],
+        [
+          "c16",
+          "c33"
+        ],
+        [
+          "c2",
+          "c36"
+        ],
+        [
+          "c17",
+          "c40"
+        ],
+        [
+          "c24",
+          "c41"
+        ],
+        [
+          "c37",
+          "c9"
+        ],
+        [
+          "c3",
+          "c44"
+        ],
+        [
+          "c10",
+          "c56"
+        ],
+        [
+          "c13",
+          "c57"
+        ],
+        [
+          "c18",
+          "c48"
+        ],
+        [
+          "c21",
+          "c49"
+        ],
+        [
+          "c25",
+          "c52"
+        ],
+        [
+          "c28",
+          "c53"
+        ],
+        [
+          "c45",
+          "c6"
+        ],
+        [
+          "c4",
+          "c60"
+        ],
+        [
+          "c5",
+          "c61"
+        ],
+        [
+          "c7",
+          "c88"
+        ],
+        [
+          "c8",
+          "c89"
+        ],
+        [
+          "c11",
+          "c64"
+        ],
+        [
+          "c12",
+          "c65"
+        ],
+        [
+          "c14",
+          "c68"
+        ],
+        [
+          "c15",
+          "c69"
+        ],
+        [
+          "c19",
+          "c72"
+        ],
+        [
+          "c20",
+          "c73"
+        ],
+        [
+          "c22",
+          "c76"
+        ],
+        [
+          "c23",
+          "c77"
+        ],
+        [
+          "c26",
+          "c80"
+        ],
+        [
+          "c27",
+          "c81"
+        ],
+        [
+          "c29",
+          "c84"
+        ],
+        [
+          "c30",
+          "c85"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 62,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 32,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 32,
+          "link": 33
+        },
+        "primitive_interactions": 0,
+        "wires": 33
+      },
+      "execution": {
+        "final_cells": 62,
+        "peak_live_cells": 62,
+        "primitive_interactions": 31,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 16,
+          "ee": 0,
+          "gd": 15,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 92,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 124
+      },
+      "input_tree_cells": 31,
+      "leaves": 16,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c31"
+        ],
+        [
+          "c1",
+          "c32"
+        ],
+        [
+          "c2",
+          "c33"
+        ],
+        [
+          "c3",
+          "c38"
+        ],
+        [
+          "c39",
+          "c4"
+        ],
+        [
+          "c44",
+          "c5"
+        ],
+        [
+          "c45",
+          "c6"
+        ],
+        [
+          "c50",
+          "c7"
+        ],
+        [
+          "c51",
+          "c8"
+        ],
+        [
+          "c10",
+          "c57"
+        ],
+        [
+          "c11",
+          "c60"
+        ],
+        [
+          "c12",
+          "c61"
+        ],
+        [
+          "c13",
+          "c66"
+        ],
+        [
+          "c14",
+          "c67"
+        ],
+        [
+          "c15",
+          "c72"
+        ],
+        [
+          "c16",
+          "c73"
+        ],
+        [
+          "c17",
+          "c78"
+        ],
+        [
+          "c18",
+          "c79"
+        ],
+        [
+          "c19",
+          "c84"
+        ],
+        [
+          "c20",
+          "c85"
+        ],
+        [
+          "c21",
+          "c90"
+        ],
+        [
+          "c22",
+          "c91"
+        ],
+        [
+          "c23",
+          "c96"
+        ],
+        [
+          "c24",
+          "c97"
+        ],
+        [
+          "c56",
+          "c9"
+        ],
+        [
+          "c102",
+          "c25"
+        ],
+        [
+          "c103",
+          "c26"
+        ],
+        [
+          "c110",
+          "c27"
+        ],
+        [
+          "c111",
+          "c28"
+        ],
+        [
+          "c116",
+          "c29"
+        ],
+        [
+          "c117",
+          "c30"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 62,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 32,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 32,
+          "link": 33
+        },
+        "primitive_interactions": 0,
+        "wires": 33
+      },
+      "execution": {
+        "final_cells": 62,
+        "peak_live_cells": 62,
+        "primitive_interactions": 31,
+        "round_widths": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 16,
+          "ee": 0,
+          "gd": 15,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 92,
+        "synchronous_rounds": 16,
+        "total_symbolic_cells_allocated": 124
+      },
+      "input_tree_cells": 31,
+      "leaves": 16,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c31"
+        ],
+        [
+          "c1",
+          "c32"
+        ],
+        [
+          "c2",
+          "c33"
+        ],
+        [
+          "c3",
+          "c38"
+        ],
+        [
+          "c39",
+          "c4"
+        ],
+        [
+          "c44",
+          "c5"
+        ],
+        [
+          "c45",
+          "c6"
+        ],
+        [
+          "c50",
+          "c7"
+        ],
+        [
+          "c51",
+          "c8"
+        ],
+        [
+          "c10",
+          "c57"
+        ],
+        [
+          "c56",
+          "c9"
+        ],
+        [
+          "c11",
+          "c60"
+        ],
+        [
+          "c12",
+          "c61"
+        ],
+        [
+          "c13",
+          "c68"
+        ],
+        [
+          "c14",
+          "c69"
+        ],
+        [
+          "c15",
+          "c74"
+        ],
+        [
+          "c16",
+          "c75"
+        ],
+        [
+          "c17",
+          "c80"
+        ],
+        [
+          "c18",
+          "c81"
+        ],
+        [
+          "c19",
+          "c86"
+        ],
+        [
+          "c20",
+          "c87"
+        ],
+        [
+          "c21",
+          "c92"
+        ],
+        [
+          "c22",
+          "c93"
+        ],
+        [
+          "c23",
+          "c98"
+        ],
+        [
+          "c24",
+          "c99"
+        ],
+        [
+          "c104",
+          "c25"
+        ],
+        [
+          "c105",
+          "c26"
+        ],
+        [
+          "c110",
+          "c27"
+        ],
+        [
+          "c111",
+          "c28"
+        ],
+        [
+          "c116",
+          "c29"
+        ],
+        [
+          "c117",
+          "c30"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 62,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 64,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 64,
+          "link": 65
+        },
+        "primitive_interactions": 0,
+        "wires": 65
+      },
+      "execution": {
+        "final_cells": 126,
+        "peak_live_cells": 126,
+        "primitive_interactions": 63,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 32,
+          "ee": 0,
+          "gd": 31,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 188,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 252
+      },
+      "input_tree_cells": 63,
+      "leaves": 32,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c63"
+        ],
+        [
+          "c1",
+          "c64"
+        ],
+        [
+          "c2",
+          "c68"
+        ],
+        [
+          "c3",
+          "c72"
+        ],
+        [
+          "c4",
+          "c76"
+        ],
+        [
+          "c5",
+          "c80"
+        ],
+        [
+          "c6",
+          "c81"
+        ],
+        [
+          "c7",
+          "c77"
+        ],
+        [
+          "c8",
+          "c88"
+        ],
+        [
+          "c10",
+          "c73"
+        ],
+        [
+          "c11",
+          "c94"
+        ],
+        [
+          "c12",
+          "c98"
+        ],
+        [
+          "c13",
+          "c99"
+        ],
+        [
+          "c14",
+          "c95"
+        ],
+        [
+          "c17",
+          "c69"
+        ],
+        [
+          "c32",
+          "c65"
+        ],
+        [
+          "c89",
+          "c9"
+        ],
+        [
+          "c106",
+          "c15"
+        ],
+        [
+          "c107",
+          "c16"
+        ],
+        [
+          "c110",
+          "c18"
+        ],
+        [
+          "c111",
+          "c25"
+        ],
+        [
+          "c114",
+          "c33"
+        ],
+        [
+          "c115",
+          "c48"
+        ],
+        [
+          "c124",
+          "c19"
+        ],
+        [
+          "c125",
+          "c22"
+        ],
+        [
+          "c128",
+          "c26"
+        ],
+        [
+          "c129",
+          "c29"
+        ],
+        [
+          "c132",
+          "c34"
+        ],
+        [
+          "c133",
+          "c41"
+        ],
+        [
+          "c136",
+          "c49"
+        ],
+        [
+          "c137",
+          "c56"
+        ],
+        [
+          "c140",
+          "c20"
+        ],
+        [
+          "c141",
+          "c21"
+        ],
+        [
+          "c144",
+          "c23"
+        ],
+        [
+          "c145",
+          "c24"
+        ],
+        [
+          "c148",
+          "c27"
+        ],
+        [
+          "c149",
+          "c28"
+        ],
+        [
+          "c152",
+          "c30"
+        ],
+        [
+          "c153",
+          "c31"
+        ],
+        [
+          "c156",
+          "c35"
+        ],
+        [
+          "c157",
+          "c38"
+        ],
+        [
+          "c160",
+          "c42"
+        ],
+        [
+          "c161",
+          "c45"
+        ],
+        [
+          "c164",
+          "c50"
+        ],
+        [
+          "c165",
+          "c53"
+        ],
+        [
+          "c168",
+          "c57"
+        ],
+        [
+          "c169",
+          "c60"
+        ],
+        [
+          "c188",
+          "c36"
+        ],
+        [
+          "c189",
+          "c37"
+        ],
+        [
+          "c192",
+          "c39"
+        ],
+        [
+          "c193",
+          "c40"
+        ],
+        [
+          "c196",
+          "c43"
+        ],
+        [
+          "c197",
+          "c44"
+        ],
+        [
+          "c200",
+          "c46"
+        ],
+        [
+          "c201",
+          "c47"
+        ],
+        [
+          "c204",
+          "c51"
+        ],
+        [
+          "c205",
+          "c52"
+        ],
+        [
+          "c208",
+          "c54"
+        ],
+        [
+          "c209",
+          "c55"
+        ],
+        [
+          "c212",
+          "c58"
+        ],
+        [
+          "c213",
+          "c59"
+        ],
+        [
+          "c216",
+          "c61"
+        ],
+        [
+          "c217",
+          "c62"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 126,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 64,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 64,
+          "link": 65
+        },
+        "primitive_interactions": 0,
+        "wires": 65
+      },
+      "execution": {
+        "final_cells": 126,
+        "peak_live_cells": 126,
+        "primitive_interactions": 63,
+        "round_widths": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 32,
+          "ee": 0,
+          "gd": 31,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 188,
+        "synchronous_rounds": 6,
+        "total_symbolic_cells_allocated": 252
+      },
+      "input_tree_cells": 63,
+      "leaves": 32,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c63"
+        ],
+        [
+          "c1",
+          "c64"
+        ],
+        [
+          "c32",
+          "c65"
+        ],
+        [
+          "c2",
+          "c68"
+        ],
+        [
+          "c17",
+          "c69"
+        ],
+        [
+          "c33",
+          "c72"
+        ],
+        [
+          "c48",
+          "c73"
+        ],
+        [
+          "c3",
+          "c76"
+        ],
+        [
+          "c10",
+          "c77"
+        ],
+        [
+          "c18",
+          "c80"
+        ],
+        [
+          "c25",
+          "c81"
+        ],
+        [
+          "c34",
+          "c84"
+        ],
+        [
+          "c41",
+          "c85"
+        ],
+        [
+          "c49",
+          "c88"
+        ],
+        [
+          "c56",
+          "c89"
+        ],
+        [
+          "c4",
+          "c92"
+        ],
+        [
+          "c7",
+          "c93"
+        ],
+        [
+          "c11",
+          "c96"
+        ],
+        [
+          "c14",
+          "c97"
+        ],
+        [
+          "c100",
+          "c19"
+        ],
+        [
+          "c101",
+          "c22"
+        ],
+        [
+          "c104",
+          "c26"
+        ],
+        [
+          "c105",
+          "c29"
+        ],
+        [
+          "c108",
+          "c35"
+        ],
+        [
+          "c109",
+          "c38"
+        ],
+        [
+          "c112",
+          "c42"
+        ],
+        [
+          "c113",
+          "c45"
+        ],
+        [
+          "c116",
+          "c50"
+        ],
+        [
+          "c117",
+          "c53"
+        ],
+        [
+          "c120",
+          "c57"
+        ],
+        [
+          "c121",
+          "c60"
+        ],
+        [
+          "c12",
+          "c132"
+        ],
+        [
+          "c13",
+          "c133"
+        ],
+        [
+          "c124",
+          "c5"
+        ],
+        [
+          "c125",
+          "c6"
+        ],
+        [
+          "c128",
+          "c8"
+        ],
+        [
+          "c129",
+          "c9"
+        ],
+        [
+          "c136",
+          "c15"
+        ],
+        [
+          "c137",
+          "c16"
+        ],
+        [
+          "c140",
+          "c20"
+        ],
+        [
+          "c141",
+          "c21"
+        ],
+        [
+          "c144",
+          "c23"
+        ],
+        [
+          "c145",
+          "c24"
+        ],
+        [
+          "c148",
+          "c27"
+        ],
+        [
+          "c149",
+          "c28"
+        ],
+        [
+          "c152",
+          "c30"
+        ],
+        [
+          "c153",
+          "c31"
+        ],
+        [
+          "c156",
+          "c36"
+        ],
+        [
+          "c157",
+          "c37"
+        ],
+        [
+          "c160",
+          "c39"
+        ],
+        [
+          "c161",
+          "c40"
+        ],
+        [
+          "c164",
+          "c43"
+        ],
+        [
+          "c165",
+          "c44"
+        ],
+        [
+          "c168",
+          "c46"
+        ],
+        [
+          "c169",
+          "c47"
+        ],
+        [
+          "c172",
+          "c51"
+        ],
+        [
+          "c173",
+          "c52"
+        ],
+        [
+          "c176",
+          "c54"
+        ],
+        [
+          "c177",
+          "c55"
+        ],
+        [
+          "c180",
+          "c58"
+        ],
+        [
+          "c181",
+          "c59"
+        ],
+        [
+          "c184",
+          "c61"
+        ],
+        [
+          "c185",
+          "c62"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 126,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 64,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 64,
+          "link": 65
+        },
+        "primitive_interactions": 0,
+        "wires": 65
+      },
+      "execution": {
+        "final_cells": 126,
+        "peak_live_cells": 126,
+        "primitive_interactions": 63,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 32,
+          "ee": 0,
+          "gd": 31,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 188,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 252
+      },
+      "input_tree_cells": 63,
+      "leaves": 32,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c63"
+        ],
+        [
+          "c1",
+          "c64"
+        ],
+        [
+          "c2",
+          "c65"
+        ],
+        [
+          "c3",
+          "c70"
+        ],
+        [
+          "c4",
+          "c71"
+        ],
+        [
+          "c5",
+          "c76"
+        ],
+        [
+          "c6",
+          "c77"
+        ],
+        [
+          "c7",
+          "c82"
+        ],
+        [
+          "c8",
+          "c83"
+        ],
+        [
+          "c10",
+          "c89"
+        ],
+        [
+          "c11",
+          "c92"
+        ],
+        [
+          "c12",
+          "c93"
+        ],
+        [
+          "c13",
+          "c98"
+        ],
+        [
+          "c14",
+          "c99"
+        ],
+        [
+          "c88",
+          "c9"
+        ],
+        [
+          "c104",
+          "c15"
+        ],
+        [
+          "c105",
+          "c16"
+        ],
+        [
+          "c112",
+          "c17"
+        ],
+        [
+          "c113",
+          "c18"
+        ],
+        [
+          "c118",
+          "c19"
+        ],
+        [
+          "c119",
+          "c20"
+        ],
+        [
+          "c124",
+          "c21"
+        ],
+        [
+          "c125",
+          "c22"
+        ],
+        [
+          "c130",
+          "c23"
+        ],
+        [
+          "c131",
+          "c24"
+        ],
+        [
+          "c136",
+          "c25"
+        ],
+        [
+          "c137",
+          "c26"
+        ],
+        [
+          "c142",
+          "c27"
+        ],
+        [
+          "c143",
+          "c28"
+        ],
+        [
+          "c148",
+          "c29"
+        ],
+        [
+          "c149",
+          "c30"
+        ],
+        [
+          "c154",
+          "c31"
+        ],
+        [
+          "c155",
+          "c32"
+        ],
+        [
+          "c160",
+          "c33"
+        ],
+        [
+          "c161",
+          "c34"
+        ],
+        [
+          "c166",
+          "c35"
+        ],
+        [
+          "c167",
+          "c36"
+        ],
+        [
+          "c172",
+          "c37"
+        ],
+        [
+          "c173",
+          "c38"
+        ],
+        [
+          "c178",
+          "c39"
+        ],
+        [
+          "c179",
+          "c40"
+        ],
+        [
+          "c184",
+          "c41"
+        ],
+        [
+          "c185",
+          "c42"
+        ],
+        [
+          "c190",
+          "c43"
+        ],
+        [
+          "c191",
+          "c44"
+        ],
+        [
+          "c196",
+          "c45"
+        ],
+        [
+          "c197",
+          "c46"
+        ],
+        [
+          "c202",
+          "c47"
+        ],
+        [
+          "c203",
+          "c48"
+        ],
+        [
+          "c208",
+          "c49"
+        ],
+        [
+          "c209",
+          "c50"
+        ],
+        [
+          "c214",
+          "c51"
+        ],
+        [
+          "c215",
+          "c52"
+        ],
+        [
+          "c220",
+          "c53"
+        ],
+        [
+          "c221",
+          "c54"
+        ],
+        [
+          "c226",
+          "c55"
+        ],
+        [
+          "c227",
+          "c56"
+        ],
+        [
+          "c232",
+          "c57"
+        ],
+        [
+          "c233",
+          "c58"
+        ],
+        [
+          "c238",
+          "c59"
+        ],
+        [
+          "c239",
+          "c60"
+        ],
+        [
+          "c244",
+          "c61"
+        ],
+        [
+          "c245",
+          "c62"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 126,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 64,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 64,
+          "link": 65
+        },
+        "primitive_interactions": 0,
+        "wires": 65
+      },
+      "execution": {
+        "final_cells": 126,
+        "peak_live_cells": 126,
+        "primitive_interactions": 63,
+        "round_widths": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 32,
+          "ee": 0,
+          "gd": 31,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 188,
+        "synchronous_rounds": 32,
+        "total_symbolic_cells_allocated": 252
+      },
+      "input_tree_cells": 63,
+      "leaves": 32,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c63"
+        ],
+        [
+          "c1",
+          "c64"
+        ],
+        [
+          "c2",
+          "c65"
+        ],
+        [
+          "c3",
+          "c70"
+        ],
+        [
+          "c4",
+          "c71"
+        ],
+        [
+          "c5",
+          "c76"
+        ],
+        [
+          "c6",
+          "c77"
+        ],
+        [
+          "c7",
+          "c82"
+        ],
+        [
+          "c8",
+          "c83"
+        ],
+        [
+          "c10",
+          "c89"
+        ],
+        [
+          "c88",
+          "c9"
+        ],
+        [
+          "c11",
+          "c92"
+        ],
+        [
+          "c12",
+          "c93"
+        ],
+        [
+          "c100",
+          "c13"
+        ],
+        [
+          "c101",
+          "c14"
+        ],
+        [
+          "c106",
+          "c15"
+        ],
+        [
+          "c107",
+          "c16"
+        ],
+        [
+          "c112",
+          "c17"
+        ],
+        [
+          "c113",
+          "c18"
+        ],
+        [
+          "c118",
+          "c19"
+        ],
+        [
+          "c119",
+          "c20"
+        ],
+        [
+          "c124",
+          "c21"
+        ],
+        [
+          "c125",
+          "c22"
+        ],
+        [
+          "c130",
+          "c23"
+        ],
+        [
+          "c131",
+          "c24"
+        ],
+        [
+          "c136",
+          "c25"
+        ],
+        [
+          "c137",
+          "c26"
+        ],
+        [
+          "c142",
+          "c27"
+        ],
+        [
+          "c143",
+          "c28"
+        ],
+        [
+          "c148",
+          "c29"
+        ],
+        [
+          "c149",
+          "c30"
+        ],
+        [
+          "c154",
+          "c31"
+        ],
+        [
+          "c155",
+          "c32"
+        ],
+        [
+          "c160",
+          "c33"
+        ],
+        [
+          "c161",
+          "c34"
+        ],
+        [
+          "c166",
+          "c35"
+        ],
+        [
+          "c167",
+          "c36"
+        ],
+        [
+          "c172",
+          "c37"
+        ],
+        [
+          "c173",
+          "c38"
+        ],
+        [
+          "c178",
+          "c39"
+        ],
+        [
+          "c179",
+          "c40"
+        ],
+        [
+          "c184",
+          "c41"
+        ],
+        [
+          "c185",
+          "c42"
+        ],
+        [
+          "c190",
+          "c43"
+        ],
+        [
+          "c191",
+          "c44"
+        ],
+        [
+          "c196",
+          "c45"
+        ],
+        [
+          "c197",
+          "c46"
+        ],
+        [
+          "c202",
+          "c47"
+        ],
+        [
+          "c203",
+          "c48"
+        ],
+        [
+          "c208",
+          "c49"
+        ],
+        [
+          "c209",
+          "c50"
+        ],
+        [
+          "c214",
+          "c51"
+        ],
+        [
+          "c215",
+          "c52"
+        ],
+        [
+          "c220",
+          "c53"
+        ],
+        [
+          "c221",
+          "c54"
+        ],
+        [
+          "c226",
+          "c55"
+        ],
+        [
+          "c227",
+          "c56"
+        ],
+        [
+          "c232",
+          "c57"
+        ],
+        [
+          "c233",
+          "c58"
+        ],
+        [
+          "c238",
+          "c59"
+        ],
+        [
+          "c239",
+          "c60"
+        ],
+        [
+          "c244",
+          "c61"
+        ],
+        [
+          "c245",
+          "c62"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 126,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 128,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 128,
+          "link": 129
+        },
+        "primitive_interactions": 0,
+        "wires": 129
+      },
+      "execution": {
+        "final_cells": 254,
+        "peak_live_cells": 254,
+        "primitive_interactions": 127,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 64,
+          "ee": 0,
+          "gd": 63,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 380,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 508
+      },
+      "input_tree_cells": 127,
+      "leaves": 64,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c127"
+        ],
+        [
+          "c1",
+          "c128"
+        ],
+        [
+          "c129",
+          "c64"
+        ],
+        [
+          "c132",
+          "c2"
+        ],
+        [
+          "c133",
+          "c33"
+        ],
+        [
+          "c136",
+          "c65"
+        ],
+        [
+          "c137",
+          "c96"
+        ],
+        [
+          "c112",
+          "c153"
+        ],
+        [
+          "c113",
+          "c156"
+        ],
+        [
+          "c114",
+          "c160"
+        ],
+        [
+          "c115",
+          "c164"
+        ],
+        [
+          "c116",
+          "c165"
+        ],
+        [
+          "c117",
+          "c161"
+        ],
+        [
+          "c118",
+          "c172"
+        ],
+        [
+          "c119",
+          "c173"
+        ],
+        [
+          "c120",
+          "c157"
+        ],
+        [
+          "c121",
+          "c180"
+        ],
+        [
+          "c122",
+          "c184"
+        ],
+        [
+          "c123",
+          "c185"
+        ],
+        [
+          "c124",
+          "c181"
+        ],
+        [
+          "c125",
+          "c192"
+        ],
+        [
+          "c126",
+          "c193"
+        ],
+        [
+          "c140",
+          "c3"
+        ],
+        [
+          "c11",
+          "c201"
+        ],
+        [
+          "c12",
+          "c204"
+        ],
+        [
+          "c13",
+          "c208"
+        ],
+        [
+          "c14",
+          "c209"
+        ],
+        [
+          "c15",
+          "c205"
+        ],
+        [
+          "c16",
+          "c216"
+        ],
+        [
+          "c17",
+          "c217"
+        ],
+        [
+          "c141",
+          "c18"
+        ],
+        [
+          "c19",
+          "c224"
+        ],
+        [
+          "c20",
+          "c228"
+        ],
+        [
+          "c21",
+          "c232"
+        ],
+        [
+          "c22",
+          "c233"
+        ],
+        [
+          "c144",
+          "c34"
+        ],
+        [
+          "c145",
+          "c49"
+        ],
+        [
+          "c148",
+          "c66"
+        ],
+        [
+          "c149",
+          "c81"
+        ],
+        [
+          "c152",
+          "c97"
+        ],
+        [
+          "c105",
+          "c257"
+        ],
+        [
+          "c106",
+          "c260"
+        ],
+        [
+          "c107",
+          "c264"
+        ],
+        [
+          "c108",
+          "c265"
+        ],
+        [
+          "c109",
+          "c261"
+        ],
+        [
+          "c110",
+          "c272"
+        ],
+        [
+          "c111",
+          "c273"
+        ],
+        [
+          "c200",
+          "c4"
+        ],
+        [
+          "c225",
+          "c26"
+        ],
+        [
+          "c27",
+          "c284"
+        ],
+        [
+          "c28",
+          "c288"
+        ],
+        [
+          "c229",
+          "c23"
+        ],
+        [
+          "c24",
+          "c294"
+        ],
+        [
+          "c25",
+          "c295"
+        ],
+        [
+          "c240",
+          "c35"
+        ],
+        [
+          "c241",
+          "c42"
+        ],
+        [
+          "c244",
+          "c50"
+        ],
+        [
+          "c245",
+          "c57"
+        ],
+        [
+          "c248",
+          "c67"
+        ],
+        [
+          "c249",
+          "c74"
+        ],
+        [
+          "c252",
+          "c82"
+        ],
+        [
+          "c253",
+          "c89"
+        ],
+        [
+          "c256",
+          "c98"
+        ],
+        [
+          "c102",
+          "c335"
+        ],
+        [
+          "c103",
+          "c338"
+        ],
+        [
+          "c104",
+          "c339"
+        ],
+        [
+          "c280",
+          "c5"
+        ],
+        [
+          "c281",
+          "c8"
+        ],
+        [
+          "c10",
+          "c351"
+        ],
+        [
+          "c285",
+          "c30"
+        ],
+        [
+          "c31",
+          "c356"
+        ],
+        [
+          "c32",
+          "c357"
+        ],
+        [
+          "c289",
+          "c29"
+        ],
+        [
+          "c302",
+          "c36"
+        ],
+        [
+          "c303",
+          "c39"
+        ],
+        [
+          "c306",
+          "c43"
+        ],
+        [
+          "c307",
+          "c46"
+        ],
+        [
+          "c310",
+          "c51"
+        ],
+        [
+          "c311",
+          "c54"
+        ],
+        [
+          "c314",
+          "c58"
+        ],
+        [
+          "c315",
+          "c61"
+        ],
+        [
+          "c318",
+          "c68"
+        ],
+        [
+          "c319",
+          "c71"
+        ],
+        [
+          "c322",
+          "c75"
+        ],
+        [
+          "c323",
+          "c78"
+        ],
+        [
+          "c326",
+          "c83"
+        ],
+        [
+          "c327",
+          "c86"
+        ],
+        [
+          "c330",
+          "c90"
+        ],
+        [
+          "c331",
+          "c93"
+        ],
+        [
+          "c334",
+          "c99"
+        ],
+        [
+          "c100",
+          "c430"
+        ],
+        [
+          "c101",
+          "c431"
+        ],
+        [
+          "c346",
+          "c6"
+        ],
+        [
+          "c347",
+          "c7"
+        ],
+        [
+          "c350",
+          "c9"
+        ],
+        [
+          "c366",
+          "c37"
+        ],
+        [
+          "c367",
+          "c38"
+        ],
+        [
+          "c370",
+          "c40"
+        ],
+        [
+          "c371",
+          "c41"
+        ],
+        [
+          "c374",
+          "c44"
+        ],
+        [
+          "c375",
+          "c45"
+        ],
+        [
+          "c378",
+          "c47"
+        ],
+        [
+          "c379",
+          "c48"
+        ],
+        [
+          "c382",
+          "c52"
+        ],
+        [
+          "c383",
+          "c53"
+        ],
+        [
+          "c386",
+          "c55"
+        ],
+        [
+          "c387",
+          "c56"
+        ],
+        [
+          "c390",
+          "c59"
+        ],
+        [
+          "c391",
+          "c60"
+        ],
+        [
+          "c394",
+          "c62"
+        ],
+        [
+          "c395",
+          "c63"
+        ],
+        [
+          "c398",
+          "c69"
+        ],
+        [
+          "c399",
+          "c70"
+        ],
+        [
+          "c402",
+          "c72"
+        ],
+        [
+          "c403",
+          "c73"
+        ],
+        [
+          "c406",
+          "c76"
+        ],
+        [
+          "c407",
+          "c77"
+        ],
+        [
+          "c410",
+          "c79"
+        ],
+        [
+          "c411",
+          "c80"
+        ],
+        [
+          "c414",
+          "c84"
+        ],
+        [
+          "c415",
+          "c85"
+        ],
+        [
+          "c418",
+          "c87"
+        ],
+        [
+          "c419",
+          "c88"
+        ],
+        [
+          "c422",
+          "c91"
+        ],
+        [
+          "c423",
+          "c92"
+        ],
+        [
+          "c426",
+          "c94"
+        ],
+        [
+          "c427",
+          "c95"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 254,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 128,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 128,
+          "link": 129
+        },
+        "primitive_interactions": 0,
+        "wires": 129
+      },
+      "execution": {
+        "final_cells": 254,
+        "peak_live_cells": 254,
+        "primitive_interactions": 127,
+        "round_widths": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 64,
+          "ee": 0,
+          "gd": 63,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 380,
+        "synchronous_rounds": 7,
+        "total_symbolic_cells_allocated": 508
+      },
+      "input_tree_cells": 127,
+      "leaves": 64,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c127"
+        ],
+        [
+          "c1",
+          "c128"
+        ],
+        [
+          "c129",
+          "c64"
+        ],
+        [
+          "c132",
+          "c2"
+        ],
+        [
+          "c133",
+          "c33"
+        ],
+        [
+          "c136",
+          "c65"
+        ],
+        [
+          "c137",
+          "c96"
+        ],
+        [
+          "c112",
+          "c153"
+        ],
+        [
+          "c140",
+          "c3"
+        ],
+        [
+          "c141",
+          "c18"
+        ],
+        [
+          "c144",
+          "c34"
+        ],
+        [
+          "c145",
+          "c49"
+        ],
+        [
+          "c148",
+          "c66"
+        ],
+        [
+          "c149",
+          "c81"
+        ],
+        [
+          "c152",
+          "c97"
+        ],
+        [
+          "c11",
+          "c161"
+        ],
+        [
+          "c105",
+          "c185"
+        ],
+        [
+          "c113",
+          "c156"
+        ],
+        [
+          "c120",
+          "c157"
+        ],
+        [
+          "c160",
+          "c4"
+        ],
+        [
+          "c164",
+          "c19"
+        ],
+        [
+          "c165",
+          "c26"
+        ],
+        [
+          "c168",
+          "c35"
+        ],
+        [
+          "c169",
+          "c42"
+        ],
+        [
+          "c172",
+          "c50"
+        ],
+        [
+          "c173",
+          "c57"
+        ],
+        [
+          "c176",
+          "c67"
+        ],
+        [
+          "c177",
+          "c74"
+        ],
+        [
+          "c180",
+          "c82"
+        ],
+        [
+          "c181",
+          "c89"
+        ],
+        [
+          "c184",
+          "c98"
+        ],
+        [
+          "c12",
+          "c188"
+        ],
+        [
+          "c15",
+          "c189"
+        ],
+        [
+          "c20",
+          "c208"
+        ],
+        [
+          "c102",
+          "c249"
+        ],
+        [
+          "c106",
+          "c192"
+        ],
+        [
+          "c109",
+          "c193"
+        ],
+        [
+          "c114",
+          "c196"
+        ],
+        [
+          "c117",
+          "c197"
+        ],
+        [
+          "c121",
+          "c200"
+        ],
+        [
+          "c124",
+          "c201"
+        ],
+        [
+          "c204",
+          "c5"
+        ],
+        [
+          "c205",
+          "c8"
+        ],
+        [
+          "c209",
+          "c23"
+        ],
+        [
+          "c212",
+          "c27"
+        ],
+        [
+          "c213",
+          "c30"
+        ],
+        [
+          "c216",
+          "c36"
+        ],
+        [
+          "c217",
+          "c39"
+        ],
+        [
+          "c220",
+          "c43"
+        ],
+        [
+          "c221",
+          "c46"
+        ],
+        [
+          "c224",
+          "c51"
+        ],
+        [
+          "c225",
+          "c54"
+        ],
+        [
+          "c228",
+          "c58"
+        ],
+        [
+          "c229",
+          "c61"
+        ],
+        [
+          "c232",
+          "c68"
+        ],
+        [
+          "c233",
+          "c71"
+        ],
+        [
+          "c236",
+          "c75"
+        ],
+        [
+          "c237",
+          "c78"
+        ],
+        [
+          "c240",
+          "c83"
+        ],
+        [
+          "c241",
+          "c86"
+        ],
+        [
+          "c244",
+          "c90"
+        ],
+        [
+          "c245",
+          "c93"
+        ],
+        [
+          "c248",
+          "c99"
+        ],
+        [
+          "c10",
+          "c297"
+        ],
+        [
+          "c13",
+          "c252"
+        ],
+        [
+          "c14",
+          "c253"
+        ],
+        [
+          "c16",
+          "c256"
+        ],
+        [
+          "c17",
+          "c257"
+        ],
+        [
+          "c21",
+          "c260"
+        ],
+        [
+          "c22",
+          "c261"
+        ],
+        [
+          "c24",
+          "c300"
+        ],
+        [
+          "c25",
+          "c301"
+        ],
+        [
+          "c28",
+          "c304"
+        ],
+        [
+          "c29",
+          "c305"
+        ],
+        [
+          "c100",
+          "c376"
+        ],
+        [
+          "c101",
+          "c377"
+        ],
+        [
+          "c103",
+          "c264"
+        ],
+        [
+          "c104",
+          "c265"
+        ],
+        [
+          "c107",
+          "c268"
+        ],
+        [
+          "c108",
+          "c269"
+        ],
+        [
+          "c110",
+          "c272"
+        ],
+        [
+          "c111",
+          "c273"
+        ],
+        [
+          "c115",
+          "c276"
+        ],
+        [
+          "c116",
+          "c277"
+        ],
+        [
+          "c118",
+          "c280"
+        ],
+        [
+          "c119",
+          "c281"
+        ],
+        [
+          "c122",
+          "c284"
+        ],
+        [
+          "c123",
+          "c285"
+        ],
+        [
+          "c125",
+          "c288"
+        ],
+        [
+          "c126",
+          "c289"
+        ],
+        [
+          "c292",
+          "c6"
+        ],
+        [
+          "c293",
+          "c7"
+        ],
+        [
+          "c296",
+          "c9"
+        ],
+        [
+          "c308",
+          "c31"
+        ],
+        [
+          "c309",
+          "c32"
+        ],
+        [
+          "c312",
+          "c37"
+        ],
+        [
+          "c313",
+          "c38"
+        ],
+        [
+          "c316",
+          "c40"
+        ],
+        [
+          "c317",
+          "c41"
+        ],
+        [
+          "c320",
+          "c44"
+        ],
+        [
+          "c321",
+          "c45"
+        ],
+        [
+          "c324",
+          "c47"
+        ],
+        [
+          "c325",
+          "c48"
+        ],
+        [
+          "c328",
+          "c52"
+        ],
+        [
+          "c329",
+          "c53"
+        ],
+        [
+          "c332",
+          "c55"
+        ],
+        [
+          "c333",
+          "c56"
+        ],
+        [
+          "c336",
+          "c59"
+        ],
+        [
+          "c337",
+          "c60"
+        ],
+        [
+          "c340",
+          "c62"
+        ],
+        [
+          "c341",
+          "c63"
+        ],
+        [
+          "c344",
+          "c69"
+        ],
+        [
+          "c345",
+          "c70"
+        ],
+        [
+          "c348",
+          "c72"
+        ],
+        [
+          "c349",
+          "c73"
+        ],
+        [
+          "c352",
+          "c76"
+        ],
+        [
+          "c353",
+          "c77"
+        ],
+        [
+          "c356",
+          "c79"
+        ],
+        [
+          "c357",
+          "c80"
+        ],
+        [
+          "c360",
+          "c84"
+        ],
+        [
+          "c361",
+          "c85"
+        ],
+        [
+          "c364",
+          "c87"
+        ],
+        [
+          "c365",
+          "c88"
+        ],
+        [
+          "c368",
+          "c91"
+        ],
+        [
+          "c369",
+          "c92"
+        ],
+        [
+          "c372",
+          "c94"
+        ],
+        [
+          "c373",
+          "c95"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 254,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "balanced"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 128,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 128,
+          "link": 129
+        },
+        "primitive_interactions": 0,
+        "wires": 129
+      },
+      "execution": {
+        "final_cells": 254,
+        "peak_live_cells": 254,
+        "primitive_interactions": 127,
+        "round_widths": null,
+        "rule_census": {
+          "dd": 0,
+          "de": 64,
+          "ee": 0,
+          "gd": 63,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 380,
+        "synchronous_rounds": null,
+        "total_symbolic_cells_allocated": 508
+      },
+      "input_tree_cells": 127,
+      "leaves": 64,
+      "policy": "first-active",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c127"
+        ],
+        [
+          "c1",
+          "c128"
+        ],
+        [
+          "c129",
+          "c2"
+        ],
+        [
+          "c134",
+          "c3"
+        ],
+        [
+          "c135",
+          "c4"
+        ],
+        [
+          "c140",
+          "c5"
+        ],
+        [
+          "c141",
+          "c6"
+        ],
+        [
+          "c146",
+          "c7"
+        ],
+        [
+          "c147",
+          "c8"
+        ],
+        [
+          "c10",
+          "c153"
+        ],
+        [
+          "c11",
+          "c156"
+        ],
+        [
+          "c12",
+          "c157"
+        ],
+        [
+          "c13",
+          "c162"
+        ],
+        [
+          "c14",
+          "c163"
+        ],
+        [
+          "c15",
+          "c168"
+        ],
+        [
+          "c16",
+          "c169"
+        ],
+        [
+          "c17",
+          "c174"
+        ],
+        [
+          "c152",
+          "c9"
+        ],
+        [
+          "c175",
+          "c18"
+        ],
+        [
+          "c182",
+          "c19"
+        ],
+        [
+          "c183",
+          "c20"
+        ],
+        [
+          "c188",
+          "c21"
+        ],
+        [
+          "c189",
+          "c22"
+        ],
+        [
+          "c194",
+          "c23"
+        ],
+        [
+          "c195",
+          "c24"
+        ],
+        [
+          "c200",
+          "c25"
+        ],
+        [
+          "c201",
+          "c26"
+        ],
+        [
+          "c206",
+          "c27"
+        ],
+        [
+          "c207",
+          "c28"
+        ],
+        [
+          "c212",
+          "c29"
+        ],
+        [
+          "c213",
+          "c30"
+        ],
+        [
+          "c218",
+          "c31"
+        ],
+        [
+          "c219",
+          "c32"
+        ],
+        [
+          "c224",
+          "c33"
+        ],
+        [
+          "c225",
+          "c34"
+        ],
+        [
+          "c230",
+          "c35"
+        ],
+        [
+          "c231",
+          "c36"
+        ],
+        [
+          "c236",
+          "c37"
+        ],
+        [
+          "c237",
+          "c38"
+        ],
+        [
+          "c242",
+          "c39"
+        ],
+        [
+          "c243",
+          "c40"
+        ],
+        [
+          "c248",
+          "c41"
+        ],
+        [
+          "c249",
+          "c42"
+        ],
+        [
+          "c254",
+          "c43"
+        ],
+        [
+          "c255",
+          "c44"
+        ],
+        [
+          "c260",
+          "c45"
+        ],
+        [
+          "c261",
+          "c46"
+        ],
+        [
+          "c266",
+          "c47"
+        ],
+        [
+          "c267",
+          "c48"
+        ],
+        [
+          "c272",
+          "c49"
+        ],
+        [
+          "c273",
+          "c50"
+        ],
+        [
+          "c278",
+          "c51"
+        ],
+        [
+          "c279",
+          "c52"
+        ],
+        [
+          "c284",
+          "c53"
+        ],
+        [
+          "c285",
+          "c54"
+        ],
+        [
+          "c290",
+          "c55"
+        ],
+        [
+          "c291",
+          "c56"
+        ],
+        [
+          "c296",
+          "c57"
+        ],
+        [
+          "c297",
+          "c58"
+        ],
+        [
+          "c302",
+          "c59"
+        ],
+        [
+          "c303",
+          "c60"
+        ],
+        [
+          "c308",
+          "c61"
+        ],
+        [
+          "c309",
+          "c62"
+        ],
+        [
+          "c314",
+          "c63"
+        ],
+        [
+          "c315",
+          "c64"
+        ],
+        [
+          "c320",
+          "c65"
+        ],
+        [
+          "c321",
+          "c66"
+        ],
+        [
+          "c326",
+          "c67"
+        ],
+        [
+          "c327",
+          "c68"
+        ],
+        [
+          "c332",
+          "c69"
+        ],
+        [
+          "c333",
+          "c70"
+        ],
+        [
+          "c338",
+          "c71"
+        ],
+        [
+          "c339",
+          "c72"
+        ],
+        [
+          "c344",
+          "c73"
+        ],
+        [
+          "c345",
+          "c74"
+        ],
+        [
+          "c350",
+          "c75"
+        ],
+        [
+          "c351",
+          "c76"
+        ],
+        [
+          "c356",
+          "c77"
+        ],
+        [
+          "c357",
+          "c78"
+        ],
+        [
+          "c362",
+          "c79"
+        ],
+        [
+          "c363",
+          "c80"
+        ],
+        [
+          "c368",
+          "c81"
+        ],
+        [
+          "c369",
+          "c82"
+        ],
+        [
+          "c374",
+          "c83"
+        ],
+        [
+          "c375",
+          "c84"
+        ],
+        [
+          "c380",
+          "c85"
+        ],
+        [
+          "c381",
+          "c86"
+        ],
+        [
+          "c386",
+          "c87"
+        ],
+        [
+          "c387",
+          "c88"
+        ],
+        [
+          "c392",
+          "c89"
+        ],
+        [
+          "c393",
+          "c90"
+        ],
+        [
+          "c398",
+          "c91"
+        ],
+        [
+          "c399",
+          "c92"
+        ],
+        [
+          "c404",
+          "c93"
+        ],
+        [
+          "c405",
+          "c94"
+        ],
+        [
+          "c410",
+          "c95"
+        ],
+        [
+          "c411",
+          "c96"
+        ],
+        [
+          "c416",
+          "c97"
+        ],
+        [
+          "c417",
+          "c98"
+        ],
+        [
+          "c100",
+          "c423"
+        ],
+        [
+          "c101",
+          "c426"
+        ],
+        [
+          "c102",
+          "c427"
+        ],
+        [
+          "c103",
+          "c432"
+        ],
+        [
+          "c104",
+          "c433"
+        ],
+        [
+          "c105",
+          "c438"
+        ],
+        [
+          "c106",
+          "c439"
+        ],
+        [
+          "c107",
+          "c444"
+        ],
+        [
+          "c108",
+          "c445"
+        ],
+        [
+          "c109",
+          "c450"
+        ],
+        [
+          "c110",
+          "c451"
+        ],
+        [
+          "c111",
+          "c456"
+        ],
+        [
+          "c112",
+          "c457"
+        ],
+        [
+          "c113",
+          "c462"
+        ],
+        [
+          "c114",
+          "c463"
+        ],
+        [
+          "c115",
+          "c468"
+        ],
+        [
+          "c116",
+          "c469"
+        ],
+        [
+          "c117",
+          "c474"
+        ],
+        [
+          "c118",
+          "c475"
+        ],
+        [
+          "c119",
+          "c480"
+        ],
+        [
+          "c120",
+          "c481"
+        ],
+        [
+          "c121",
+          "c486"
+        ],
+        [
+          "c122",
+          "c487"
+        ],
+        [
+          "c123",
+          "c492"
+        ],
+        [
+          "c124",
+          "c493"
+        ],
+        [
+          "c125",
+          "c498"
+        ],
+        [
+          "c126",
+          "c499"
+        ],
+        [
+          "c422",
+          "c99"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 254,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    },
+    {
+      "construction": {
+        "boundaries": 2,
+        "cells": 128,
+        "graph_api_calls": {
+          "boundary": 2,
+          "cell": 128,
+          "link": 129
+        },
+        "primitive_interactions": 0,
+        "wires": 129
+      },
+      "execution": {
+        "final_cells": 254,
+        "peak_live_cells": 254,
+        "primitive_interactions": 127,
+        "round_widths": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "rule_census": {
+          "dd": 0,
+          "de": 64,
+          "ee": 0,
+          "gd": 63,
+          "ge": 0,
+          "gg": 0
+        },
+        "runtime_cells_allocated": 380,
+        "synchronous_rounds": 64,
+        "total_symbolic_cells_allocated": 508
+      },
+      "input_tree_cells": 127,
+      "leaves": 64,
+      "policy": "snapshot-rounds",
+      "primitive_pairs": [
+        [
+          "c0",
+          "c127"
+        ],
+        [
+          "c1",
+          "c128"
+        ],
+        [
+          "c129",
+          "c2"
+        ],
+        [
+          "c134",
+          "c3"
+        ],
+        [
+          "c135",
+          "c4"
+        ],
+        [
+          "c140",
+          "c5"
+        ],
+        [
+          "c141",
+          "c6"
+        ],
+        [
+          "c146",
+          "c7"
+        ],
+        [
+          "c147",
+          "c8"
+        ],
+        [
+          "c10",
+          "c153"
+        ],
+        [
+          "c152",
+          "c9"
+        ],
+        [
+          "c11",
+          "c156"
+        ],
+        [
+          "c12",
+          "c157"
+        ],
+        [
+          "c13",
+          "c164"
+        ],
+        [
+          "c14",
+          "c165"
+        ],
+        [
+          "c15",
+          "c170"
+        ],
+        [
+          "c16",
+          "c171"
+        ],
+        [
+          "c17",
+          "c176"
+        ],
+        [
+          "c177",
+          "c18"
+        ],
+        [
+          "c182",
+          "c19"
+        ],
+        [
+          "c183",
+          "c20"
+        ],
+        [
+          "c188",
+          "c21"
+        ],
+        [
+          "c189",
+          "c22"
+        ],
+        [
+          "c194",
+          "c23"
+        ],
+        [
+          "c195",
+          "c24"
+        ],
+        [
+          "c200",
+          "c25"
+        ],
+        [
+          "c201",
+          "c26"
+        ],
+        [
+          "c206",
+          "c27"
+        ],
+        [
+          "c207",
+          "c28"
+        ],
+        [
+          "c212",
+          "c29"
+        ],
+        [
+          "c213",
+          "c30"
+        ],
+        [
+          "c218",
+          "c31"
+        ],
+        [
+          "c219",
+          "c32"
+        ],
+        [
+          "c224",
+          "c33"
+        ],
+        [
+          "c225",
+          "c34"
+        ],
+        [
+          "c230",
+          "c35"
+        ],
+        [
+          "c231",
+          "c36"
+        ],
+        [
+          "c236",
+          "c37"
+        ],
+        [
+          "c237",
+          "c38"
+        ],
+        [
+          "c242",
+          "c39"
+        ],
+        [
+          "c243",
+          "c40"
+        ],
+        [
+          "c248",
+          "c41"
+        ],
+        [
+          "c249",
+          "c42"
+        ],
+        [
+          "c254",
+          "c43"
+        ],
+        [
+          "c255",
+          "c44"
+        ],
+        [
+          "c260",
+          "c45"
+        ],
+        [
+          "c261",
+          "c46"
+        ],
+        [
+          "c266",
+          "c47"
+        ],
+        [
+          "c267",
+          "c48"
+        ],
+        [
+          "c272",
+          "c49"
+        ],
+        [
+          "c273",
+          "c50"
+        ],
+        [
+          "c278",
+          "c51"
+        ],
+        [
+          "c279",
+          "c52"
+        ],
+        [
+          "c284",
+          "c53"
+        ],
+        [
+          "c285",
+          "c54"
+        ],
+        [
+          "c290",
+          "c55"
+        ],
+        [
+          "c291",
+          "c56"
+        ],
+        [
+          "c296",
+          "c57"
+        ],
+        [
+          "c297",
+          "c58"
+        ],
+        [
+          "c302",
+          "c59"
+        ],
+        [
+          "c303",
+          "c60"
+        ],
+        [
+          "c308",
+          "c61"
+        ],
+        [
+          "c309",
+          "c62"
+        ],
+        [
+          "c314",
+          "c63"
+        ],
+        [
+          "c315",
+          "c64"
+        ],
+        [
+          "c320",
+          "c65"
+        ],
+        [
+          "c321",
+          "c66"
+        ],
+        [
+          "c326",
+          "c67"
+        ],
+        [
+          "c327",
+          "c68"
+        ],
+        [
+          "c332",
+          "c69"
+        ],
+        [
+          "c333",
+          "c70"
+        ],
+        [
+          "c338",
+          "c71"
+        ],
+        [
+          "c339",
+          "c72"
+        ],
+        [
+          "c344",
+          "c73"
+        ],
+        [
+          "c345",
+          "c74"
+        ],
+        [
+          "c350",
+          "c75"
+        ],
+        [
+          "c351",
+          "c76"
+        ],
+        [
+          "c356",
+          "c77"
+        ],
+        [
+          "c357",
+          "c78"
+        ],
+        [
+          "c362",
+          "c79"
+        ],
+        [
+          "c363",
+          "c80"
+        ],
+        [
+          "c368",
+          "c81"
+        ],
+        [
+          "c369",
+          "c82"
+        ],
+        [
+          "c374",
+          "c83"
+        ],
+        [
+          "c375",
+          "c84"
+        ],
+        [
+          "c380",
+          "c85"
+        ],
+        [
+          "c381",
+          "c86"
+        ],
+        [
+          "c386",
+          "c87"
+        ],
+        [
+          "c387",
+          "c88"
+        ],
+        [
+          "c392",
+          "c89"
+        ],
+        [
+          "c393",
+          "c90"
+        ],
+        [
+          "c398",
+          "c91"
+        ],
+        [
+          "c399",
+          "c92"
+        ],
+        [
+          "c404",
+          "c93"
+        ],
+        [
+          "c405",
+          "c94"
+        ],
+        [
+          "c410",
+          "c95"
+        ],
+        [
+          "c411",
+          "c96"
+        ],
+        [
+          "c416",
+          "c97"
+        ],
+        [
+          "c417",
+          "c98"
+        ],
+        [
+          "c100",
+          "c423"
+        ],
+        [
+          "c422",
+          "c99"
+        ],
+        [
+          "c101",
+          "c426"
+        ],
+        [
+          "c102",
+          "c427"
+        ],
+        [
+          "c103",
+          "c434"
+        ],
+        [
+          "c104",
+          "c435"
+        ],
+        [
+          "c105",
+          "c440"
+        ],
+        [
+          "c106",
+          "c441"
+        ],
+        [
+          "c107",
+          "c446"
+        ],
+        [
+          "c108",
+          "c447"
+        ],
+        [
+          "c109",
+          "c452"
+        ],
+        [
+          "c110",
+          "c453"
+        ],
+        [
+          "c111",
+          "c458"
+        ],
+        [
+          "c112",
+          "c459"
+        ],
+        [
+          "c113",
+          "c464"
+        ],
+        [
+          "c114",
+          "c465"
+        ],
+        [
+          "c115",
+          "c470"
+        ],
+        [
+          "c116",
+          "c471"
+        ],
+        [
+          "c117",
+          "c476"
+        ],
+        [
+          "c118",
+          "c477"
+        ],
+        [
+          "c119",
+          "c482"
+        ],
+        [
+          "c120",
+          "c483"
+        ],
+        [
+          "c121",
+          "c488"
+        ],
+        [
+          "c122",
+          "c489"
+        ],
+        [
+          "c123",
+          "c494"
+        ],
+        [
+          "c124",
+          "c495"
+        ],
+        [
+          "c125",
+          "c500"
+        ],
+        [
+          "c126",
+          "c501"
+        ]
+      ],
+      "readout": {
+        "ordered_copies": 2,
+        "visited_cells": 254,
+        "whole_graph_accounted_for": true
+      },
+      "shape": "comb"
+    }
+  ],
+  "contract": {
+    "build_unit": "host graph API calls; not host time or native reductions",
+    "leaf_counts": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "policies": [
+      "first-active",
+      "snapshot-rounds"
+    ],
+    "primitive_rule_count": 6,
+    "round_unit": "all pairs active at snapshot start, new pairs deferred",
+    "scope": "finite structural tree families; no arbitrary-input or all-schedule claim",
+    "shapes": [
+      "balanced",
+      "comb"
+    ],
+    "size_unit": "epsilon leaves in a full binary gamma/epsilon input tree",
+    "space_unit": "cells at initial/post-atomic-rewrite states; not host bytes"
+  },
+  "format": "IC-SIZE-FAMILY-1",
+  "source_sha256": {
+    "ic_gamma_tree_copy_demo.py": "72dd3bac6203c9b5a081b7ede8e90f3489609c32950e79375dafb5813c2cda54",
+    "ic_primitive_port_verifier.py": "d9726547f873b1a91e1a54cff8750afd849964de59de092be7d090959b8fe733",
+    "ic_size_family_audit.py": "65739767fcf9957deaa42e0d954240843e3ffc2654ac036355698dd7386b50a4"
+  }
+}

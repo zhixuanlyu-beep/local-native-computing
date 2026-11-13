@@ -23,6 +23,23 @@ These related lines retain separate obligations:
 
 The [claim ledger](docs/CLAIM_LEDGER.md) is the sole source for detailed evidence, test sizes, coverage counts, and proof boundaries. Read it before interpreting any result.
 
+[Input size and uniform construction](docs/SIZE_AND_UNIFORMITY.md) separates
+fixed descriptions/rules from generated graph size, primitive work, allocation,
+peak space, synchronous rounds and readout. Its native tree-copy audit compares
+size-generated balanced and comb families; see [ledger X](docs/CLAIM_LEDGER.md#x-size-parametric-construction-and-tree-copy-audit)
+for exact finite evidence and limits.
+
+The [Boolean-family follow-up](docs/BOOLEAN_SIZE_FAMILY.md) builds an AND
+framework from length alone, plugs supplied values afterward and checks the
+native computation. It adds input-dependent work records, whole-output checks,
+small exhaustive schedule exploration and preserved cutoff/failure fixtures;
+see [ledger Y](docs/CLAIM_LEDGER.md#y-input-bearing-uniform-and-frameworks).
+
+[Evidence input validation](docs/EVIDENCE_INPUTS.md) rejects ambiguous JSON,
+graph-schema and port-type aliases, and out-of-fragment Boolean frameworks.
+The regression audit and valid-archive compatibility scope are recorded in
+[ledger Z](docs/CLAIM_LEDGER.md#z-evidence-input-validation-and-regression-audit).
+
 M6 connects complete tasks through their actual SQ/BR results: native control
 enables or skips the next prewired program, and a skipped task restores enable.
 The [result-controlled execution guide](docs/RESULT_CONTROLLED_EXECUTION.md)
@@ -63,6 +80,9 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 ### Research documents and audits
 
 - `docs/RESEARCH_FRAMEWORK.md`: research route, terminology, component contracts, and evidence boundaries.
+- `docs/SIZE_AND_UNIFORMITY.md`: size-family generation, uniformity requirements, stage costs, and native tree-copy reproduction.
+- `docs/BOOLEAN_SIZE_FAMILY.md`: input-independent AND framework construction, separately encoded values, native execution and exact finite evidence boundaries.
+- `docs/EVIDENCE_INPUTS.md`, `ic_evidence_json.py`, `tests/evidence_input_integrity.py`: strict input decoding, graph/port validation and failure-cleanup regressions.
 - `docs/CLAIM_LEDGER.md`: executable evidence, conditional results, coverage boundaries, and open goals.
 - `docs/COHERENT_IC_COMPILER.md`: unified compiler conventions, trace format, structural readout, and reproduction commands.
 - `docs/BOUNDED_IC_INSTANCE.md`: a runnable finite observation-to-IC instance and its exact scope.
@@ -79,6 +99,8 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 
 - `ic_primitive_port_verifier.py`: literal gamma/delta/epsilon port-graph reducer for the six Lafont rules.
 - `ic_gamma_tree_copy_demo.py`, `ic_reduced_package_copy_demo.py`, `ic_tree_erase_demo.py`: primitive IC copy and erase experiments.
+- `ic_size_family_audit.py`, `tests/size_family_integrity.py`, `results/size_family_audit.json`: construction/work/space/round accounting, whole-output checks, and reconstructible finite pair records.
+- `ic_boolean_size_family.py`, `tests/boolean_size_family_integrity.py`, `results/boolean_size_family.json`: fixed frameworks across input values, native AND folds, small all-schedule explorations and reconstruction checks.
 - `source_ic_structure_encoding.py`: lossless source port-net data encoding in primitive gamma/epsilon IC, with native delta copying and epsilon erasure.
 
 ### Operational fragments and components
@@ -132,9 +154,14 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 
 ```sh
 python source_rule_audit_v3.py
+python tests/evidence_input_integrity.py
 python source_feedback_audit.py
 python ic_primitive_port_verifier.py
 python ic_gamma_tree_copy_demo.py
+python tests/size_family_integrity.py
+python ic_size_family_audit.py --verify-report results/size_family_audit.json
+python tests/boolean_size_family_integrity.py
+python ic_boolean_size_family.py --verify-report results/boolean_size_family.json
 python ic_reduced_package_copy_demo.py
 python ic_tree_erase_demo.py
 python source_ic_structure_encoding.py

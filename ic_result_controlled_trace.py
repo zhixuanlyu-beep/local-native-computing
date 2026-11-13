@@ -2,6 +2,7 @@
 import gzip
 import hashlib
 import json
+from ic_evidence_json import loads as json_loads
 from pathlib import Path
 
 from ic_coherent_feedback import spec_digest
@@ -22,7 +23,7 @@ def pack_trace(path, summary, *, shard_bytes=SHARD_BYTES):
     shards, total, overall = [], 0, hashlib.sha256()
     with gzip.open(path, "rb") as source:
         header_line = source.readline()
-        header = json.loads(header_line)
+        header = json_loads(header_line)
         if header.get("format") != PAIR:
             raise ValueError("only an original primitive pair stream can be sharded")
         pending = source.read(min(BLOCK, shard_bytes))
@@ -98,8 +99,13 @@ class _ShardReader:
         if hashlib.sha256(path.read_bytes()).hexdigest() != entry["compressed_file_sha256"]:
             raise ValueError("primitive trace shard compressed-file digest mismatch")
         self.stream = gzip.open(path, "rb")
-        if json.loads(self.stream.readline()) != self.manifest["metadata"]:
-            raise ValueError("primitive trace shard metadata mismatch")
+        try:
+            if json_loads(self.stream.readline()) != self.manifest["metadata"]:
+                raise ValueError("primitive trace shard metadata mismatch")
+        except BaseException:
+            self.stream.close()
+            self.stream = None
+            raise
         self.digest, self.bytes = hashlib.sha256(), 0
         return True
 
@@ -135,7 +141,7 @@ class M6Trace(ScheduleTrace):
         self.path, self.manifest = Path(path), None
         if replay:
             with gzip.open(path, "rb") as probe:
-                header = json.loads(probe.readline())
+                header = json_loads(probe.readline())
                 if header.get("format") == FORMAT:
                     if probe.read(1):
                         raise ValueError("unaccounted trace manifest data")
@@ -143,7 +149,7 @@ class M6Trace(ScheduleTrace):
             if self.manifest is not None:
                 self.replay, self.count, self.digest = True, 0, hashlib.sha256()
                 self.stream = _ShardReader(path, self.manifest)
-                if json.loads(self.stream.readline()) != {"format": PAIR, **metadata}:
+                if json_loads(self.stream.readline()) != {"format": PAIR, **metadata}:
                     raise ValueError("primitive trace shard binding mismatch")
                 return
         super().__init__(path, metadata, replay=replay)

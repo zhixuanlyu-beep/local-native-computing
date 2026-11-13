@@ -87,12 +87,19 @@ otherwise retain the actual measured input and policy.
 |---|---|
 | Description `D` | Generator/program, representation, rules and parameter encoding |
 | Build/encode/plug `B` | Discovery/compilation, graph generation, input encoding, wiring and adapters; separate host and native work |
-| Initial size `I` | All cells, boundaries and wires before the native interval, including dormant future tasks |
+| Initial live cells `I` | All cells before the native interval, including dormant future tasks |
+| Initial interfaces and wiring | Report boundary, wire and detached-wire-cycle inventories separately; these are not added to `I` |
 | Work `W` | All primitive interactions in the interval |
-| Allocation `A` | `I` plus every allocated RHS cell; also report runtime allocation separately |
+| Allocation `A` | Initial cells `I` plus every allocated RHS cell; also report runtime cell allocation separately |
 | Space `P` | Peak live cells at initial/post-atomic-rewrite states; host bytes and rewrite temporaries are separate |
 | Dependency measure `R` | Explicitly defined circuit depth, causal depth or synchronous rounds |
 | Readout `Q` | Traversal, decoding and/or native consumers, with readiness and cleanup conventions |
+
+`I`, `A`, final cells `F`, and `P` all count cells. The identity `A = F + 2W`
+therefore concerns cell allocation only. Boundary and wire inventories remain
+part of full structural accounting, with their own units. For example, the
+64-leaf copy case has `I=128` cells, 2 boundaries and 129 wires; these are
+three separate measurements, not a combined value of `I`.
 
 Only add `B + W + Q` after placing them in a common cost model. Host API calls,
 IC interactions and elapsed seconds cannot be added without a conversion.

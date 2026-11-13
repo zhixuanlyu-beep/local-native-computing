@@ -866,3 +866,11 @@ checks exercise the hardened readers on the actual frozen artifacts. Local
 targeted checks and finite exploration support the specified contracts; they
 do not prove that every possible input, implementation path or future context
 is free of defects.
+
+Follow-up review clarified the central cost table: `I` is the initial live-cell
+count, and `A`, `F` and `P` likewise count cells. Boundary, wire and detached
+wire-cycle inventories are separate structural measurements. This resolves
+the mismatch between the original wording and `A=F+2W` without changing any
+reported formula or execution evidence. The workflow also uses the verified
+official Node-24 releases `actions/checkout@v7.0.1` and
+`actions/setup-python@v7.1.0`, retaining Python 3.11 and all 64 audit commands.

@@ -1,7 +1,9 @@
 """Input-independent construction, native semantics, bounds and evidence checks."""
 import copy
+from collections import Counter
 from itertools import product
 from pathlib import Path
+import random
 import sys
 import unittest
 from unittest.mock import patch
@@ -52,7 +54,7 @@ class BooleanSizeFamilyIntegrity(unittest.TestCase):
         self.assertEqual({c["resources"]["initial_cells"] for c in cases}, {3})
 
     def test_all_true_shape_rounds(self):
-        for width in (1, 3, 5, 8, 17):
+        for width in range(1, 65):
             for shape in family.SHAPES:
                 c = family.run_case(family.build_framework(width, shape), (True,) * width, "snapshot-rounds")
                 # A local AND gate can annihilate before its RIGHT input is
@@ -73,9 +75,45 @@ class BooleanSizeFamilyIntegrity(unittest.TestCase):
                 family.plug_inputs(framework, bits)
         with self.assertRaises(ValueError):
             family.plug_inputs(framework, (True,))
+        delta = GraphSpec(("d", "e"), ("INPUT_0", "OUT"),
+                          (((0, 0), (1, 0)), ((0, 1), ("F", "INPUT_0")),
+                           ((0, 2), ("F", "OUT"))))
+        for invalid in (delta, GraphSpec((), ("INPUT_0", "OUT"),
+                                        ((("F", "INPUT_0"), ("F", "OUT")),), 1)):
+            with patch.object(family.Net, "reduce", side_effect=AssertionError("must reject before execution")):
+                with self.assertRaises(ValueError):
+                    family.run_case(invalid, (False,), "first-active")
         for name, value in (("max_steps", -1), ("max_cells", True)):
             with self.assertRaises(ValueError):
                 family.run_case(framework, (True, True), "first-active", **{name: value})
+
+    def test_randomized_schedules_over_all_supported_widths(self):
+        rng = random.Random(20261113)
+        for width in range(1, 65):
+            for shape in family.SHAPES:
+                bits = tuple(bool(rng.getrandbits(1)) for _ in range(width))
+                spec = family.build_framework(width, shape)
+                net = family.plug_inputs(spec, bits)
+                initial = len(net.nodes)
+                potential_bound = 2 * sum(k == "g" for k in net.nodes.values()) + sum(k == "e" for k in net.nodes.values())
+                work = 0
+                census = Counter({"".join(rule): 0 for rule in family.RULES})
+                while net.active():
+                    pair = rng.choice(net.active())
+                    kinds = tuple(net.nodes[c] for c in pair)
+                    rule = kinds if kinds in family.RULES else kinds[::-1]
+                    census["".join(rule)] += 1
+                    before = sum(2 if k == "g" else 1 for k in net.nodes.values())
+                    net.reduce(*pair)
+                    after = sum(2 if k == "g" else 1 for k in net.nodes.values())
+                    self.assertLess(after, before)
+                    self.assertLessEqual(len(net.nodes), initial)
+                    work += 1
+                    self.assertLessEqual(work, potential_bound)
+                self.assertTrue(family.isomorphic(net, family.expected_output(all(bits))))
+                snapshot = family.run_case(spec, bits, "snapshot-rounds")
+                self.assertEqual(work, snapshot["resources"]["primitive_interactions"])
+                self.assertEqual(dict(census), snapshot["resources"]["rule_census"])
 
     def test_cutoffs_are_preserved(self):
         framework = family.build_framework(4, "balanced")

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+python tests/evidence_input_integrity.py
+
 python source_rule_audit_v3.py
 python source_feedback_audit.py
 python ic_primitive_port_verifier.py

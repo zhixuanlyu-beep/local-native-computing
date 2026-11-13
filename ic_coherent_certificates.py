@@ -3,6 +3,7 @@ import argparse
 import gzip
 import hashlib
 import json
+from ic_evidence_json import loads as json_loads
 from pathlib import Path
 import struct
 
@@ -107,7 +108,7 @@ def verify(report, trace_path, compiler):
     assert len(report["certificates"]) == len(RULES)
     offset = 0
     with gzip.open(trace_path, "rb") as stream:
-        header = json.loads(stream.readline())
+        header = json_loads(stream.readline())
         assert header["source_rules_sha256"] == source_rules_digest()
         assert header["program_sha256"] == graph_digest(compiler.program)
         for record, spec in zip(report["certificates"], RULES.values()):
@@ -156,7 +157,7 @@ def main():
         if not args.trace:
             parser.error("--verify-report requires --trace")
         encoded = args.verify_report.read_bytes()
-        report = json.loads(gzip.decompress(encoded) if args.verify_report.suffix == ".gz" else encoded)
+        report = json_loads(gzip.decompress(encoded) if args.verify_report.suffix == ".gz" else encoded)
         print("PASS: coherent primitive rule traces replayed", verify(report, args.trace, compiler))
         return
     report = generate(compiler, args.trace)

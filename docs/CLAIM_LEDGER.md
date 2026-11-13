@@ -632,7 +632,8 @@ gamma/epsilon tree from its epsilon-leaf count `n`. One delta copier and two
 labeled outputs complete the initial graph. The report selects leaf counts
 **1,2,3,4,8,16,32,64**, both shapes, and both **first-active** and
 **snapshot-rounds** policies: **32 cases**, totaling **1,008 primitive
-interactions**. It binds all three source files by SHA-256 and stores every
+interactions**. It binds the audit, primitive reducer, tree helper and strict
+JSON reader by SHA-256 and stores every
 selected primitive pair.
 
 Construction records **2n cell calls, 2 boundary calls and 2n+1 link calls**,
@@ -672,7 +673,7 @@ disjoint interactions, not wall time or a general minimum causal depth.
 The sequential policy records no parallel-depth value.
 
 Archive: [size_family_audit.json](../results/size_family_audit.json), SHA-256
-`dec3033b8dfb79adf1db2d172d47d54088517de64e0521325c1d9cabc1c5f0ef`.
+`b0bf269aa005cedc1ab2f07a66a40b0c20aa185ad68182d5c1f61c829a5bf682`.
 Generation and independent CLI reconstruction passed: every field, source
 binding, primitive pair, census, resource count and complete output is checked.
 [The integrity suite](../tests/size_family_integrity.py) passed **5 groups**,
@@ -782,18 +783,19 @@ round has no complete synchronous-depth claim; a quiescent wrong graph is not
 successful computation, and truncated exploration is not all-schedule evidence.
 
 Archive: [boolean_size_family.json](../results/boolean_size_family.json), SHA-256
-`a9927a96697ab25bb899ff201e237cafa3070c87f7898401a8dafe8ed1a71ab4`.
-It binds the new implementation and five unchanged helper modules, retains
+`f3abcc3953b417a58814dd78117903c0a3730ab9f595f39b076b59d6278769df`.
+It binds the implementation and six helper modules, retains
 literal framework specs, exact input/policy records, complete final graphs,
 primitive pairs, exploration summaries and all negative fixtures. Generation
 and independent reconstruction, including a different Python hash seed, passed.
 Every semantic field and source binding is compared.
 
-[The integrity suite](../tests/boolean_size_family_integrity.py) passed **9
+[The integrity suite](../tests/boolean_size_family_integrity.py) passed **10
 groups**: oracle-free construction/unchanged internal wiring, all width-5
 inputs under both shapes and three policies, value-dependent work, non-power
 all-true round counts, strict preconditions, bounded execution classifications,
-incorrect terminals, incomplete exploration, and nine changed-report probes.
+incorrect terminals, incomplete exploration, nine changed-report probes and
+fixed-seed randomized schedules across all supported widths (details in Z).
 The unchanged GraphSpec, bounded-exploration and observation-contract audits,
 the original **5-group** size-family suite and its full report reconstruction
 also passed locally. The earlier PR's full historical CI was green before
@@ -804,3 +806,63 @@ This establishes the recorded finite value-bearing AND families and separates
 framework size from input-dependent native work. Arbitrary-function generation,
 full-feedback unfolding, native decompression of a size descriptor, physical
 inventory, optimality and net reuse benefit remain separate obligations.
+
+## Z. Evidence input validation and regression audit
+
+The [input-validation guide](EVIDENCE_INPUTS.md) records host-side preconditions
+and malformed-input behavior. A review reproduced these previously untested
+failures:
+
+- Direct `GraphSpec` construction accepted Boolean cell/port indices through
+  Python's numeric equality, but decoding the same serialized graph rejected
+  it. Runtime bindings also accepted Boolean or float aliases for integer ports.
+- Graph decoding treated scalar strings as node/boundary arrays and ignored
+  undeclared fields instead of enforcing its literal schema.
+- The Boolean-family executor accepted a delta/epsilon framework on a false
+  singleton input and reported success, despite the declared gamma-only
+  framework fragment.
+- JSON readers silently discarded earlier duplicate fields. The default
+  decoder also admitted nonfinite numeric values.
+- M4 interval validation failures after header parsing and M6 shard-header
+  failures could leave their opened stream unclosed.
+
+The fixes reject those precondition violations before graph allocation or
+native execution, centralize strict JSON decoding in **14 production modules**,
+and close the affected streams on failure. The literal graph decoder validates
+array fields, two-endpoint wires, integer endpoints excluding Booleans, and its
+declared keys. Valid generic empty boundary labels and omitted zero `cycles`
+remain supported. The Boolean input interface checks width 1..64, `n-1` gamma
+cells and zero detached wire cycles. Its deliberately incorrectly wired
+gamma fixture still reaches an incorrect terminal; it is not hidden by the
+fragment check.
+
+[evidence_input_integrity.py](../tests/evidence_input_integrity.py) contains
+**12 regression groups**, covering constructor/decoder consistency, schema
+errors, valid round trips, allocation-free binding rejection, duplicate and
+nonfinite JSON, actual plain/gzip report and trace-header entrypoints,
+pre-reconstruction CLI rejection, stream cleanup and compatibility with the
+existing rule/matrix JSON documents. The Boolean suite expands to **10 groups**:
+its all-true round check now covers every width 1..64, and **128 fixed-seed
+randomized executions** cover both shapes at every supported width. Each checks
+the whole output, nonincreasing live size and strictly decreasing `2G+E`, then
+compares work and primitive census with the independently selected snapshot
+policy. These randomized runs do not extend the 28 recorded exhaustive
+schedule explorations.
+
+Both current size-family reports were regenerated to bind the updated source
+and shared decoder. Removing only `source_sha256` from each old/new report
+gives exact equality: inputs, frameworks, all primitive pairs, outputs, failure
+fixtures, exploration summaries and resource records are unchanged. The
+immediately preceding report digests were
+`dec3033b8dfb79adf1db2d172d47d54088517de64e0521325c1d9cabc1c5f0ef`
+(tree) and
+`a9927a96697ab25bb899ff201e237cafa3070c87f7898401a8dafe8ed1a71ab4`
+(Boolean); X/Y give the current digests. Earlier frozen reports and primitive
+streams are unchanged.
+
+The existing CI runner retains every historical audit, adds the input suite,
+and independently reconstructs both size-family reports. Its complete archive
+checks exercise the hardened readers on the actual frozen artifacts. Local
+targeted checks and finite exploration support the specified contracts; they
+do not prove that every possible input, implementation path or future context
+is free of defects.

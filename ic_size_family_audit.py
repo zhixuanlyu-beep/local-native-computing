@@ -7,6 +7,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+from ic_evidence_json import loads as json_loads
 from pathlib import Path
 
 from ic_gamma_tree_copy_demo import build_shape, decode_tree
@@ -135,7 +136,7 @@ def source_digests():
     root = Path(__file__).resolve().parent
     return {name: hashlib.sha256((root / name).read_bytes()).hexdigest()
             for name in ("ic_size_family_audit.py", "ic_gamma_tree_copy_demo.py",
-                         "ic_primitive_port_verifier.py")}
+                         "ic_primitive_port_verifier.py", "ic_evidence_json.py")}
 
 
 def build_report():
@@ -170,7 +171,7 @@ def main():
     group.add_argument("--verify-report", type=Path)
     args = parser.parse_args()
     if args.verify_report:
-        verify_report(json.loads(args.verify_report.read_text(encoding="utf-8")))
+        verify_report(json_loads(args.verify_report.read_text(encoding="utf-8")))
         print("PASS: exact size-family report, source bindings and primitive pairs")
         return
     report = build_report()

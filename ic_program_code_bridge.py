@@ -8,6 +8,7 @@ import argparse
 import gzip
 import hashlib
 import json
+from ic_evidence_json import loads as json_loads
 from pathlib import Path
 import struct
 
@@ -51,7 +52,7 @@ def load_discovery(path=DISCOVERY_PATH):
     raw = Path(path).read_bytes()
     if hashlib.sha256(raw).hexdigest() != DISCOVERY_SHA256:
         raise ValueError("discovery report differs from the frozen evidence")
-    report = json.loads(gzip.decompress(raw))
+    report = json_loads(gzip.decompress(raw))
     synthesis = report["synthesis"]
     gates = {r["id"]: GraphSpec.from_dict(r["graph"]) for r in synthesis["gates"]}
     carriers = {r["id"]: GraphSpec.from_dict(r["graph"]) for r in synthesis["materials"]}
@@ -193,7 +194,7 @@ class NativeTrace:
         if replay:
             self.stream = gzip.open(path, "rb")
             try:
-                if json.loads(self.stream.readline()) != {"format": "IC-PAIR-U32LE-1", **metadata}:
+                if json_loads(self.stream.readline()) != {"format": "IC-PAIR-U32LE-1", **metadata}:
                     raise ValueError("trace header binding mismatch")
             except BaseException:
                 self.stream.close()
@@ -375,7 +376,7 @@ def _suite(trace_path, discovery_path, replay=False):
                             raise AssertionError("native copying did not consume original payload")
                         if not port_graph_isomorphic(artifact.instantiate(), other.instantiate()):
                             raise AssertionError("copy products differ")
-                        serialized = json.loads(artifact.export_json())
+                        serialized = json_loads(artifact.export_json())
                         restored = RetainedArtifact.from_dict(serialized)
                         archive_index = len(archives)
                         archives.append({"pair": pair_index, "first_input": bit, "artifact": serialized,

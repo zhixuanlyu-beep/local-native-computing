@@ -35,6 +35,11 @@ native computation. It adds input-dependent work records, whole-output checks,
 small exhaustive schedule exploration and preserved cutoff/failure fixtures;
 see [ledger Y](docs/CLAIM_LEDGER.md#y-input-bearing-uniform-and-frameworks).
 
+[Evidence input validation](docs/EVIDENCE_INPUTS.md) rejects ambiguous JSON,
+graph-schema and port-type aliases, and out-of-fragment Boolean frameworks.
+The regression audit and valid-archive compatibility scope are recorded in
+[ledger Z](docs/CLAIM_LEDGER.md#z-evidence-input-validation-and-regression-audit).
+
 M6 connects complete tasks through their actual SQ/BR results: native control
 enables or skips the next prewired program, and a skipped task restores enable.
 The [result-controlled execution guide](docs/RESULT_CONTROLLED_EXECUTION.md)
@@ -77,6 +82,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 - `docs/RESEARCH_FRAMEWORK.md`: research route, terminology, component contracts, and evidence boundaries.
 - `docs/SIZE_AND_UNIFORMITY.md`: size-family generation, uniformity requirements, stage costs, and native tree-copy reproduction.
 - `docs/BOOLEAN_SIZE_FAMILY.md`: input-independent AND framework construction, separately encoded values, native execution and exact finite evidence boundaries.
+- `docs/EVIDENCE_INPUTS.md`, `ic_evidence_json.py`, `tests/evidence_input_integrity.py`: strict input decoding, graph/port validation and failure-cleanup regressions.
 - `docs/CLAIM_LEDGER.md`: executable evidence, conditional results, coverage boundaries, and open goals.
 - `docs/COHERENT_IC_COMPILER.md`: unified compiler conventions, trace format, structural readout, and reproduction commands.
 - `docs/BOUNDED_IC_INSTANCE.md`: a runnable finite observation-to-IC instance and its exact scope.
@@ -148,6 +154,7 @@ The scripts are also runnable individually. The test suite uses Python 3.11+ and
 
 ```sh
 python source_rule_audit_v3.py
+python tests/evidence_input_integrity.py
 python source_feedback_audit.py
 python ic_primitive_port_verifier.py
 python ic_gamma_tree_copy_demo.py

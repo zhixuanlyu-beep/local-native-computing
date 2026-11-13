@@ -66,6 +66,10 @@ The shipped builder accepts `1 <= n <= 64`. Its recursive size-only recipe
 exhibits the proposed organization, while implementation evidence remains
 finite. It does not establish a uniform compiler for arbitrary functions.
 
+Input plugging also checks the declared width, gamma-only framework inventory
+and absence of detached wire cycles before execution. See
+[the evidence-input contract](EVIDENCE_INPUTS.md) for graph and report validation.
+
 ## Work, space and round interpretation
 
 Framework construction has `n-1` cells, `n+1` boundaries and `2n-1` wires,

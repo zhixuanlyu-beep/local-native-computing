@@ -3,6 +3,7 @@ import argparse
 import gzip
 import hashlib
 import json
+from ic_evidence_json import loads as json_loads
 from math import isqrt
 from pathlib import Path
 import struct
@@ -55,7 +56,7 @@ class PrimitiveTrace:
 def read_trace_summary(path):
     digest, records = hashlib.sha256(), 0
     with gzip.open(path, "rb") as stream:
-        metadata = json.loads(stream.readline())
+        metadata = json_loads(stream.readline())
         if metadata.get("format") != "IC-PAIR-U32LE-1":
             raise ValueError("unknown primitive trace format")
         while block := stream.read(1024 * 1024):
@@ -77,7 +78,7 @@ def write_json(path, data):
 def read_json(path):
     path = Path(path)
     encoded = path.read_bytes()
-    return json.loads(gzip.decompress(encoded) if path.suffix == ".gz" else encoded)
+    return json_loads(gzip.decompress(encoded) if path.suffix == ".gz" else encoded)
 
 
 def spec_digest(spec):
@@ -237,7 +238,7 @@ def replay_input(number, compiler, path, *, limit=50_000_000,
     initial_digest, program_digest = graph_digest(net), graph_digest(compiler.program)
     digest = hashlib.sha256()
     with gzip.open(path, "rb") as stream:
-        header = json.loads(stream.readline())
+        header = json_loads(stream.readline())
         assert header["format"] == "IC-PAIR-U32LE-1" and header["input"] == number
         assert header["initial_graph_sha256"] == initial_digest
         assert header["program_sha256"] == program_digest and header["schedule"] == "FIFO"

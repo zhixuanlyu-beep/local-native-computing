@@ -10,6 +10,7 @@ from dataclasses import dataclass
 import gzip
 import hashlib
 import json
+from ic_evidence_json import loads as json_loads
 import struct
 
 from ic_coherent_feedback import PrimitiveTrace
@@ -216,7 +217,7 @@ class ScheduleTrace:
         if replay:
             self.stream = gzip.open(path, "rb")
             try:
-                if json.loads(self.stream.readline()) != {"format": "IC-PAIR-U32LE-1", **metadata}:
+                if json_loads(self.stream.readline()) != {"format": "IC-PAIR-U32LE-1", **metadata}:
                     raise ValueError("composition trace header binding mismatch")
             except BaseException:
                 self.stream.close()

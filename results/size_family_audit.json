@@ -5550,8 +5550,9 @@
   },
   "format": "IC-SIZE-FAMILY-1",
   "source_sha256": {
+    "ic_evidence_json.py": "01ee54741a4ab7a520966963f539a4d5a41909b2ff05b7de49cd62b62c9f7615",
     "ic_gamma_tree_copy_demo.py": "72dd3bac6203c9b5a081b7ede8e90f3489609c32950e79375dafb5813c2cda54",
     "ic_primitive_port_verifier.py": "d9726547f873b1a91e1a54cff8750afd849964de59de092be7d090959b8fe733",
-    "ic_size_family_audit.py": "65739767fcf9957deaa42e0d954240843e3ffc2654ac036355698dd7386b50a4"
+    "ic_size_family_audit.py": "1545f0bbf6c6f43cda24c088058760245b5f16aaeab21449f5c17449e8e66c5b"
   }
 }

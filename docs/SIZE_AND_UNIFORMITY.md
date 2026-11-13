@@ -139,7 +139,9 @@ python ic_size_family_audit.py --verify-report results/size_family_audit.json
 
 Verification rebuilds every case, reruns primitive rules, checks whole outputs,
 and compares every report field and pair sequence. Source SHA-256 bindings cover
-the audit, reducer and tree helper. This is finite reproducible evidence.
+the audit, reducer, tree helper and strict JSON reader. This is finite
+reproducible evidence; [input validation](EVIDENCE_INPUTS.md) describes rejected
+malformed report inputs.
 
 ## Existing project results and remaining obligations
 

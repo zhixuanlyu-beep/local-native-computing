@@ -8,6 +8,7 @@ import argparse
 import hashlib
 from itertools import product
 import json
+from ic_evidence_json import loads as json_loads
 from pathlib import Path
 
 from ic_bounded_execution import explore
@@ -36,6 +37,11 @@ def digest(value):
     return hashlib.sha256(canonical(value).encode()).hexdigest()
 
 
+def _validate_width(width):
+    if type(width) is not int or not 1 <= width <= MAX_WIDTH:
+        raise ValueError("width must be an integer in 1..64")
+
+
 def build_framework(width, shape):
     """Build only from size and shape; gamma ports are LEFT=0, RIGHT=1, OUT=2.
 
@@ -43,8 +49,7 @@ def build_framework(width, shape):
     LEFT annihilates the gate and passes RIGHT. A false LEFT erases RIGHT and
     leaves epsilon at OUT. No truth-table operation is performed by this code.
     """
-    if type(width) is not int or not 1 <= width <= MAX_WIDTH:
-        raise ValueError("width must be an integer in 1..64")
+    _validate_width(width)
     if shape not in SHAPES:
         raise ValueError("unknown framework shape")
     net = Net()
@@ -72,8 +77,12 @@ def plug_inputs(framework, bits):
         raise TypeError("framework must be a GraphSpec")
     if type(bits) is not tuple or any(type(bit) is not bool for bit in bits):
         raise TypeError("inputs must be a tuple of exact Booleans")
-    if not bits or set(framework.boundaries) != {"OUT", *(f"INPUT_{i}" for i in range(len(bits)))}:
+    _validate_width(len(bits))
+    if set(framework.boundaries) != {"OUT", *(f"INPUT_{i}" for i in range(len(bits)))}:
         raise ValueError("input length and framework interface differ")
+    if (len(framework.kinds) != len(bits) - 1 or framework.cycles
+            or any(kind != "g" for kind in framework.kinds)):
+        raise ValueError("framework must contain n-1 gamma cells and no detached wire cycles")
     net = framework.instantiate()
     for i, bit in enumerate(bits):
         root = value_spec("A", bit).open_root(net)
@@ -165,6 +174,7 @@ def run_case(framework, bits, policy, *, max_steps=MAX_STEPS, max_cells=MAX_CELL
 
 
 def input_cases(width):
+    _validate_width(width)
     if width <= EXHAUSTIVE_INPUT_WIDTH:
         return tuple(product((False, True), repeat=width))
     return ((False,) * width, (True,) * width,
@@ -217,7 +227,7 @@ def source_digests():
     root = Path(__file__).resolve().parent
     names = ("ic_boolean_size_family.py", "ic_primitive_port_verifier.py",
              "ic_research_artifacts.py", "ic_observation_contracts.py",
-             "lafont_ic_macro_builder.py", "ic_bounded_execution.py")
+             "lafont_ic_macro_builder.py", "ic_bounded_execution.py", "ic_evidence_json.py")
     return {name: hashlib.sha256((root / name).read_bytes()).hexdigest() for name in names}
 
 
@@ -274,7 +284,7 @@ def main():
     group.add_argument("--verify-report", type=Path)
     args = parser.parse_args()
     if args.verify_report:
-        verify_report(json.loads(args.verify_report.read_text(encoding="utf-8")))
+        verify_report(json_loads(args.verify_report.read_text(encoding="utf-8")))
         print("PASS: exact Boolean-family report, primitive pairs and small schedule explorations")
         return
     report = build_report()

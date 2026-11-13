@@ -143,6 +143,13 @@ the audit, reducer and tree helper. This is finite reproducible evidence.
 
 ## Existing project results and remaining obligations
 
+The [Boolean-family follow-up](BOOLEAN_SIZE_FAMILY.md) separately supplies
+actual value-bearing inputs to a framework built only from size. It checks
+the AND task on all inputs through width 4 and a declared larger sample, with
+small all-schedule exploration. This addresses the earlier tree-copy audit's
+same-length-input limitation for that concrete task; its evidence remains
+separate in [ledger Y](CLAIM_LEDGER.md#y-input-bearing-uniform-and-frameworks).
+
 | Mechanism | Existing meaning | Further size-family obligation |
 |---|---|---|
 | Structural source encoding | Store/decode a finite source graph as data | Bound encoding/decoding; storage is not source execution |

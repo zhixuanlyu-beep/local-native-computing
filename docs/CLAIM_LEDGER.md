@@ -692,3 +692,115 @@ same-length bitstrings, native decompression of a size descriptor, full-compiler
 unfolding, all-schedule execution, general time/space optimality, physical
 stock, or reuse benefit. Algebraic arguments, finite implementation checks and
 future family-level obligations retain their separate scopes.
+
+## Y. Input-bearing uniform AND frameworks
+
+The [Boolean-family guide](BOOLEAN_SIZE_FAMILY.md) and
+[implementation](../ic_boolean_size_family.py) extend the size-family question
+to actual variable input values for one task. `build_framework(n, shape)` takes
+only size and shape, returning immutable literal syntax with `n-1` gamma gates,
+`n+1` boundaries and `2n-1` wires. It performs zero native reductions.
+`plug_inputs` separately encodes each supplied Boolean using the existing M4
+A representation: one epsilon for false, or one gamma with an auxiliary
+self-wire for true. The original primitive reducer supplies every execution
+step. Neither builder consults the scalar reference or chooses wiring from
+the answer. This literal gate is directly specified, not claimed as a new
+discovery or frozen-library retrieval.
+
+The **16 framework configurations** cover sizes **1,2,3,4,8,16,32,64** and
+balanced/left-comb shapes. They contain **14 distinct literal framework
+digests**: shape configurations coincide at widths 1 and 2 and are retained
+explicitly. Every input tuple through width **4** is executed. At widths
+**8,16,32,64**, the fixed five tuples are all-false, all-true, alternating
+false-first, only-first-false and only-last-false. Each uses first-active,
+last-active and snapshot-rounds policies. All **300 positive executions**
+passed, totaling **6,810 primitive interactions**. For each input/configuration,
+the three policies agree on the complete output and exact resource/census
+record; their snapshot-round measure is recorded separately.
+
+The fully plugged instance has `I=2n-1` cells regardless of values; with `t`
+true values its wire count is `2n-1+t`. The framework digest therefore stays
+fixed while input encoding changes the instance. At width **2**, the same
+framework uses **2,3,1,1** interactions for inputs **00,01,10,11**, respectively.
+All four begin with **3 cells**. This directly distinguishes size-only
+construction from value-dependent work.
+
+The gamma gate's LEFT/RIGHT/OUT ports are 0/1/2. True LEFT annihilates the gate
+and passes RIGHT through the Loop wiring. False LEFT produces an OUT epsilon
+and an eraser for RIGHT; erasing true RIGHT needs the extra gamma/epsilon and
+epsilon/epsilon cleanup. The complete four-input local behavior is checked
+inside the matrix, including complete terminal graphs rather than scalar
+readout alone. Every passing terminal is exactly one A value at OUT, with no
+extra components or detached cyclic wires.
+
+In this gamma/epsilon fragment live size never increases under an atomic
+rewrite, so `P=I=2n-1`. Runtime allocation is `2*count(ge)`, and passing
+terminals satisfy `A=I+2*count(ge)=1+2W`, hence `W=n-1+count(ge)`.
+These equations are checked against actual graphs and primitive inventories.
+The following are measured snapshot executions at **n=64**, all with **127
+initial/peak cells** and one terminal cell:
+
+| Input | Shape | Interactions | Total allocation | Synchronous rounds |
+|---|---|---:|---:|---:|
+| All true | Balanced | 63 | 127 | 6 |
+| All true | Left comb | 63 | 127 | 63 |
+| All false | Balanced | 126 | 253 | 7 |
+| All false | Left comb | 126 | 253 | 64 |
+| Only first false | Balanced | 75 | 151 | 8 |
+| Only first false | Left comb | 189 | 379 | 65 |
+
+Each snapshot reduces all pairs already active at its start, with new pairs
+deferred. These are simulated local-rewrite rounds, including cleanup, not
+host time, hardware delay or general minimum circuit depth. In particular,
+an AND gate may annihilate before its RIGHT subtree finishes. The all-true
+balanced recurrence yields `floor(log2(n))`, not the ordinary circuit-depth
+formula for non-power sizes. The all-true left comb uses `n-1` rounds.
+
+Exact bounded exploration covers **28 concrete small configurations**: every
+input through width **3**, under both shapes, retaining coincident shape cases.
+It visits **122 quotient states** and attempts **125 transitions**. Every
+exploration is complete and acyclic and all its terminal whole graphs match
+the independent output. Bounds are **256 states, 2,048 transitions and 16
+live cells** per exploration. This is exhaustive scheduling evidence only
+for these concrete small graphs. Larger executions retain their three-policy
+scope, even though abstract composition arguments are available.
+
+The guide gives a conditional abstract staged-normalization argument by tree
+induction using the local truth table and existing linear-context lifting
+assumptions. It also records the strictly decreasing potential `2G+E`, initially
+`3n-2+t <= 4n-2`. This separates a mathematical termination argument from
+finite implementation checks. Positive execution bounds were fixed at **512
+interactions and 127 live cells** before the matrix; none was adjusted after
+failure. No unbounded Python conformance or new arbitrary-context theorem is
+claimed.
+
+Five negative fixtures preserve zero-step and partial-snapshot cutoffs, an
+initial material violation, a quiescent incorrect whole graph, and an incomplete
+schedule exploration. The partial snapshot contains **one additional primitive
+pair**, so the report retains **6,811 policy/probe pairs** in total. An unfinished
+round has no complete synchronous-depth claim; a quiescent wrong graph is not
+successful computation, and truncated exploration is not all-schedule evidence.
+
+Archive: [boolean_size_family.json](../results/boolean_size_family.json), SHA-256
+`a9927a96697ab25bb899ff201e237cafa3070c87f7898401a8dafe8ed1a71ab4`.
+It binds the new implementation and five unchanged helper modules, retains
+literal framework specs, exact input/policy records, complete final graphs,
+primitive pairs, exploration summaries and all negative fixtures. Generation
+and independent reconstruction, including a different Python hash seed, passed.
+Every semantic field and source binding is compared.
+
+[The integrity suite](../tests/boolean_size_family_integrity.py) passed **9
+groups**: oracle-free construction/unchanged internal wiring, all width-5
+inputs under both shapes and three policies, value-dependent work, non-power
+all-true round counts, strict preconditions, bounded execution classifications,
+incorrect terminals, incomplete exploration, and nine changed-report probes.
+The unchanged GraphSpec, bounded-exploration and observation-contract audits,
+the original **5-group** size-family suite and its full report reconstruction
+also passed locally. The earlier PR's full historical CI was green before
+this extension; the local extension checks do not replace a fresh full CI run.
+The existing runner appends the new integrity suite and complete reconstruction.
+
+This establishes the recorded finite value-bearing AND families and separates
+framework size from input-dependent native work. Arbitrary-function generation,
+full-feedback unfolding, native decompression of a size descriptor, physical
+inventory, optimality and net reuse benefit remain separate obligations.

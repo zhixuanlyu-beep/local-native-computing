@@ -7,6 +7,8 @@ python ic_primitive_port_verifier.py
 python ic_gamma_tree_copy_demo.py
 python tests/size_family_integrity.py
 python ic_size_family_audit.py --verify-report results/size_family_audit.json
+python tests/boolean_size_family_integrity.py
+python ic_boolean_size_family.py --verify-report results/boolean_size_family.json
 python ic_reduced_package_copy_demo.py
 python ic_tree_erase_demo.py
 python source_ic_structure_encoding.py

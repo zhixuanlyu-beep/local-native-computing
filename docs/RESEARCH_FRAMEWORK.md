@@ -42,6 +42,13 @@ specifies `Build(P_f,n)` followed by input encoding, plugging, evaluation and
 observation, separating host construction from native expansion. Its tree-copy
 audit has its own finite scope in [ledger X](CLAIM_LEDGER.md#x-size-parametric-construction-and-tree-copy-audit).
 
+The [Boolean-family experiment](BOOLEAN_SIZE_FAMILY.md) now separates framework
+construction from supplying concrete same-length inputs for one AND task.
+Its exact finite input/policy matrix and small exhaustive schedule results
+are recorded independently in [ledger Y](CLAIM_LEDGER.md#y-input-bearing-uniform-and-frameworks).
+Input-independent construction does not make native work independent of input
+values; the experiment explicitly records both differences.
+
 ## 3. Observation semantics and information closure
 
 ### Separate four interfaces

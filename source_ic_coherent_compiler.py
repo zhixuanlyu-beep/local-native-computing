@@ -12,6 +12,7 @@ from collections import Counter
 from dataclasses import dataclass
 import argparse
 import json
+from ic_evidence_json import loads as json_loads
 from pathlib import Path
 
 from ic_primitive_port_verifier import Net
@@ -37,7 +38,7 @@ class CoherentICCompiler:
         self.arity = dict(AR)
         self.index = {symbol: index + 1 for index, symbol in enumerate(self.symbols)}
         self.width = len(self.symbols)
-        source = json.loads(Path(__file__).with_name("lafont_15_rules_phi_psi_split.json").read_text(encoding="utf-8"))
+        source = json_loads(Path(__file__).with_name("lafont_15_rules_phi_psi_split.json").read_text(encoding="utf-8"))
         self.entries = {}
         for rule in source["rules"]:
             first, second = rule["lhs"]

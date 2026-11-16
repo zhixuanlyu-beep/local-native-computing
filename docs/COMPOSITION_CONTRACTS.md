@@ -36,6 +36,13 @@ Selected M2 sequences are also executed under the alternative policies. Their fu
 
 ## Reproduction and rejection
 
+The separate [size-family contract](SIZE_AND_UNIFORMITY.md) adds input-size,
+uniform generation and stage-accounting requirements. Its tree-copy audit is
+indexed in [ledger X](CLAIM_LEDGER.md#x-size-parametric-construction-and-tree-copy-audit)
+and does not extend this environment's source-rule, context or schedule coverage.
+In particular, a synchronous round count must not be inferred from a sequential
+pair trace or substituted for primitive work.
+
 ```sh
 python tests/typed_programs_integrity.py
 python tests/schedule_audit_integrity.py

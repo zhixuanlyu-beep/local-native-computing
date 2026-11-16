@@ -16,6 +16,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 import hashlib
 import json
+from ic_evidence_json import loads as json_loads
 from typing import Any, Mapping, Sequence
 
 from ic_primitive_port_verifier import AR, Net
@@ -40,8 +41,10 @@ class GraphSpec:
 
     def _endpoint_port_count(self, endpoint: Endpoint) -> int:
         if isinstance(endpoint, tuple) and len(endpoint) == 2:
-            if isinstance(endpoint[0], int) and isinstance(endpoint[1], int):
-                if 0 <= endpoint[0] < len(self.kinds):
+            if (isinstance(endpoint[0], int) and not isinstance(endpoint[0], bool)
+                    and isinstance(endpoint[1], int) and not isinstance(endpoint[1], bool)):
+                if (0 <= endpoint[0] < len(self.kinds)
+                        and 0 <= endpoint[1] <= AR[self.kinds[endpoint[0]]]):
                     return AR[self.kinds[endpoint[0]]] + 1
             if (isinstance(endpoint[0], str) and endpoint[0] == "F"
                     and isinstance(endpoint[1], str)):
@@ -57,6 +60,8 @@ class GraphSpec:
             raise TypeError("wires must be a tuple")
         if any(kind not in AR for kind in self.kinds):
             raise ValueError(f"unknown cell kind in {self.kinds!r}")
+        if any(not isinstance(label, str) for label in self.boundaries):
+            raise ValueError("boundary labels must be strings")
         if len(set(self.boundaries)) != len(self.boundaries):
             raise ValueError(f"duplicate boundary labels: {self.boundaries!r}")
 
@@ -93,6 +98,15 @@ class GraphSpec:
     def from_dict(cls, data: Mapping[str, Any]) -> "GraphSpec":
         if not isinstance(data, Mapping):
             raise TypeError("GraphSpec data must be a mapping")
+        required = {"kinds", "boundaries", "wires"}
+        if not required <= set(data) or set(data) - required - {"cycles"}:
+            raise ValueError("GraphSpec keys must be kinds, boundaries, wires and optional cycles")
+        for key in required:
+            if not isinstance(data[key], Sequence) or isinstance(data[key], (str, bytes, bytearray)):
+                raise ValueError(f"GraphSpec {key} must be an array")
+        if any(not isinstance(wire, Sequence) or isinstance(wire, (str, bytes, bytearray))
+               or len(wire) != 2 for wire in data["wires"]):
+            raise ValueError("GraphSpec wires must be two-endpoint arrays")
         try:
             kinds = tuple(data["kinds"])
             boundaries = tuple(data["boundaries"])
@@ -111,7 +125,7 @@ class GraphSpec:
 
     @staticmethod
     def _decode_endpoint(value: Sequence[Any]) -> Endpoint:
-        if not isinstance(value, Sequence) or isinstance(value, (str, bytes)) or len(value) != 2:
+        if not isinstance(value, Sequence) or isinstance(value, (str, bytes, bytearray)) or len(value) != 2:
             raise ValueError(f"invalid endpoint encoding: {value!r}")
         first, second = value
         if isinstance(first, str):
@@ -184,6 +198,17 @@ class GraphSpec:
                 raise ValueError(f"binding mismatch; missing={sorted(missing)}, extra={sorted(extra)}")
             boundary_ports = {}
             for label, endpoint in bindings.items():
+                if not isinstance(endpoint, tuple) or len(endpoint) != 2:
+                    raise ValueError(f"invalid bound endpoint: {label} -> {endpoint!r}")
+                cell, port = endpoint
+                if cell == "F":
+                    valid = isinstance(port, str) and endpoint in net.free
+                else:
+                    valid = (isinstance(cell, str) and cell in net.nodes
+                             and isinstance(port, int) and not isinstance(port, bool)
+                             and 0 <= port <= AR[net.nodes[cell]])
+                if not valid:
+                    raise ValueError(f"invalid bound endpoint: {label} -> {endpoint!r}")
                 if endpoint not in net.adj or net.adj[endpoint] is not None:
                     raise ValueError(f"bound target is not a free port: {label} -> {endpoint!r}")
                 boundary_ports[label] = endpoint
@@ -483,7 +508,7 @@ def _check_roundtrip(spec: GraphSpec) -> None:
     net = spec.instantiate()
     roundtrip = GraphSpec.from_net(net)
     assert roundtrip == spec
-    encoded = GraphSpec.from_dict(json.loads(json.dumps(spec.to_dict())))
+    encoded = GraphSpec.from_dict(json_loads(json.dumps(spec.to_dict())))
     assert encoded == spec
 
 
@@ -499,7 +524,7 @@ def _check_bindings_and_capture() -> None:
     assert cell_ids == {"c0", "c1", "c2"}
     fresh = artifact.instantiate()
     assert GraphSpec.from_net(fresh) == artifact.spec
-    artifact.from_dict(json.loads(artifact.export_json()))
+    artifact.from_dict(json_loads(artifact.export_json()))
 
     # Composition must use explicitly provided free target ports.  A host may
     # be intentionally incomplete before binding; the final graph is checked

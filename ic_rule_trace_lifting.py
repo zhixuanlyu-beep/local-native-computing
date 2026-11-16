@@ -7,6 +7,7 @@ import gzip
 import hashlib
 from pathlib import Path
 import struct
+from ic_evidence_json import loads as json_loads
 
 from ic_coherent_feedback import graph_digest, read_json, spec_digest
 from ic_coherent_certificates import source_rules_digest
@@ -73,8 +74,7 @@ def lift_all_rules(compiler, trace, *, max_steps=2_000_000, max_cells=250_000):
         raise ValueError("incomplete frozen source-rule table")
     records, old_offset = [], 0
     with gzip.open(RESULTS / "coherent_rule_certificates.ictrace.gz", "rb") as stream:
-        import json
-        header = json.loads(stream.readline())
+        header = json_loads(stream.readline())
         if header != {"format": "IC-PAIR-U32LE-1", **saved["metadata"]}:
             raise ValueError("frozen rule trace metadata mismatch")
         for old_record, rule in zip(saved["certificates"], RULES.values()):

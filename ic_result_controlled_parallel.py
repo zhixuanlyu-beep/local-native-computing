@@ -3,6 +3,7 @@
 import gzip
 import hashlib
 import json
+from ic_evidence_json import loads as json_loads
 import multiprocessing
 from pathlib import Path
 import tempfile
@@ -82,7 +83,7 @@ def _split(parent, path, count, metadata):
 def _merge(parent, path, metadata, expected_summary):
     offset, digest, count = parent.count, hashlib.sha256(), 0
     with gzip.open(path, "rb") as stream:
-        if json.loads(stream.readline()) != {"format": "IC-PAIR-U32LE-1", **metadata}:
+        if json_loads(stream.readline()) != {"format": "IC-PAIR-U32LE-1", **metadata}:
             raise ValueError("parallel chunk header mismatch")
         while raw := stream.read(BLOCK):
             if len(raw) % 8:

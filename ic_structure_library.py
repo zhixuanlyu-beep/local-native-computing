@@ -10,6 +10,7 @@ from dataclasses import dataclass
 import gzip
 import hashlib
 import json
+from ic_evidence_json import loads as json_loads
 from pathlib import Path
 import struct
 from types import MappingProxyType
@@ -428,7 +429,7 @@ def _load_frozen_report(report_path=REPORT_PATH) -> tuple[Path, dict[str, Any]]:
         raise ValueError("frozen M4 report digest changed")
     if report_path.suffix != ".gz":
         raise ValueError("the frozen M4 report must be gzip-encoded")
-    report = json.loads(gzip.decompress(raw).decode("utf-8"))
+    report = json_loads(gzip.decompress(raw).decode("utf-8"))
     if report.get("format") != REPORT_FORMAT or report.get("status") != "passed":
         raise ValueError("the frozen M4 report is not accepted evidence")
     return report_path, report
@@ -560,11 +561,14 @@ class _IntervalTrace:
         self.path = Path(path)
         self.stream = gzip.open(self.path, "rb")
         try:
-            self.header = json.loads(self.stream.readline())
+            self.header = json_loads(self.stream.readline())
             self.payload_start = self.stream.tell()
+            self._validate_stream(source_binding)
         except BaseException:
             self.stream.close()
             raise
+
+    def _validate_stream(self, source_binding):
         expected = {"format": TRACE_FORMAT, "scope": source_binding["metadata"]["scope"],
                     "bindings_sha256": source_binding["metadata"]["bindings_sha256"]}
         if self.header != expected:

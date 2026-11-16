@@ -34,6 +34,21 @@ The separate **search budget `A`** records the candidate family, generation meth
 
 Resource bounds must include consumers and adapters when making a composition claim. If a run exceeds a promised bound, record the violation; do not discard it and then claim correctness within the original contract. Any fairness restriction belongs explicitly in `E`. Random scheduler trials alone do not establish all fair executions, and fairness alone supplies no uniform time bound.
 
+For input-size families, declare the size measure/encoding, fixed description,
+initial instance and runtime evolution separately. Fixed rules do not imply a
+fixed graph. A size bound does not imply topology determined by size or an
+efficient common generator. The [size and uniformity contract](SIZE_AND_UNIFORMITY.md)
+specifies `Build(P_f,n)` followed by input encoding, plugging, evaluation and
+observation, separating host construction from native expansion. Its tree-copy
+audit has its own finite scope in [ledger X](CLAIM_LEDGER.md#x-size-parametric-construction-and-tree-copy-audit).
+
+The [Boolean-family experiment](BOOLEAN_SIZE_FAMILY.md) now separates framework
+construction from supplying concrete same-length inputs for one AND task.
+Its exact finite input/policy matrix and small exhaustive schedule results
+are recorded independently in [ledger Y](CLAIM_LEDGER.md#y-input-bearing-uniform-and-frameworks).
+Input-independent construction does not make native work independent of input
+values; the experiment explicitly records both differences.
+
 ## 3. Observation semantics and information closure
 
 ### Separate four interfaces
@@ -119,6 +134,13 @@ Distinguish these human-designed reusable artifacts from **structures formed dur
 Cost records should separate representation/constraint discovery, candidate validation, instance construction or compilation, native reduction, readout, and subsequent reuse. Include duplicated inputs, preallocated candidates, wrappers, adapters, consumers, peak live cells, and cleanup when relevant. Keep conditional macro budgets distinct from generated graphs and measured runs. Neither improved yield nor net savings follows from adding constraints; comparing such benefits requires a shared candidate universe and declared budgets. The [ledger](CLAIM_LEDGER.md) retains the concrete accounting already established.
 
 ## 8. Next obligations and reporting discipline
+
+Use the [size-family cost table](SIZE_AND_UNIFORMITY.md#cost-contract) to separate
+description length, construction units, initial size, work/allocation, peak
+and dependency measures. Only combine stages in a common cost model.
+Amortizing a recipe does not remove the cost of copying, rebuilding or resetting
+consumed specimens. Name numeral value, unary length and binary length
+separately in asymptotic claims.
 
 The agenda leaves the following concrete work open:
 

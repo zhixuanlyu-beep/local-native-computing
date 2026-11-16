@@ -13,6 +13,7 @@ from dataclasses import asdict, replace
 import argparse
 import gzip
 import json
+from ic_evidence_json import loads as json_loads
 from pathlib import Path
 
 from ic_primitive_port_verifier import AR, Net, isomorphic
@@ -129,7 +130,7 @@ def retain_and_reuse(gate, carrier, budget=None):
                 "readout_cells": len(artifact.spec.kinds),
                 "readout_ports": sum(AR[k] + 1 for k in artifact.spec.kinds) + 1,
             }
-            serialized = json.loads(artifact.export_json())
+            serialized = json_loads(artifact.export_json())
             restored = RetainedArtifact.from_dict(serialized)
             replay_artifact(restored, expected(first_bit, description, "copy"))
             reuse_cases = []
@@ -260,7 +261,7 @@ def main():
         encoded = args.verify_report.read_bytes()
         if args.verify_report.suffix == ".gz":
             encoded = gzip.decompress(encoded)
-        checked = verify_report(json.loads(encoded))
+        checked = verify_report(json_loads(encoded))
         print("PASS: saved report counterexamples, provenance and native reuse cases", checked)
         return
     report = run_research()

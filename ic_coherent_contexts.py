@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import json
+from ic_evidence_json import loads as json_loads
 from pathlib import Path
 
 from ic_fast_reducer import FastNet
@@ -147,7 +148,7 @@ def main():
     records = run_contexts()
     if not args.report:
         encoded = args.verify_report.read_bytes()
-        saved = json.loads(gzip.decompress(encoded) if args.verify_report.suffix == ".gz" else encoded)
+        saved = json_loads(gzip.decompress(encoded) if args.verify_report.suffix == ".gz" else encoded)
         assert records == saved, "finite-context results differ from the archived evidence"
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)

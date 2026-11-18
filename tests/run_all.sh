@@ -66,3 +66,6 @@ python ic_coherent_feedback.py --verify-report results/coherent_feedback_81.json
 python lafont_sigma_width_audit.py
 python lafont_phi_psi_split.py
 python lafont_macro_budget_v2.py
+python tests/localization_backend_integrity.py
+python tests/localization_integrity.py
+python -m ic_localization --verify-report results/localization.json.gz --trace results/localization.ictrace.gz --workers 2

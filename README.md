@@ -2,7 +2,16 @@
 
 This repository studies how a task's observable meaning can be met by local constraints, constrained materials, local evolution, and stable readout. Its concrete vehicle is Lafont's Interaction Combinators (IC): finite port graphs whose gamma, delta, and epsilon cells interact through six local rewrite rules.
 
-The research route is:
+The current research route is **problem specification → generate localization
+transforms → verify correctness → compare native costs → accumulate relations
+between transforms and structures**. [M7](docs/LOCALIZATION_OPTIMIZATION.md)
+implements finite-class exact optimization for Boolean chains of sizes 2 and 3.
+The [evidence ledger](docs/CLAIM_LEDGER.md#aa-m7-exact-localization-optimization)
+records the exhaustive comparison, schedule costs and replay artifacts.
+M1–M6 remain its execution, audit and replay foundation. Concept induction,
+transfer experiments and broader transform spaces are the later M8–M10 route.
+
+The earlier route supplies the underlying obligations:
 
 1. **Observation semantics** — state the information objects, boundary observations, visible and hidden state, allowed environments, and resource bounds.
 2. **Local constraints** — derive port, type, capacity, and invariant conditions that materials must satisfy.

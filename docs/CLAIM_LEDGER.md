@@ -85,7 +85,7 @@ One primitive IC `delta` attached to the root of that *closed, delta-free reduce
 
 For `N=81`, the initial source structure encodes as **533 gamma/epsilon IC cells**, containing **83 original source wire pairs**. Copying or erasing it takes **616 primitive IC reductions**. These numbers represent the encoded **initial problem data only**; they do not imply an IC computation of `SQ(9)`, a runtime rule compiler, or an output decoder. The representation's node order and boundary order are part of its chosen syntax, not canonical graph-isomorphism invariants. Source symbolic types are represented as unary data tags, not active IC node kinds.
 
-**Historical bridge:** source program graphs can exist *as data* inside literal 3-symbol IC nets and be copied/erased locally. That storage bridge is distinct from executing source rules; the unified compiler and full `81 -> SQ(9)` trace are now established in [§Q](#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution).
+**Historical bridge:** source program graphs can exist *as data* inside literal 3-symbol IC nets and be copied/erased locally. That storage bridge is distinct from executing source rules; the unified compiler and full `81 to SQ(9)` trace are now established in [§Q](#q-coherent-14-symbol-compiler-and-81--sq9-feedback-execution).
 
 ## G. Four SOURCE rules operationally refined to primitive IC
 
@@ -183,7 +183,7 @@ The original producer network remains unchanged during subsequent reconstruction
 
 The evidence establishes this finite archive/reconstruction/consumer workflow. It does not establish autonomous discovery of a general auxiliary-structure library, arbitrary-context replacement, physical material reuse, or complete source feedback execution. The original implementations, isolated-certificate distinction, missing component adapters, and historical **4/15** fragment evidence are preserved. The separate unified compiler is evaluated in section Q. The new audits are included in [tests/run_all.sh](../tests/run_all.sh), which is run by the existing CI workflow.
 
-## Q. Coherent 14-symbol compiler and 81 鈫?SQ(9) feedback execution
+## Q. Coherent 14-symbol compiler and 81 to SQ(9) feedback execution
 
 `source_ic_coherent_compiler.py` constructs the actual Figure-10-style primitive-IC program for all 14 source symbols and 15 unordered source rules. The implementation is a unified representation: each source symbol has one consistent primitive-IC footprint, and `Gamma` uses the column construction required by the Lafont transpositor/selector mechanism. The program itself has **2,937 decoded cells** (1,549 gamma, 147 delta, 1,241 epsilon); its delta-free `!Gamma` encoding has **3,231 cells** (1,990 gamma and 1,241 epsilon). These are generated and validated graphs, not conditional budget estimates.
 
@@ -613,9 +613,9 @@ This establishes the listed finite result-controlled whole computations and
 actual local-trace composition under the existing abstract-model and faithful
 implementation hypotheses. It does not establish arbitrary contextual
 equivalence, all-schedule large-network execution, physical finite stock or
-general reuse benefit. The next priority is result numerals as subsequent
-inputs, then broader adaptation/discovery and renewed complete-computation
-reuse-cost evaluation.
+general reuse benefit. Result numerals as subsequent inputs remain a future
+extension of this execution line. The current problem-to-transform research
+route starts with the [M7 chain optimization contract](LOCALIZATION_OPTIMIZATION.md).
 
 ## X. Size-parametric construction and tree-copy audit
 
@@ -874,3 +874,93 @@ the mismatch between the original wording and `A=F+2W` without changing any
 reported formula or execution evidence. The workflow also uses the verified
 official Node-24 releases `actions/checkout@v7.0.1` and
 `actions/setup-python@v7.1.0`, retaining Python 3.11 and all 64 audit commands.
+
+## AA. M7 exact localization optimization
+
+[Contract](LOCALIZATION_OPTIMIZATION.md) · [Pre-search freeze](M7_FREEZE.json) ·
+[Report](../results/localization.json.gz) ·
+[Primitive trace](../results/localization.ictrace.gz)
+
+The finite experiment chooses one transform per chain size and minimizes its
+maximum complete FIFO primitive work across all Boolean inputs. All **116 raw
+descriptions** were retained. The full matrices had **18 x 64 = 1,152** and
+**98 x 1,024 = 100,352** runs. Every run reached exactly the independent
+reference A value at `OUT`, with no other cells or bare cycles. The reducer
+audited every primitive rule and allocation. The matrices used 71,298 and
+15,647,058 original interactions in total. The corresponding maxima for
+initial, peak live and runtime allocated cells were (99, 105, 100) and
+(275, 355, 452). Each run was within 2,000,000 interactions and 250,000 live
+cells, including the initial graph.
+
+All **32 foundation instances** passed FIFO, LIFO, seed 17 and exhaustive small
+schedule exploration. The largest exploration had 311 states. Maxima across
+the explorations were 996 attempted transitions and 23 live cells. The archived
+negative cases reject a reversed truth branch, an incomplete interaction count,
+an initial resource cutoff, an extra bare cycle, an inconsistent P package
+and a port reused without copying. The 16 targeted integrity tests additionally
+check visible output before cleanup, runtime resource growth, oracle isolation,
+candidate omission, typed cost mutation, and trace truncation and append.
+
+| Size | S direct | P direct | Class-optimal FIFO | Optimal raw descriptions | Archived representative (zero-based order, materialize bits) |
+|---:|---:|---:|---:|---:|---|
+| 2 | 54 | 99 | **34** | 4 | S variable elimination, `(1,0)`, `00` |
+| 3 | 198 | 363 | **78** | 20 | S variable elimination, `(0,2,1)`, `000` |
+
+All four size-2 winners have order `(1,0)` and arbitrary materialization
+bits. At size 3, both `(0,2,1)` and `(2,0,1)` tie for all eight vectors.
+`(2,1,0)` also ties for the four vectors with the first bit set. All winners
+use S. The report retains every optimum and chooses the archive representative
+by lexicographic order of the normalized description.
+
+The observed savings over S direct are **20 (37.0%)** and **120 (60.6%)**
+worst-input interactions. A matched change from S to P increases the worst
+work by 29-45 at size 2 and 67-165 at size 3. At size 2, every isolated
+materialization flag flip ties on worst work. At size 3, setting the
+first flag with all other description fields fixed improves 8 of 24
+comparisons for each representation and ties the other 16. The largest
+reductions are 60 for S and 110 for P. Later flag flips tie throughout.
+Across the tested materialization flips, every individual FIFO input ties
+or improves. The observed flag benefit depends on elimination order.
+
+The baselines and representatives each also ran every input under LIFO and
+seed 17, for **6,528** additional executions. Each policy had the same
+worst-input interactions as its corresponding FIFO run. Live-cell peaks can
+differ. Each row reports the maximum over all inputs for each field.
+
+| Size | Archived transform | Initial cells | Runtime allocated | FIFO peak | LIFO peak | Seed 17 peak |
+|---:|---|---:|---:|---:|---:|---:|
+| 2 | S direct | 59 | 50 | 65 | 61 | 63 |
+| 2 | P direct | 99 | 100 | 105 | 101 | 105 |
+| 2 | S optimum representative | 47 | 22 | 47 | 47 | 47 |
+| 3 | S direct | 163 | 234 | 203 | 185 | 187 |
+| 3 | P direct | 275 | 452 | 355 | 313 | 333 |
+| 3 | S optimum representative | 91 | 66 | 95 | 91 | 91 |
+
+The report counts algebra operations and measures host compilation,
+construction, reference evaluation, native execution and validation separately.
+The formal search and archiving took about **380 s** on the local machine with
+five candidate workers. The wall times describe that run, while original IC
+interaction counts determine the optimum.
+
+The archive contains **1,938,878** primitive pair records. Its bindings digest
+is `f5d84a7e781c3332a1302fb3c8e4bed20265f78f88f8506adaae1dfad5df603b`
+and its raw-pair digest is
+`a54348f73e6a2e378418914e48e4fbf79301557d25574e52734de91a833328d5`.
+The gzip report and trace SHA-256 digests are
+`562a9c5d48847ab01a24663b3ac3eba845346d60246bd89620751068fe897874` and
+`2d6e17a102da3867f9fd741d2e4bd82d739147a967586444ed897320d5d0a950`.
+Independent CLI verification rebuilt the manifests and graphs, reran all
+101,504 FIFO cases, and replayed all stored pairs through the end of the stream.
+The rebuilt report matched every deterministic evidence field.
+
+The full 64-command upstream regression at `75e2201` passed, including M1–M6
+and the complete M6 and input-81 trace replays. Two upstream size-family
+verifiers initially reported source digest mismatches under a Windows CRLF
+checkout. All other evidence fields matched. Both verifiers passed after
+restoring the source bytes from Git in the isolated regression worktree.
+The regression used the existing archives.
+
+The `class-optimal` claim is scoped to the frozen grammar, the exhaustive
+input domains of sizes 2 and 3, and fixed FIFO. M8 can use the retained
+descriptions, ties, cost changes and counterexamples as inputs to its bounded
+concept induction experiment.

@@ -1,0 +1,28 @@
+{
+  "contract": "M8-chain-counting-and-concepts-v1",
+  "m7_baseline": {
+    "commit": "8e7956d",
+    "contract": "M7-chain-localization-v1",
+    "bindings_sha256": "f5d84a7e781c3332a1302fb3c8e4bed20265f78f88f8506adaae1dfad5df603b",
+    "fifo_report": "results/localization.json.gz",
+    "fifo_report_sha256": "562a9c5d48847ab01a24663b3ac3eba845346d60246bd89620751068fe897874",
+    "native_cost": "maximum complete FIFO primitive interactions across the frozen Boolean input domain per raw candidate"
+  },
+  "domains": [
+    {"n": 2, "candidates": 18, "inputs": 64},
+    {"n": 3, "candidates": 98, "inputs": 1024}
+  ],
+  "candidate_input_checks": 101504,
+  "counting": {
+    "input_values": [0, 1],
+    "reference": "enumerate all binary assignments and count those satisfying every factor",
+    "ir": {"and": "integer multiplication", "or": "integer addition"},
+    "terminal_check": "positive count matches the M7 complete Boolean terminal"
+  },
+  "induction": {
+    "edits": ["materialization bit flip", "adjacent elimination swap", "S/P switch"],
+    "features": ["step position", "incoming factor count", "result scope width", "downstream reference count"],
+    "maximum_conditions": 2,
+    "minimum_distinct_ir_pairs": 2
+  }
+}

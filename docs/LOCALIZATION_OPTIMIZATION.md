@@ -81,8 +81,8 @@ separate conclusions. This class provides no claim of universal optimality,
 universal materialization benefit, arbitrary-context equivalence or physical
 runtime improvement. Negative gains belong in the evidence ledger too.
 
-M8 will use these concrete transforms and costs to freeze a bounded counting
-experiment for concept induction. M9 will use frozen held-out tasks and account
+[M8](COUNTING_AND_CONCEPTS.md) uses these concrete transforms and costs for
+bounded counting and concept induction. M9 will use frozen held-out tasks and account
 for recognition/search/learning cost and library size. M10 can expand factor
 structures, representations and transformation rules while strengthening bounds
 and proofs. Distinguish model impossibility, budget infeasibility and unknown

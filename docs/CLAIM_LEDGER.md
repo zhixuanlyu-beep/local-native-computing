@@ -961,6 +961,19 @@ restoring the source bytes from Git in the isolated regression worktree.
 The regression used the existing archives.
 
 The `class-optimal` claim is scoped to the frozen grammar, the exhaustive
-input domains of sizes 2 and 3, and fixed FIFO. M8 can use the retained
-descriptions, ties, cost changes and counterexamples as inputs to its bounded
-concept induction experiment.
+input domains of sizes 2 and 3, and fixed FIFO.
+
+## AB. M8 bounded counting and concept induction
+
+The two host paths agreed on all **101,504** candidate/input combinations.
+The M7 complete Boolean terminal agreed with count positivity in every
+case. The repeated operand witness produced a count of 2 under integer
+addition and a value of 1 under Boolean OR.
+
+Across **322** single-edit pairs, 130 improved the maximum FIFO cost,
+176 tied, and 16 degraded it under the recorded edit orientations.
+The concept library records support in distinct compiled IR pairs and
+preserves negative observations. The validation scope is the frozen
+chain grammar at sizes 2 and 3. The analyses of native costs use M7's
+Boolean evaluation archive. The [M8 guide](COUNTING_AND_CONCEPTS.md)
+gives the cost ranges and independent reconstruction command.

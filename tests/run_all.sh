@@ -69,3 +69,5 @@ python lafont_macro_budget_v2.py
 python tests/localization_backend_integrity.py
 python tests/localization_integrity.py
 python -m ic_localization --verify-report results/localization.json.gz --trace results/localization.ictrace.gz --workers 2
+python tests/m8_integrity.py
+python -m ic_m8 --verify-report results/m8_concept_library.json.gz

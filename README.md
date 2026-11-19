@@ -8,8 +8,11 @@ between transforms and structures**. [M7](docs/LOCALIZATION_OPTIMIZATION.md)
 implements finite-class exact optimization for Boolean chains of sizes 2 and 3.
 The [evidence ledger](docs/CLAIM_LEDGER.md#aa-m7-exact-localization-optimization)
 records the exhaustive comparison, schedule costs and replay artifacts.
-M1–M6 remain its execution, audit and replay foundation. Concept induction,
-transfer experiments and broader transform spaces are the later M8–M10 route.
+M1–M6 remain its execution, audit and replay foundation.
+[M8](docs/COUNTING_AND_CONCEPTS.md) verifies exact host-side counting on the
+same finite class and reconstructs a versioned library of transformation
+concepts from M7 FIFO costs. Transfer experiments and broader transform
+spaces are the M9–M10 route.
 
 The earlier route supplies the underlying obligations:
 

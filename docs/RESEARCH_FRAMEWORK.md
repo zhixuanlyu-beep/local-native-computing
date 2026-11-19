@@ -8,9 +8,9 @@ compare native costs → accumulate relations between transforms and structures.
 [M7](LOCALIZATION_OPTIMIZATION.md) supplies a finite-class exact optimization
 instance. M1–M6 supply its native execution, audit and replay foundation. The
 earlier observation-semantics/local-constraints/materials route below specifies
-the obligations for those transforms. M8–M10 (concept induction, held-out
-transfer/search comparisons and expanded transform spaces) are future work;
-numerical program handoff is outside M7.
+the obligations for those transforms. [M8](COUNTING_AND_CONCEPTS.md) adds
+bounded host counting and evidence-backed concept induction. M9–M10 cover
+held-out transfer and search comparisons and expanded transform spaces.
 
 Here, *materials* means computational building blocks: primitive Interaction Combinator (IC) cells, wires, representations, and component interfaces. A constrained material is a building block together with its admissible states, connections, and interactions. This terminology makes no claim about a finite physical inventory or a material implementation.
 
